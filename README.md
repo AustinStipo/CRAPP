@@ -1,2 +1,0 @@
-# CRAPP
-CRAPP for CRIME APP
