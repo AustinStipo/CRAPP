@@ -2,6 +2,8 @@
  * @author Sarah Carlucci
  */
 
+import java.util.ArrayList;
+
 public class Crime {
     
     private String location;
@@ -66,7 +68,7 @@ public class Crime {
     } 
 
     public ArrayList<Victim> getVictims(){
-
+        return victims;
     } 
 
     public void addWitness(Witness witness){
@@ -97,7 +99,7 @@ public class Crime {
 
     } 
 
-    public Arraylist<User> getUsers() {
+    public ArrayList<User> getUsers() {
         return users;
     } 
     
@@ -142,7 +144,7 @@ public class Crime {
     } 
 
     public User getEnteredCrime() {
-        return users;
+        return users.get(0);
     }
 
     public void setCrimeSeverity(int severity) {

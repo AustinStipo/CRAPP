@@ -5,7 +5,7 @@ public class Suspect extends Person{
     private ArrayList<String> aliases;
     private ArrayList<Person> associates;
     private ArrayList<Crime> pastCrimes;
-    private ArrayList<evidence> evidence;
+    private ArrayList<Evidence> evidence;
     private String alibi;
 
     public Suspect(String firstName, String lastName, int age, int height, int weight, String skinColor,
@@ -34,7 +34,7 @@ public class Suspect extends Person{
 
     }
 
-    public void addEvidence(evidence evidence) {
+    public void addEvidence(Evidence evidence) {
         
     }
 

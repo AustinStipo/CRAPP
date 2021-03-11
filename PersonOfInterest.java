@@ -1,8 +1,9 @@
 /**
  * @author Sarah Carlucci 
  */
+import java.util.ArrayList;
 
-public class personOfInterest {
+public class PersonOfInterest {
     
     private String phoneNumber;
     private String email;

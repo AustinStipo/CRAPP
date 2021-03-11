@@ -43,7 +43,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveWitnesses() {
-        ArrayList<Witness> witnessList = DataLoader.getWitnesss();
+        ArrayList<Witness> witnessList = DataLoader.getWitnesses();
         JSONArray jsonWitnesss = new JSONArray();
     }
 

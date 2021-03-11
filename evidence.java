@@ -1,6 +1,7 @@
 /**
  * @author Sarah Carlucci 
  */
+import java.util.ArrayList;
 
 public class Evidence {
     
@@ -45,7 +46,7 @@ public class Evidence {
     } 
 
     public User getEnteredEvidence() {
-        return handleEvidence;
+        return handleEvidence.get(0);
     } 
 
     public void addHandleEvidence(User user) {
@@ -57,7 +58,7 @@ public class Evidence {
     }
 
     public User getLastHandleEvidence() {
-        return handleEvidence;
+        return handleEvidence.get(0);
     }
 
     public void addComment(String comment) {

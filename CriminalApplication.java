@@ -1,4 +1,5 @@
-import org.graalvm.compiler.nodes.virtual.EnsureVirtualizedNode;
+// import org.graalvm.compiler.nodes.virtual.EnsureVirtualizedNode;
+import java.util.ArrayList;
 
 /**
  * @author Sarah Carlucci
@@ -49,7 +50,7 @@ public class CriminalApplication {
 
     }
 
-    public ArrayList<Suspect suspect> getSuspects() {
+    public ArrayList<Suspect> getSuspects() {
         return suspects;
     }
 
@@ -82,7 +83,7 @@ public class CriminalApplication {
     }
 
     public ArrayList<Crime> getCrime() {
-        return crime;
+        return crimes;
     }
 
     public int crimeLength() {
