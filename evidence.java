@@ -2,7 +2,7 @@
  * @author Sarah Carlucci 
  */
 
-public class evidence {
+public class Evidence {
     
     private String evidenceType;
     private ArrayList<String> locations;
