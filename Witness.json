@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "firstName": "Olivia",
+        "lastName": "Coronado",
+        "age": 37,
+        "address": "65 Maple St",
+        "image": "OliviaCoronado.jpg",
+        "phoneNumber": 8539228739,
+        "email": "oliviacoronado@gmail.com",
+        "stories": "witnessed Jenna Brown break and enter into nieghbors home"
+    },{
+        "id": 2,
+        "firstName": "Billy",
+        "lastName": "Turner",
+        "age": 66,
+        "address": "23987 Cornerstone Ave",
+        "image": "BillyTurner.jpg",
+        "phoneNumber": 9450729932,
+        "email": "billyturner@gmail.com",
+        "stories": "witnessed Jack Windsor punch another samaritian at Drews Pub"
+    },{
+        "id": 3,
+        "firstName": "Carrie",
+        "lastName": "Sider",
+        "age": 30,
+        "address": "5522 Oval Cir",
+        "image": "CarrieSider.jpg",
+        "phoneNumber": 3925965043,
+        "email": "carriesider@gmail.com",
+        "stories": "civilian after ms. fisher was dressed as repairman claiming to fix atm"
+    }
+]
