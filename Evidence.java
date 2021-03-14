@@ -14,7 +14,11 @@ public class Evidence {
 
 
     public Evidence(String evidenceType, String location, String time, User enteredEvidence, String comment) {
-
+        this.evidenceType = evidenceType;
+        this.locations = location;
+        this.times = time;
+        this.enteredEvidence = enteredEvidence;
+        this.comments = comment;
     }
 
     public String getEvidenceType() {
@@ -30,11 +34,11 @@ public class Evidence {
     } 
 
     public String getLastLocation() {
-        return "";
+        return locations.get(0);
     } 
 
     public void addTime(String time) {
-
+        times.add(time);
     } 
 
     public ArrayList<String> getTimes() {
@@ -42,7 +46,7 @@ public class Evidence {
     } 
 
     public String getLastTime() {
-        return "";
+        return times.get(0);
     } 
 
     public User getEnteredEvidence() {
@@ -50,7 +54,7 @@ public class Evidence {
     } 
 
     public void addHandleEvidence(User user) {
-
+        handleEvidence.add(user);
     } 
 
     public  ArrayList<User> getHandleEvidence() {
@@ -62,7 +66,7 @@ public class Evidence {
     }
 
     public void addComment(String comment) {
-
+        comments.add(comment);
     }
 
     public ArrayList<String> getComments() {
