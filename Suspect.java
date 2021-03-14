@@ -35,7 +35,7 @@ public class Suspect extends Person{
     }
 
     public void addEvidence(Evidence evidence) {
-        evidence.add(evidene);
+        evidence.add(evidence);
     }
 
     public String getAlibi() {
