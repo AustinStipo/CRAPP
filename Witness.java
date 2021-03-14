@@ -29,11 +29,11 @@ public class Witness extends Person{
     }
 
     public void addStory(String story) {
-        
+        stories.add(story);
     }
 
     public String getLastStory() {
-        return "";
+        return stories.get(stories.size()-1);
     }
     
 }

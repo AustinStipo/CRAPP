@@ -41,11 +41,11 @@ public class Victim extends Person {
     }
 
     public void addStory(String story) {
-        
+        stories.add(story);
     }
     
     public String getLastStory() {
-        return "";
+        return stories.get(stories.size()-1);
     }
 
     public boolean getHospitalized() {
@@ -53,7 +53,12 @@ public class Victim extends Person {
     }
 
     public void changeHospitalized() {
-        
+        if(getHospitalized == true) {
+            getHospitalized == false;
+        }
+        if(getHospitalized == false) {
+            getHospitalized == true;
+        }
     }
 
     public boolean getAlive() {
@@ -61,6 +66,11 @@ public class Victim extends Person {
     }
 
     public void changeAlive() {
-        
+        if(getAlive == true) {
+            getAlive == false;
+        }
+        if(getAlive == false) {
+            getAlive == false
+        }
     }
 }

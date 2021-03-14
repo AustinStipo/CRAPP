@@ -46,10 +46,10 @@ public class Criminal extends Person {
 
     public void changeJail() {
         if(Criminal.getJail == true) {
-            return false;
+            Criminal.getJail == false;
         }
         if(Criminal.getJail == false) {
-            return true;
+            Criminal.getJail == true;
         }
     }
 
@@ -59,10 +59,10 @@ public class Criminal extends Person {
 
     public void changeAlive() {
         if(Criminal.getAlive == true) {
-            return false;
+            Criminal.getAlive == false;
         }
         if(Criminal.getAlive == false) {
-            return true;
+            Criminal.getAlive == true;
         }
     }
 

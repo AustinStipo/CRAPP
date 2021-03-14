@@ -34,7 +34,7 @@ public class Evidence {
     } 
 
     public String getLastLocation() {
-        return locations.get(0);
+        return locations.get(locations.size()-1);
     } 
 
     public void addTime(String time) {
@@ -46,7 +46,7 @@ public class Evidence {
     } 
 
     public String getLastTime() {
-        return times.get(0);
+        return times.get(times.size()-1);
     } 
 
     public User getEnteredEvidence() {
@@ -62,7 +62,7 @@ public class Evidence {
     }
 
     public User getLastHandleEvidence() {
-        return handleEvidence.get(0);
+        return handleEvidence.get(handleEvidence.size()-1);
     }
 
     public void addComment(String comment) {
@@ -74,6 +74,6 @@ public class Evidence {
     } 
 
     public String getLastComment() {
-        return comments.get(0);
+        return comments.get(comments.size()-1);
     }
 }
