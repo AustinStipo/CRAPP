@@ -74,6 +74,6 @@ public class Evidence {
     } 
 
     public String getLastComment() {
-        return "";
+        return comments.get(0);
     }
 }

@@ -7,6 +7,11 @@ public class Person {
     private String firstName;
     private String lastName;
     private int age;
+    private int height; //in inches
+    private int weight;
+    private String skinColor;
+    private String hairColor;
+    private String eyeColor;
     private String address;
     private String image;
 
@@ -15,9 +20,13 @@ public class Person {
         setFirstName(firstName);
         setLastName(lastName);
         setAge(age);
+        setHeight(height);
+        setWeight(weight);
+        setSkinColor(skinColor);
+        sethairColor(hairColor);
+        setEyeColor(eyeColor);
         setAddress(address);
         setImage(image);
-
     }
 
     public String getName() {
@@ -55,4 +64,44 @@ public class Person {
     public void setImage(String image) {
         this.image = image;
     } 
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    public void setSkinColor(String skinColor) {
+        this.skinColor = skinColor;
+    }
+
+    public String getSkinColor() {
+        return this.skinColor;
+    }
+
+    public void sethairColor(String hairColor) {
+        this.hairColor = hairColor;
+    }
+
+    public String getHairColor() {
+        return this.hairColor;
+    }
+
+    public void setEyeColor(String eyeColor) {
+        this.eyeColor = eyeColor;
+    }
+
+    public String getEyeColor() {
+        return this.eyeColor;
+    }
 }
