@@ -12,38 +12,47 @@ public class Person {
 
 
     public Person(String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAge(age);
+        setAddress(address);
+        setImage(image);
 
     }
 
     public String getName() {
-        return "";
+        return "First Name: " + firstName + "\nLastName: " + lastName;
     }
 
-    public void setName(String name) {
-
+    public void setFirstName(String firstName) {
+        this.firstName = name;
     } 
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public int getAge() {
-        return 1;
+        return this.age;
     }
 
     public void setAge(int age) {
-
+        this.age = age;
     } 
 
     public String getAddress() {
-        return "";
+        return "Address: " + address;
     }
 
     public void setAddress(String address) {
-
+        this.address = address; 
     }
 
     public String getImage() {
-        return "";
+        return "Person looks like " + image;
     }
 
     public void setImage(String image) {
-
+        this.image = image;
     } 
 }

@@ -18,11 +18,11 @@ public class Evidence {
     }
 
     public String getEvidenceType() {
-        return "";
+        return "Evidence Type: "+ evidenceType;
     } 
 
     public void addLocation(String location) {
-
+        this.location = location;
     } 
 
     public ArrayList<String> getLocations() {

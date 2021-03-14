@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Criminal extends Person{
+public class Criminal extends Person {
     private boolean hasTattoos;
     private ArrayList<String> tattoos;
     private ArrayList<String> aliases;
@@ -21,23 +21,23 @@ public class Criminal extends Person{
     }
 
     public void addTattoo(String tattoos) {
-        
+        tattos.add(tattoos);
     }
 
     public void addAlias(String aliases) {
-
+        aliases.add(aliases);
     }
 
     public void addAssociate(Person person) {
-        
+        associates.add(person);
     }
 
     public void addCrime(Crime crime) {
-        
+        pastCrimes.add(crime);
     }
 
     public void removeCrime(Crime crime){
-
+        pastCrimes.remove(crime);
     }
 
     public boolean getJail() {
@@ -45,7 +45,12 @@ public class Criminal extends Person{
     }
 
     public void changeJail() {
-        
+        if(Criminal.getJail == true) {
+            return false;
+        }
+        if(Criminal.getJail == false) {
+            return true;
+        }
     }
 
     public boolean getAlive() {
@@ -53,11 +58,16 @@ public class Criminal extends Person{
     }
 
     public void changeAlive() {
-        
+        if(Criminal.getAlive == true) {
+            return false;
+        }
+        if(Criminal.getAlive == false) {
+            return true;
+        }
     }
 
-    public void chargesDropped() {
-        
+    public boolean chargesDropped() {
+        return this.chargesDropped;
     }
 
     public int getSeverity() {
@@ -69,11 +79,12 @@ public class Criminal extends Person{
     }
 
     public String toString(){
-        return "";
+        return "I'm not sure how we want to write this toString so I'll save this for later when we format";
     }
 
     public void addingInfo(String info, User user) {
-        
+        addedInfo.add(info);
+        addedInfo.add(user);
     }
 
     public String getBirthDate() {
