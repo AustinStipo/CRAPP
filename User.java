@@ -103,6 +103,10 @@ public class User {
         this.password = password;
     }
 
+    public ArrayList<Crime> getCrimesWorking() {
+        return crimesWorking;
+    }
+
     public void addCrime(Crime crime) {
         
     }

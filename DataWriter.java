@@ -8,8 +8,24 @@ import org.json.simple.JSONObject;
 public class DataWriter extends DataConstants {
     
     public static void saveUsers() {
-        ArrayList<User> userList = DataLoader.getUsers();
-        JSONArray jsonUsers = new JSONArray();
+        Users users = Users.getInstance();
+		ArrayList<User> userList = users.getUsers();
+		JSONArray jsonUsers = new JSONArray();
+		
+		//creating all the json objects
+		for(int i=0; i< userList.size(); i++) {
+			jsonUsers.add(getUserJSON(userList.get(i)));
+		}
+		
+		//Write JSON file
+        try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+ 
+            file.write(jsonUsers.toJSONString());
+            file.flush();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void saveCrimes() {
@@ -49,6 +65,25 @@ public class DataWriter extends DataConstants {
 
     public static JSONObject getUserJSON(User user) {
         JSONObject userDetails = new JSONObject();
+        userDetails.put(ID, user.getUuid().toString());
+		userDetails.put(FIRST_NAME, user.getFirstName());
+		userDetails.put(LAST_NAME, user.getLastName());
+		userDetails.put(EMAIL, user.getEmail());
+		userDetails.put(PHONE_NUMBER, user.getPhoneNumber());
+		userDetails.put(USER_PRECINCT, user.getPrecinct());
+		userDetails.put(USER_DEPARTMENT, user.getDepartment());
+		userDetails.put(USER_BADGE_NUMBER, user.getBadgeNumber());
+		userDetails.put(USER_RANK, user.getRank());
+		userDetails.put(USER_PASSWORD, user.getPassword());
+
+        JSONArray crimes = new JSONArray();
+        for(int j = 0; j < user.getCrimesWorking().size(); j++) {
+            JSONObject crime = new JSONObject();
+            crime.put(ID,user.getCrimesWorking().get(j).getUuid().toString();)
+            crimes.add(crime);
+        }
+        userDetails.put(USER_CRIME, crimes);
+
         return userDetails;
     }
 

@@ -62,15 +62,15 @@ public class DataLoader extends DataConstants {
                 String description = (String)personJSON.get(DESCRIPTION);
                 String crimeType = (String)personJSON.get(CRIME_TYPE);
                 JSONArray users = (JSONArray)new JSONParser().parse(USERS);
-                for(int j = 0; j < crimes.size(); j++) {
+                for(int j = 0; j < users.size(); j++) {
                     JSONObject user = (JSONObject)users.get(i);
-                    UUID cid = UUID.fromString((String)user.get(ID));
-                    detectives.add(); // I think I need to create a new Users class
+                    UUID uid = UUID.fromString((String)user.get(ID));
+                    detectives.add(Users.getInstance().getUser(uid)); // I think I need to create a new Users class
                 }
                 int severity = ((Long)personJSON.get(CRIME_SEVERITY)).intValue();
                 String jurisdiction = (String)personJSON.get(CRIME_JURISDICTION);
                 UUID enteredCrimeID = UUID.fromString((String)personJSON.get(CRIME_ENTERED_ID));
-                User enteredCrime = Users.get(enteredCrimeID);
+                User enteredCrime = Users.getInstance().getUser(enteredCrimeID);
 
                 Crime crime = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
 
