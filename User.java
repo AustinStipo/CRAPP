@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User {
+    private UUID id;
     private String firstName;
     private String lastName;
     private String email;
@@ -12,7 +14,8 @@ public class User {
     private String password;
     private ArrayList<Crime> crimesWorking;
 
-    public User(String firstName, String lastName, String email, String phoneNumber, String precinct, String department, String badgeNumber, String rank, String password, ArrayList<Crime> crimesWorking) {
+    public User(UUID id, String firstName, String lastName, String email, String phoneNumber, String precinct, String department, String badgeNumber, String rank, String password, ArrayList<Crime> crimesWorking) {
+        this.id = id;
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
@@ -34,7 +37,7 @@ public class User {
     }
 
     public String getLastName() {
-        return this.firstName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {

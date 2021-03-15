@@ -11,7 +11,7 @@ public class PersonOfInterest {
     private String associtationToSuspect;
     private ArrayList<String> stories;
 
-    public PersonOfInterest(String name, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
+    public PersonOfInterest(String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
 
     }
 

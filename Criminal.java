@@ -20,12 +20,12 @@ public class Criminal extends Person {
         this.enteredCriminal = enteredCriminal;
     }
 
-    public void addTattoo(String tattoos) {
-        tattos.add(tattoos);
+    public void addTattoo(String tattoo) {
+        tattoos.add(tattoo);
     }
 
-    public void addAlias(String aliases) {
-        aliases.add(aliases);
+    public void addAlias(String alias) {
+        aliases.add(alias);
     }
 
     public void addAssociate(Person person) {
@@ -44,12 +44,24 @@ public class Criminal extends Person {
         return this.jail;
     }
 
+    public void addPastCrime(Crime crime) {
+        pastCrimes.add(crime);
+    }
+
+    public ArrayList<Crime> getPastCrimes() {
+        return pastCrimes;
+    }
+
+    public void setJail(boolean jailed) {
+        jail = jailed;
+    }
+
     public void changeJail() {
-        if(Criminal.getJail == true) {
-            Criminal.getJail == false;
+        if(jail) {
+            jail = false;
         }
-        if(Criminal.getJail == false) {
-            Criminal.getJail == true;
+        else {
+            jail = true;
         }
     }
 
@@ -57,13 +69,21 @@ public class Criminal extends Person {
         return this.alive;
     }
 
+    public void setAlive(boolean living) {
+        alive = living;
+    }
+
     public void changeAlive() {
-        if(Criminal.getAlive == true) {
-            Criminal.getAlive == false;
+        if(alive) {
+            alive = false;
         }
-        if(Criminal.getAlive == false) {
-            Criminal.getAlive == true;
+        else {
+            alive = true;
         }
+    }
+
+    public void setChargesDropped(boolean dropped) {
+        chargesDropped = dropped;
     }
 
     public boolean chargesDropped() {
@@ -83,7 +103,7 @@ public class Criminal extends Person {
     }
 
     public void addingInfo(String info, User user) {
-        addedInfo.add(info);
+        //addedInfo.add(info);
         addedInfo.add(user);
     }
 

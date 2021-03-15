@@ -15,11 +15,11 @@ public class Suspect extends Person{
     }
 
     public void addTattoo(String tattoos) {
-        tattos.add(tattoos);
+        this.tattoos.add(tattoos);
     }
 
     public void addAlias(String aliases) {
-        aliases.add(aliases);
+        this.aliases.add(aliases);
     }
 
     public void addAssociate(Person person) {
@@ -35,7 +35,7 @@ public class Suspect extends Person{
     }
 
     public void addEvidence(Evidence evidence) {
-        evidence.add(evidence);
+        this.evidence.add(evidence);
     }
 
     public String getAlibi() {

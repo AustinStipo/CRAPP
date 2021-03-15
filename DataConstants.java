@@ -1,14 +1,18 @@
 public abstract class DataConstants {
-    protected static final String USER_FILE_NAME = "src/users.json";
+    protected static final String USER_FILE_NAME = "json/users.json";
     protected static final String USER_ID = "id";
-    protected static final String USER_NAME = "name";
+    protected static final String USER_FIRST_NAME = "fistName";
+    protected static final String USER_LAST_NAME = "lastName";
+    protected static final String USER_EMAIL = "email";
     protected static final String USER_PHONE_NUMBER = "phoneNumber";
+    protected static final String USER_DEPARTMENT = "department";
     protected static final String USER_PRECINCT = "precinct";
     protected static final String USER_BADGE_NUMBER = "badgeNumber";
     protected static final String USER_RANK = "rank";
     protected static final String USER_PASSWORD = "password";
+    protected static final String USER_CRIME = "Crime";
     
-    protected static final String CRIME_FILE_NAME = "src/crime.json";
+    protected static final String CRIME_FILE_NAME = "json/crime.json";
     protected static final String CRIME_ID = "id";
     protected static final String CRIME_LOCATION = "location";
     protected static final String CRIME_DATE = "date";
@@ -29,9 +33,10 @@ public abstract class DataConstants {
     protected static final String CRIME_ADDED_INFO = "addedInfo";
     protected static final String CRIME_IMAGE = "image";
 
-    protected static final String CRIMINAL_FILE = "src/criminals.json";
+    protected static final String CRIMINAL_FILE = "json/criminals.json";
     protected static final String CRIMINAL_ID = "id";
-    protected static final String CRIMINAL_NAME = "name";
+    protected static final String CRIMINAL_FIRST_NAME = "firstName";
+    protected static final String CRIMINAL_LAST_NAME = "lastName";
     protected static final String CRIMINAL_AGE = "age";
     protected static final String CRIMINAL_HEIGHT = "height";
     protected static final String CRIMINAL_WEIGHT = "weight";
@@ -52,7 +57,7 @@ public abstract class DataConstants {
     protected static final String CRIMINAL_ENTERED_CRIMINAL = "enteredCriminal";
     protected static final String CRIMINAL_ADDED_INFO = "addedInfo";
 
-    protected static final String EVIDENCE_FILE = "src/evidence.json";
+    protected static final String EVIDENCE_FILE = "json/evidence.json";
     protected static final String EVIDENCE_ID = "id";
     protected static final String EVIDENCE_TYPE = "evidenceType";
     protected static final String EVIDENCE_LOCATIONS = "locations";
@@ -61,9 +66,10 @@ public abstract class DataConstants {
     protected static final String EVIDENCE_HANDLED = "handledEvidence";
     protected static final String EVIDENCE_COMMENTS = "comments";
     
-    protected static final String POI_FILE = "scr/personofinterest.json";
+    protected static final String POI_FILE = "json/personofinterest.json";
     protected static final String POI_ID = "id";
-    protected static final String POI_NAME = "name";
+    protected static final String POI_FIRST_NAME = "firstName";
+    protected static final String POI_LAST_NAME = "lastName";
     protected static final String POI_AGE = "age";
     protected static final String POI_ADDRESS = "address";
     protected static final String POI_IMAGE = "image";
@@ -73,7 +79,7 @@ public abstract class DataConstants {
     protected static final String POI_ASSOCIATION_TO_SUSPECT = "assocationToSuspect";
     protected static final String POI_STORIES = "stories";
     
-    protected static final String SUSPECT_FILE = "src/suspects.json";
+    protected static final String SUSPECT_FILE = "json/suspects.json";
     protected static final String SUSPECT_ID = "id";
     protected static final String SUSPECT_NAME = "name";
     protected static final String SUSPECT_AGE = "age";
@@ -92,7 +98,7 @@ public abstract class DataConstants {
     protected static final String SUSPECT_EVIDENCE = "evidence";
     protected static final String SUSPECT_ALIBI = "alibi";
 
-    protected static final String VICTIM_FILE = "src/victims.json";
+    protected static final String VICTIM_FILE = "json/victims.json";
     protected static final String VICTIM_ID = "id";
     protected static final String VICTIM_NAME = "name";
     protected static final String VICTIM_AGE = "age";
@@ -104,7 +110,7 @@ public abstract class DataConstants {
     protected static final String VICTIM_HOSPITALIZED = "hospitalized";
     protected static final String VICTIM_ALIVE = "alive";
     
-    protected static final String WITNESS_FILE = "src/witness.json";
+    protected static final String WITNESS_FILE = "json/witness.json";
     protected static final String WITNESS_ID = "id";
     protected static final String WITNESS_NAME = "name";
     protected static final String WITNESS_AGE = "age";

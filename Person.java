@@ -34,7 +34,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = name;
+        this.firstName = firstName;
     } 
 
     public void setLastName(String lastName) {

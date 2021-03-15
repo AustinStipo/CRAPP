@@ -13,7 +13,7 @@ public class Evidence {
     private ArrayList<String> comments;
 
 
-    public Evidence(String evidenceType, String location, String time, User enteredEvidence, String comment) {
+    public Evidence(String evidenceType, ArrayList<String> location, ArrayList<String> time, User enteredEvidence, ArrayList<String> comment) {
         this.evidenceType = evidenceType;
         this.locations = location;
         this.times = time;
@@ -26,7 +26,7 @@ public class Evidence {
     } 
 
     public void addLocation(String location) {
-        this.location = location;
+        this.locations.add(location);
     } 
 
     public ArrayList<String> getLocations() {
