@@ -58,12 +58,7 @@ public class Criminal extends Person {
     }
 
     public void changeJail() {
-        if(jail) {
-            jail = false;
-        }
-        else {
-            jail = true;
-        }
+        jail = !jail;
     }
 
     public boolean getAlive() {
@@ -75,12 +70,7 @@ public class Criminal extends Person {
     }
 
     public void changeAlive() {
-        if(alive) {
-            alive = false;
-        }
-        else {
-            alive = true;
-        }
+        alive = !alive;
     }
 
     public void setChargesDropped(boolean dropped) {
@@ -117,6 +107,8 @@ public class Criminal extends Person {
     }
 
     public Suspect convertToSuspect() {
-        return new Suspect(birthDate, birthDate, severity, severity, severity, birthDate, birthDate, birthDate, birthDate, birthDate);
+        return new Suspect(this.getUuid(), this.getFirstName(), this.getLastName(), 
+        this.getAge(), this.getHeight(), this.getWeight(), this.getSkinColor(), 
+        this.getHairColor(), this.getEyeColor(), this.getAddress(), "no alibi");
     }
 }

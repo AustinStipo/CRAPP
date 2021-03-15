@@ -166,14 +166,7 @@ public class Crime {
     public void setCrimeSeverity(int severity) {
         this.severity = severity;
     } 
-    private ArrayList<Victim> victims;
-    private ArrayList<Witness> witnesses;
-    private ArrayList<Suspect> suspects;
-    private ArrayList<Criminal> criminals;
-    private ArrayList<PersonOfInterest> personOfInterest;
-    private ArrayList<Evidence> evidence;
-    private User enteredCrime;
-    private String extraInfo;
+    
     public String toString() {
         String userNames = "";
         String victs = "";

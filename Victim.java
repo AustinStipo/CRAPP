@@ -58,12 +58,7 @@ public class Victim extends Person {
     }
 
     public void changeHospitalized() {
-        if(hospitalized) {
-            hospitalized = false;
-        }
-        else {
-            hospitalized = true;
-        }
+        hospitalized = !hospitalized;
     }
 
     public boolean getAlive() {
@@ -75,11 +70,6 @@ public class Victim extends Person {
     }
 
     public void changeAlive() {
-        if(alive) {
-            alive = false;
-        }
-        if(!alive) {
-            alive = false;
-        }
+        alive = !alive;
     }
 }
