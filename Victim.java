@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Victim extends Person {
     private String phoneNumber;
@@ -8,9 +9,9 @@ public class Victim extends Person {
     private boolean hospitalized;
     private boolean alive;
 
-    public Victim(String firstName, String lastName, int age, int height, int weight, String skinColor,
+    public Victim(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToSuspect) {
-        super(firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
+        super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
@@ -52,6 +53,10 @@ public class Victim extends Person {
         return this.hospitalized;
     }
 
+    public void setHospitalized(boolean hospitalized) {
+        this.hospitalized = hospitalized;
+    }
+
     public void changeHospitalized() {
         if(hospitalized) {
             hospitalized = false;
@@ -63,6 +68,10 @@ public class Victim extends Person {
 
     public boolean getAlive() {
         return this.alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
 
     public void changeAlive() {

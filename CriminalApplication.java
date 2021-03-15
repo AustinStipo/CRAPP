@@ -13,9 +13,10 @@ public class CriminalApplication {
     private ArrayList<PersonOfInterest> personOfInterest;
     private ArrayList<Evidence> evidence;
     private ArrayList<Crime> crimes;
+    private Crimes crimess;
 
     public CriminalApplication() {
-
+        crimess = Crimes.getInstance();
     }
 
     public void addCriminal(Criminal criminal) {

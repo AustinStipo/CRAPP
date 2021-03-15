@@ -1,9 +1,10 @@
 /**
  * @author Sarah Carlucci
  */
+import java.util.UUID;
 
 public class Person {
-    
+    private UUID id;
     private String firstName;
     private String lastName;
     private int age;
@@ -16,7 +17,8 @@ public class Person {
     private String image;
 
 
-    public Person(String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address) {
+    public Person(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address) {
+        this.id = id;
         setFirstName(firstName);
         setLastName(lastName);
         setAge(age);
@@ -28,9 +30,21 @@ public class Person {
         setAddress(address);
         setImage(image);
     }
+    
+    public UUID getUuid() {
+        return id;
+    }
 
     public String getName() {
         return "First Name: " + firstName + "\nLastName: " + lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setFirstName(String firstName) {

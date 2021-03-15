@@ -28,44 +28,56 @@ public class Crime {
     private UUID id;
 
     public Crime(UUID id, String location, String date, String description, String crimeType, ArrayList<User> detectives, int severity, String jurisdiction, User enteredCrime) {
-
+        this.id = id;
+        this.location = location;
+        this.date = date;
+        this.description = description;
+        this.crimeType = crimeType;
+        this.users = detectives;
+        this.severity = severity;
+        this.jurisdiction = jurisdiction;
+        this.enteredCrime = enteredCrime;
+    }
+    
+    public UUID getUuid() {
+        return id;
     }
 
     public String getLocation() {
-        return "";
+        return this.location;
     }
 
 
     public void setLocation(String location) {
-
+        this.location = location;
     } 
 
     public String getDate() {
-        return "";
+        return this.date;
     } 
 
     public void setDate(String date){
-
+        this.date = date;
     } 
 
     public String getDescription() {
-        return "";
+        return this.description;
     }
 
     public void setDescription(String description){
-
+        this.description = description;
     } 
 
     public String getCrimeType(){
-        return "";
+        return this.crimeType;
     } 
 
     public void setCrimeType(String crimeType){
-
+        this.crimeType = crimeType;
     } 
 
     public void addVictim(Victim victim){
-
+        victims.add(victim);
     } 
 
     public ArrayList<Victim> getVictims(){
@@ -73,7 +85,7 @@ public class Crime {
     } 
 
     public void addWitness(Witness witness){
-
+        witnesses.add(witness);
     } 
 
     public ArrayList<Witness> getWitnesses(){
@@ -81,7 +93,7 @@ public class Crime {
     } 
 
     public void addPersonOfInterest(PersonOfInterest person){
-
+        personOfInterest.add(person);
     } 
 
     public ArrayList<PersonOfInterest> getPersonOfInterest(){
@@ -89,7 +101,7 @@ public class Crime {
     } 
 
     public void addSuspect(Suspect suspect){
-
+        suspects.add(suspect);
     } 
 
     public ArrayList<Suspect> getSuspects() {
@@ -97,7 +109,7 @@ public class Crime {
     }
 
     public void addUser(User user) {
-
+        users.add(user);
     } 
 
     public ArrayList<User> getUsers() {
@@ -105,7 +117,7 @@ public class Crime {
     } 
     
     public void addEvidence(Evidence evidence){
-
+        this.evidence.add(evidence);
     } 
 
     public ArrayList<Evidence> getEvidence() {
@@ -113,23 +125,23 @@ public class Crime {
     } 
 
     public boolean getSolved() {
-        return true;
+        return solved;
     } 
 
     public void setSolved(boolean solved) {
-
+        this.solved = solved;
     } 
 
     public int getSeverity() {
-        return 1;
+        return severity;
     } 
 
     public void setSeverity(int severity) {
-
+        this.severity = severity;
     } 
 
     public void addCriminal (Criminal criminal) {
-
+        criminals.add(criminal);
     } 
 
     public ArrayList<Criminal> getCriminals() {
@@ -137,35 +149,75 @@ public class Crime {
     } 
 
     public String getJurisdiction() {
-        return "";
+        return jurisdiction;
     }
 
     public void setJurisdiction(String jurisdiction) {
-
+        this.jurisdiction = jurisdiction;
     } 
 
     public User getEnteredCrime() {
+        if(users == null) {
+            return null;
+        }
         return users.get(0);
     }
 
     public void setCrimeSeverity(int severity) {
-
+        this.severity = severity;
     } 
-
+    private ArrayList<Victim> victims;
+    private ArrayList<Witness> witnesses;
+    private ArrayList<Suspect> suspects;
+    private ArrayList<Criminal> criminals;
+    private ArrayList<PersonOfInterest> personOfInterest;
+    private ArrayList<Evidence> evidence;
+    private User enteredCrime;
+    private String extraInfo;
     public String toString() {
-        return "";
+        String userNames = "";
+        String victs = "";
+        String witns = "";
+        String pois = "";
+        String susps = "";
+        String crims = "";
+        for(User u: users) {
+            userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";
+        }
+        for(Victim v: victims) {
+            victs = victs + v.getFirstName() + " " + v.getLastName() + ", ";
+        }
+        for(Witness w: witnesses) {
+            witns = witns + w.getFirstName() + " " + w.getLastName() + ", ";
+        }
+        for(PersonOfInterest p: personOfInterest) {
+            pois = pois + p.getFirstName() + " " + p.getLastName() + ", ";
+        }
+        for(Suspect s: suspects) {
+            susps = susps + s.getFirstName() + " " + s.getLastName() + ", ";
+        }
+        for(Criminal c: criminals) {
+            crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
+        }
+        for(User u: users) {
+            userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";
+        }
+        return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nSolved?: " + solved + "\nSeverity: " + severity +
+        "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps + "\n" +
+        "\nCriminals: " + crims + "\nExtra Info: " + extraInfo;
     }
 
     public void addingInfo(String info, User user){
-
+        addedInfo.add(user);
+        extraInfo = extraInfo + "\n" + info;
     } 
 
     public String getImage() {
-        return "";
+        return image;
     } 
 
     public void setImage(String image) {
-
+        this.image = image;
     } 
 
 

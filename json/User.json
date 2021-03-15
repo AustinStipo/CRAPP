@@ -10,7 +10,7 @@
         "badgeNumber": "182734604",
         "rank": "Officer",
         "password": "*dEjE@3nU*83_94KD",
-        "Crime": []
+        "Crime": [{"id": 1}]
     },{
         "id": 2,
         "firstName": "Kyle",
@@ -22,7 +22,7 @@
         "badgeNumber": "192685340",
         "rank": "Commander",
         "password": "*TYeE%3_U*8nn&-p",
-        "Crime": []
+        "Crime": [{"id": 2}]
     },{
         "id": 3,
         "firstName": "Chester",
@@ -34,7 +34,7 @@
         "badgeNumber": "993853112",
         "rank": "Captain",
         "password": "&#eE%334__8*&-p",
-        "Crime": []
+        "Crime": [{"id": 3}]
     }
 
 ]

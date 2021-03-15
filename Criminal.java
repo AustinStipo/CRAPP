@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Criminal extends Person {
     private boolean hasTattoos;
@@ -14,9 +15,9 @@ public class Criminal extends Person {
     private ArrayList<User> addedInfo;
     private String birthDate;
 
-    public Criminal(String firstName, String lastName, int age, int height, int weight, String skinColor,
+    public Criminal(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, User enteredCriminal) {
-        super(firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
+        super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         this.enteredCriminal = enteredCriminal;
     }
 

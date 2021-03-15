@@ -2,8 +2,9 @@
  * @author Sarah Carlucci 
  */
 import java.util.ArrayList;
+import java.util.UUID;
 
-public class PersonOfInterest {
+public class PersonOfInterest extends Person{
     
     private String phoneNumber;
     private String email;
@@ -11,7 +12,7 @@ public class PersonOfInterest {
     private String associtationToSuspect;
     private ArrayList<String> stories;
 
-    public PersonOfInterest(String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
+    public PersonOfInterest(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
 
     }
 

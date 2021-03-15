@@ -27,6 +27,9 @@ public class User {
         setPassword(password);
     }
     
+    public UUID getUuid() {
+        return id;
+    }
 
     public String getFirstName() {
         return this.firstName;
