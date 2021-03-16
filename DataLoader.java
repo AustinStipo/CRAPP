@@ -29,12 +29,6 @@ public class DataLoader extends DataConstants {
 				String badgeNumber = (String)personJSON.get(USER_BADGE_NUMBER);
 				String rank = (String)personJSON.get(USER_RANK);
 				String password = (String)personJSON.get(USER_PASSWORD);
-                JSONArray crimes = (JSONArray)new JSONParser().parse(USER_CRIME);
-                for(int j = 0; j < crimes.size(); j++) {
-                    JSONObject crime = (JSONObject)crimes.get(i);
-                    UUID cid = UUID.fromString((String)crime.get(ID));
-                    crimesWorking.add(CriminalApplication.getCrime(cid)); // Talk about in meeting
-                }
 
                 users.add(new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, crimesWorking));
             }
@@ -63,8 +57,7 @@ public class DataLoader extends DataConstants {
                 String crimeType = (String)personJSON.get(CRIME_TYPE);
                 JSONArray users = (JSONArray)new JSONParser().parse(USERS);
                 for(int j = 0; j < users.size(); j++) {
-                    JSONObject user = (JSONObject)users.get(i);
-                    UUID uid = UUID.fromString((String)user.get(ID));
+                    UUID uid = UUID.fromString((String)users.get(i));
                     detectives.add(Users.getInstance().getUser(uid)); // I think I need to create a new Users class
                 }
                 int severity = ((Long)personJSON.get(CRIME_SEVERITY)).intValue();
@@ -385,6 +378,13 @@ public class DataLoader extends DataConstants {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<User> users =  DataLoader.getUsers();
+        for(User user: users) {
+            System.out.println(user);
+        }
     }
     
 }

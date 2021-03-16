@@ -2,11 +2,10 @@
  * @author Sarah Carlucci 
  */
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Evidence {
     
-    private UUID id;
+    private int id;
     private String evidenceType;
     private ArrayList<String> locations;
     private ArrayList<String> times;
@@ -15,7 +14,7 @@ public class Evidence {
     private ArrayList<String> comments;
 
 
-    public Evidence(UUID id, String evidenceType, ArrayList<String> location, ArrayList<String> time, User enteredEvidence, ArrayList<String> comment) {
+    public Evidence(int id, String evidenceType, ArrayList<String> location, ArrayList<String> time, User enteredEvidence, ArrayList<String> comment) {
         this.id = id;
         this.evidenceType = evidenceType;
         this.locations = location;
@@ -24,7 +23,7 @@ public class Evidence {
         this.comments = comment;
     }
     
-    public UUID getUuid() {
+    public int getUuid() {
         return id;
     }
 

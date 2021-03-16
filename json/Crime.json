@@ -10,7 +10,7 @@
                       {"id":2, "name":"Luke Banks"}],
         "personOfInterest": [{"id":1, "name":"Gabe Levit"}],
         "suspects": [{"id":1, "name":"Chris Klein"}],
-        "users": [{"id":1, "name":"Michael Payne"}],
+        "users": [{"id":1}],
         "evidence": [{"id":1, "evidenceType":"Potential alibi"},
                      {"id":2, "evidenceType":"Victim story"}],
         "solved": true,

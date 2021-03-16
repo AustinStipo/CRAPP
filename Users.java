@@ -17,9 +17,9 @@ public class Users {
 		return users;
 	}
 
-	public boolean haveUser(UUID id) {
+	public boolean haveUser(int id) {
 		for(User user : userList) {
-			if(user.getUuid().equals(id)) {
+			if(user.getUuid() == id) {
 				return true;
 			}
 		}
@@ -27,9 +27,9 @@ public class Users {
 		return false;
 	}
 	
-	public User getUser(UUID id) {
+	public User getUser(int id) {
 		for(User user : userList) {
-			if(user.getUuid().equals(id)) {
+			if(user.getUuid() == id) {
 				return user;
 			}
 		}
@@ -41,7 +41,7 @@ public class Users {
 		return userList;
 	}
 	
-	public boolean addUser(UUID id, String firstName, String lastName, String email, String phoneNumber, String precinct, String department, String badgeNumber, String rank, String password, ArrayList<Crime> crimesWorking) {
+	public boolean addUser(int id, String firstName, String lastName, String email, String phoneNumber, String precinct, String department, String badgeNumber, String rank, String password, ArrayList<Crime> crimesWorking) {
 		if(haveUser(id)) {
             return false;
         }

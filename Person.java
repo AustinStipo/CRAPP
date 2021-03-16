@@ -1,10 +1,9 @@
 /**
  * @author Sarah Carlucci
  */
-import java.util.UUID;
 
 public class Person {
-    private UUID id;
+    private int id;
     private String firstName;
     private String lastName;
     private int age;
@@ -17,7 +16,7 @@ public class Person {
     private String image;
 
 
-    public Person(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address) {
+    public Person(int id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address) {
         this.id = id;
         setFirstName(firstName);
         setLastName(lastName);
@@ -31,7 +30,7 @@ public class Person {
         setImage(image);
     }
     
-    public UUID getUuid() {
+    public int getUuid() {
         return id;
     }
 

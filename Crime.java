@@ -3,7 +3,6 @@
  */
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Crime {
     
@@ -25,9 +24,9 @@ public class Crime {
     private String extraInfo;
     private ArrayList<User> addedInfo;
     private String image;
-    private UUID id;
+    private int id;
 
-    public Crime(UUID id, String location, String date, String description, String crimeType, ArrayList<User> detectives, int severity, String jurisdiction, User enteredCrime) {
+    public Crime(int id, String location, String date, String description, String crimeType, ArrayList<User> detectives, int severity, String jurisdiction, User enteredCrime) {
         this.id = id;
         this.location = location;
         this.date = date;
@@ -39,7 +38,7 @@ public class Crime {
         this.enteredCrime = enteredCrime;
     }
     
-    public UUID getUuid() {
+    public int getUuid() {
         return id;
     }
 

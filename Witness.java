@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Witness extends Person{
     private String phoneNumber;
     private String email;
     private ArrayList<String> stories;
 
-    public Witness(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor,
+    public Witness(int id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, String phoneNumber, String email) {
         super(id,firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setPhoneNumber(phoneNumber);

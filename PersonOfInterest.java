@@ -2,7 +2,6 @@
  * @author Sarah Carlucci 
  */
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class PersonOfInterest extends Person{
     
@@ -12,7 +11,7 @@ public class PersonOfInterest extends Person{
     private String associtationToSuspect;
     private ArrayList<String> stories;
 
-    public PersonOfInterest(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
+    public PersonOfInterest(int id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToCase, String associationToSuspect) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setPhoneNumber(phoneNumber);
         setEmail(email);

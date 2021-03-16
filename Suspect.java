@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Suspect extends Person{
     private ArrayList<String> tattoos;
@@ -9,7 +8,7 @@ public class Suspect extends Person{
     private ArrayList<Evidence> evidence;
     private String alibi;
 
-    public Suspect(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor,
+    public Suspect(int id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, String alibi) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setAlibi(alibi);
