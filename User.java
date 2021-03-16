@@ -109,5 +109,9 @@ public class User {
     public void addCrime(Crime crime) {
         
     }
+
+    public String toString() {
+        return id + "\n" + firstName + "\n" + lastName + "\n" + email + "\n" + phoneNumber + "\n" + precinct + "\n" + department + "\n" + badgeNumber + "\n" + rank + "\n" + password + "\n";
+    }
     
 }

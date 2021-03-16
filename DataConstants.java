@@ -1,7 +1,7 @@
 public abstract class DataConstants {
     protected static final String USER_FILE_NAME = "json/User.json";
     protected static final String ID = "id";
-    protected static final String FIRST_NAME = "fistName";
+    protected static final String FIRST_NAME = "firstName";
     protected static final String LAST_NAME = "lastName";
     protected static final String EMAIL = "email";
     protected static final String PHONE_NUMBER = "phoneNumber";

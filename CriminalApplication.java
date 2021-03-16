@@ -7,6 +7,7 @@ import java.util.UUID;
  */
 public class CriminalApplication {
     
+    private static CriminalApplication crapp;
     private ArrayList<Criminal> criminals;
     private ArrayList<Witness> witnesses;
     private ArrayList<Suspect> suspects;
@@ -19,6 +20,14 @@ public class CriminalApplication {
     public CriminalApplication() {
         crimes = DataLoader.getCrimes();
         users = DataLoader.getUsers();
+    }
+
+    public static CriminalApplication getInstance() {
+        if(crapp == null) {
+            crapp = new CriminalApplication();
+        }
+
+        return crapp;
     }
 
     public void addCriminal(Criminal criminal) {
@@ -77,7 +86,7 @@ public class CriminalApplication {
 
     }
 
-    public ArrayList<Evidence> getEvidence() {
+    public ArrayList<Evidence> getEvidences() {
         return evidence;
     }
 
@@ -89,7 +98,7 @@ public class CriminalApplication {
         return crimes;
     }
 
-    public Crime getCrime(UUID id) {
+    public Crime getCrime(int id) {
         for(Crime crime: crimes) {
             if(crime.getUuid() == id) {
                 return crime;
@@ -108,6 +117,15 @@ public class CriminalApplication {
 
     public ArrayList<User> getUsers() {
         return users;
+    }
+
+    public User getUser(int id) {
+        for(User user: users) {
+            if(user.getUuid() == id) {
+                return user;
+            }
+        }
+        return null;
     }
 
     public void searchCrime(String keyWord, String category) {

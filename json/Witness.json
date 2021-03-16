@@ -4,9 +4,14 @@
         "firstName": "Olivia",
         "lastName": "Coronado",
         "age": 37,
+        "weight": 120,
+        "height": 67,
+        "skinColor": "white",
+        "hairColor": "red",
+        "eyeColor": "blue",
         "address": "65 Maple St",
         "image": "OliviaCoronado.jpg",
-        "phoneNumber": 8539228739,
+        "phoneNumber": "8539228739",
         "email": "oliviacoronado@gmail.com",
         "stories": "witnessed Jenna Brown break and enter into nieghbors home"
     },{
@@ -14,9 +19,14 @@
         "firstName": "Billy",
         "lastName": "Turner",
         "age": 66,
+        "weight": 200,
+        "height": 74,
+        "skinColor": "white",
+        "hairColor": "white",
+        "eyeColor": "brown",
         "address": "23987 Cornerstone Ave",
         "image": "BillyTurner.jpg",
-        "phoneNumber": 9450729932,
+        "phoneNumber": "9450729932",
         "email": "billyturner@gmail.com",
         "stories": "witnessed Jack Windsor punch another samaritian at Drews Pub"
     },{
@@ -24,9 +34,14 @@
         "firstName": "Carrie",
         "lastName": "Sider",
         "age": 30,
+        "weight": 140,
+        "height": 71,
+        "skinColor": "brown",
+        "hairColor": "black",
+        "eyeColor": "brown",
         "address": "5522 Oval Cir",
         "image": "CarrieSider.jpg",
-        "phoneNumber": 3925965043,
+        "phoneNumber": "3925965043",
         "email": "carriesider@gmail.com",
         "stories": "civilian after ms. fisher was dressed as repairman claiming to fix atm"
     }

@@ -19,7 +19,7 @@ public class DataLoader extends DataConstants {
 
             for(int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-				UUID id = UUID.fromString((String)personJSON.get(ID));
+                int id = ((Long)personJSON.get(ID)).intValue();
 				String firstName = (String)personJSON.get(FIRST_NAME);
 				String lastName = (String)personJSON.get(LAST_NAME);
 				String email = (String)personJSON.get(EMAIL);
@@ -50,19 +50,19 @@ public class DataLoader extends DataConstants {
     
             for(int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-                UUID id = UUID.fromString((String)personJSON.get(ID));
+                int id = ((Long)personJSON.get(ID)).intValue();
                 String location = (String)personJSON.get(LOCATION);
                 String date = (String)personJSON.get(DATE);
                 String description = (String)personJSON.get(DESCRIPTION);
                 String crimeType = (String)personJSON.get(CRIME_TYPE);
                 JSONArray users = (JSONArray)new JSONParser().parse(USERS);
                 for(int j = 0; j < users.size(); j++) {
-                    UUID uid = UUID.fromString((String)users.get(i));
-                    detectives.add(Users.getInstance().getUser(uid)); // I think I need to create a new Users class
+                    int uid = ((Long)personJSON.get(ID)).intValue();
+                    detectives.add(CriminalApplication.getInstance().getUser(uid));
                 }
                 int severity = ((Long)personJSON.get(CRIME_SEVERITY)).intValue();
                 String jurisdiction = (String)personJSON.get(CRIME_JURISDICTION);
-                UUID enteredCrimeID = UUID.fromString((String)personJSON.get(CRIME_ENTERED_ID));
+                int enteredCrimeID = ((Long)personJSON.get(CRIME_ENTERED_ID)).intValue();
                 User enteredCrime = Users.getInstance().getUser(enteredCrimeID);
 
                 Crime crime = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
@@ -70,51 +70,51 @@ public class DataLoader extends DataConstants {
                 JSONArray vics = (JSONArray)new JSONParser().parse(VICTIMS);
                 for(int j = 0; j < vics.size(); j++) {
                     JSONObject vic = (JSONObject)vics.get(i);
-                    UUID vid = UUID.fromString((String)vic.get(ID));
-                    crime.addVictim(); // I think I need to create a new Victims class
+                    int vid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addVictim(CriminalApplication.getInstance().getVictim(vid)); // I think I need to create a new Victims class
                 }
                 
                 JSONArray wits = (JSONArray)new JSONParser().parse(WITNESSSES);
                 for(int j = 0; j < wits.size(); j++) {
                     JSONObject wit = (JSONObject)wits.get(i);
-                    UUID wid = UUID.fromString((String)wit.get(ID));
-                    crime.addWitness(); // I think I need to create a new Victims class
+                    int wid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addWitness(CriminalApplication.getInstance().getWitness(wid)); // I think I need to create a new Victims class
                 }
                 
                 JSONArray pers = (JSONArray)new JSONParser().parse(POI);
                 for(int j = 0; j < pers.size(); j++) {
                     JSONObject per = (JSONObject)pers.get(i);
-                    UUID pid = UUID.fromString((String)per.get(ID));
-                    crime.addPersonOfInterest(); // I think I need to create a new Victims class
+                    int pid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addPersonOfInterest(CriminalApplication.getInstance().getPOI(pid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray susps = (JSONArray)new JSONParser().parse(SUSPECTS);
                 for(int j = 0; j < susps.size(); j++) {
                     JSONObject susp = (JSONObject)susps.get(i);
-                    UUID sid = UUID.fromString((String)susp.get(ID));
-                    crime.addSuspect(); // I think I need to create a new Victims class
+                    int sid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addSuspect(CriminalApplication.getInstance().getSuspect(sid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray evids = (JSONArray)new JSONParser().parse(EVIDENCE);
                 for(int j = 0; j < evids.size(); j++) {
                     JSONObject evid = (JSONObject)evids.get(i);
-                    UUID eid = UUID.fromString((String)evid.get(ID));
-                    crime.addEvidence(); // I think I need to create a new Victims class
+                    int eid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addEvidence(CriminalApplication.getInstance().getEvidence(uid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray crims = (JSONArray)new JSONParser().parse(CRIMINALS);
                 for(int j = 0; j < crims.size(); j++) {
                     JSONObject crim = (JSONObject)crims.get(i);
-                    UUID cid = UUID.fromString((String)crim.get(ID));
-                    crime.addCriminal(); // I think I need to create a new Victims class
+                    int cid = ((Long)personJSON.get(ID)).intValue();
+                    crime.addCriminal(CriminalApplication.getInstance().getCriminal(cid)); // I think I need to create a new Victims class
                 }
                 
                 boolean solved = ((Boolean)personJSON.get(CRIME_SEVERITY)).booleanValue();
                 crime.setSolved(solved);
 
                 String extraInfo = (String)personJSON.get(EXTRA_INFO);
-                UUID addedInfoID = UUID.fromString((String)personJSON.get(ADDED_INFO));
-                User addedInfo = Users.get(enteredCrimeID);
+                int addedInfoID = ((Long)personJSON.get(ADDED_INFO)).intValue();
+                User addedInfo = CriminalApplication.getInstance().getUser(enteredCrimeID);
                 crime.addingInfo(extraInfo, addedInfo);
                 
                 String image = (String)personJSON.get(IMAGE);
@@ -142,7 +142,7 @@ public class DataLoader extends DataConstants {
     
             for(int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-                UUID id = UUID.fromString((String)personJSON.get(ID));
+                int id = ((Long)personJSON.get(ID)).intValue();
                 String firstName = (String)personJSON.get(FIRST_NAME);
                 String lastName = (String)personJSON.get(LAST_NAME);
                 int age = ((Long)personJSON.get(AGE)).intValue();
@@ -157,12 +157,12 @@ public class DataLoader extends DataConstants {
                 String tattoos = (String)personJSON.get(TATTOOS);
                 String aliases = (String)personJSON.get(ALIASES);
                 String associates = (String)personJSON.get(ASSOCIATES); //Need to point to other criminals
-                String pastCrimes = (String)personJSON.get(PAST_CRIMES); //Need to point to crimes
                 boolean jail = ((Boolean)personJSON.get(JAIL)).booleanValue();
                 boolean alive = ((Boolean)personJSON.get(ALIVE)).booleanValue();
                 boolean chargesDropped = ((Boolean)personJSON.get(CHARGES_DROPPED)).booleanValue();
                 int severity = ((Long)personJSON.get(SEVERITY)).intValue();
-                String enteredCriminal = (String)personJSON.get(ENTERED_CRIMINAL); //Needs to point to user that entered it
+                int enteredCriminalID = ((Long)personJSON.get(ENTERED_CRIMINAL)).intValue();
+                User enteredCriminal = CriminalApplication.getInstance().getUser(enteredCriminalID);
                 String addedInfo = (String)personJSON.get(ADDED_INFO);
 
                 Criminal criminal = new Criminal(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, enteredCriminal);
@@ -171,13 +171,20 @@ public class DataLoader extends DataConstants {
                     criminal.addTattoo(tattoos);                    
                 }
                 criminal.addAlias(aliases);
-                criminal.addAssociate(associates); // need to point to other criminals
-                criminal.addPastCrime(pastCrimes);
+                criminal.addAssociate(associates); 
+                ArrayList<Crime> crimes = CriminalApplication.getInstance().getCrimes();
+                for(Crime crime: crimes) {
+                    for(Criminal crim: crime.getCriminals()) {
+                        if(crim.getUuid() == criminal.getUuid()) {
+                            criminal.addPastCrime(crime);
+                        }
+                    }
+                }
                 criminal.setJail(jail);
                 criminal.setAlive(alive);
                 criminal.setChargesDropped(chargesDropped);
                 criminal.setSeverity(severity);
-                criminal.addingInfo(info, addedInfo); //Need info and person that added it
+                //criminal.addingInfo(info, addedInfo); //Need info and person that added it
                 
                 criminals.add(criminal);
             }
@@ -305,18 +312,18 @@ public class DataLoader extends DataConstants {
         ArrayList<Victim> victims = new ArrayList<Victim>();
 
         try {
-            FileReader reader = new FileReader(SUSPECT_FILE);
+            FileReader reader = new FileReader(VICTIM_FILE);
             JSONParser parser = new JSONParser();	
             JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
     
             for(int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-                UUID id = UUID.fromString((String)personJSON.get(ID));
+                int id = ((Long)personJSON.get(ID)).intValue();
                 String firstName = (String)personJSON.get(FIRST_NAME);
                 String lastName = (String)personJSON.get(LAST_NAME);
                 int age = ((Long)personJSON.get(AGE)).intValue();
-                String height = (String)personJSON.get(HEIGHT);
-                String weight = (String)personJSON.get(WEIGHT);
+                int height = ((Long)personJSON.get(HEIGHT)).intValue();
+                int weight = ((Long)personJSON.get(WEIGHT)).intValue();
                 String skinColor = (String)personJSON.get(SKIN);
                 String hairColor = (String)personJSON.get(HAIR);
                 String eyeColor = (String)personJSON.get(EYE);
@@ -332,6 +339,7 @@ public class DataLoader extends DataConstants {
                 
                 victim.setAlive(alive);
                 victim.setHospitalized(hospitalized);
+                victim.setImage(image);
 
                 victims.add(victim);
             }
@@ -346,18 +354,18 @@ public class DataLoader extends DataConstants {
         ArrayList<Witness> witnesses = new ArrayList<Witness>();
 
         try {
-            FileReader reader = new FileReader(SUSPECT_FILE);
+            FileReader reader = new FileReader(WITNESS_FILE);
             JSONParser parser = new JSONParser();	
             JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
     
             for(int i = 0; i < peopleJSON.size(); i++) {
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
-                UUID id = UUID.fromString((String)personJSON.get(ID));
+                int id = ((Long)personJSON.get(ID)).intValue();
                 String firstName = (String)personJSON.get(FIRST_NAME);
                 String lastName = (String)personJSON.get(LAST_NAME);
                 int age = ((Long)personJSON.get(AGE)).intValue();
-                String height = (String)personJSON.get(HEIGHT);
-                String weight = (String)personJSON.get(WEIGHT);
+                int height = ((Long)personJSON.get(HEIGHT)).intValue();
+                int weight = ((Long)personJSON.get(WEIGHT)).intValue();
                 String skinColor = (String)personJSON.get(SKIN);
                 String hairColor = (String)personJSON.get(HAIR);
                 String eyeColor = (String)personJSON.get(EYE);
@@ -381,8 +389,8 @@ public class DataLoader extends DataConstants {
     }
 
     public static void main(String[] args) {
-        ArrayList<User> users =  DataLoader.getUsers();
-        for(User user: users) {
+        ArrayList<Witness> users =  DataLoader.getWitnesses();
+        for(Witness user: users) {
             System.out.println(user);
         }
     }

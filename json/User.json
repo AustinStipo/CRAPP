@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "firstName": "Michael",
         "lastName": "Payne",
         "email": "michaelpayne@police.gov",
@@ -11,7 +11,7 @@
         "rank": "Officer",
         "password": "*dEjE@3nU*83_94KD"
     },{
-        "id": "2",
+        "id": 2,
         "firstName": "Kyle",
         "lastName": "Workman",
         "email": "kyleworkman@police.gov",
@@ -22,7 +22,7 @@
         "rank": "Commander",
         "password": "*TYeE%3_U*8nn&-p"
     },{
-        "id": "3",
+        "id": 3,
         "firstName": "Chester",
         "lastName": "Toppez",
         "email": "chestertoppez@police.gov",

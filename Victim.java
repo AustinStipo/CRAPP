@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Victim extends Person {
     private String phoneNumber;
@@ -9,7 +8,7 @@ public class Victim extends Person {
     private boolean hospitalized;
     private boolean alive;
 
-    public Victim(UUID id, String firstName, String lastName, int age, int height, int weight, String skinColor,
+    public Victim(int id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, String phoneNumber, String email, String associationToSuspect) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setPhoneNumber(phoneNumber);

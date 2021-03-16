@@ -92,10 +92,10 @@ public class Criminal extends Person {
         return "I'm not sure how we want to write this toString so I'll save this for later when we format";
     }
 
-    public void addingInfo(String info, User user) {
-        //addedInfo.add(info);
-        addedInfo.add(user);
-    }
+    // public void addingInfo(String info, User user) {
+    //     addedInfo.add(info);
+    //     addedInfo.add(user);
+    // } Do we even need this method. It doesn't seem to make a lot of sense
 
     public String getBirthDate() {
         return this.birthDate;

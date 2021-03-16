@@ -27,7 +27,6 @@ public class Person {
         sethairColor(hairColor);
         setEyeColor(eyeColor);
         setAddress(address);
-        setImage(image);
     }
     
     public int getUuid() {

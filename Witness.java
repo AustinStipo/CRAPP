@@ -8,6 +8,7 @@ public class Witness extends Person{
     public Witness(int id, String firstName, String lastName, int age, int height, int weight, String skinColor,
             String hairColor, String eyeColor, String address, String phoneNumber, String email) {
         super(id,firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
+        stories = new ArrayList<String>();
         setPhoneNumber(phoneNumber);
         setEmail(email);
     }
