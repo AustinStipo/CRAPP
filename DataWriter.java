@@ -79,7 +79,7 @@ public class DataWriter extends DataConstants {
         JSONArray crimes = new JSONArray();
         for(int j = 0; j < user.getCrimesWorking().size(); j++) {
             JSONObject crime = new JSONObject();
-            crime.put(ID,user.getCrimesWorking().get(j).getUuid().toString();)
+            crime.put(ID,user.getCrimesWorking().get(j).getUuid().toString());
             crimes.add(crime);
         }
         userDetails.put(USER_CRIME, crimes);
