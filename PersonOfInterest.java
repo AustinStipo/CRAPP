@@ -33,11 +33,11 @@ public class PersonOfInterest extends Person{
     } 
 
     public void setEmail(String email) {
-        this.email = email
+        this.email = email;
     }
 
     public String getAssociationToSuspect() {
-        return this.associationToSuspect
+        return associtationToSuspect;
     } 
 
     public void setAssociationToSuspect(String associationToSuspect) {
@@ -48,7 +48,7 @@ public class PersonOfInterest extends Person{
         return this.associtationToSuspect;
     }
 
-    public void setSuspectAssociatedTo(String association) {
+    public void setSuspectAssociatedTo(Suspect association) {
         this.suspectAssociatedTo = association;
     }
 

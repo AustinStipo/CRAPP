@@ -1,5 +1,6 @@
 // import org.graalvm.compiler.nodes.virtual.EnsureVirtualizedNode;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @author Sarah Carlucci
@@ -13,10 +14,11 @@ public class CriminalApplication {
     private ArrayList<PersonOfInterest> personOfInterest;
     private ArrayList<Evidence> evidence;
     private ArrayList<Crime> crimes;
-    private Crimes crimess;
+    private ArrayList<User> users;
 
     public CriminalApplication() {
-        crimess = Crimes.getInstance();
+        crimes = DataLoader.getCrimes();
+        users = DataLoader.getUsers();
     }
 
     public void addCriminal(Criminal criminal) {
@@ -83,12 +85,29 @@ public class CriminalApplication {
         
     }
 
-    public ArrayList<Crime> getCrime() {
+    public ArrayList<Crime> getCrimes() {
         return crimes;
+    }
+
+    public Crime getCrime(UUID id) {
+        for(Crime crime: crimes) {
+            if(crime.getUuid() == id) {
+                return crime;
+            }
+        }
+        return null;
     }
 
     public int crimeLength() {
         return 1;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
     }
 
     public void searchCrime(String keyWord, String category) {

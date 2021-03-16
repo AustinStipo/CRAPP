@@ -33,7 +33,7 @@ public class DataLoader extends DataConstants {
                 for(int j = 0; j < crimes.size(); j++) {
                     JSONObject crime = (JSONObject)crimes.get(i);
                     UUID cid = UUID.fromString((String)crime.get(ID));
-                    crimesWorking.add(Crimes.getInstance().getCrime(cid)); // Talk about in meeting
+                    crimesWorking.add(CriminalApplication.getCrime(cid)); // Talk about in meeting
                 }
 
                 users.add(new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, crimesWorking));
