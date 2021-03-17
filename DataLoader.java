@@ -99,7 +99,7 @@ public class DataLoader extends DataConstants {
                 for(int j = 0; j < evids.size(); j++) {
                     JSONObject evid = (JSONObject)evids.get(i);
                     int eid = ((Long)personJSON.get(ID)).intValue();
-                    crime.addEvidence(CriminalApplication.getInstance().getEvidence(uid)); // I think I need to create a new Victims class
+                    crime.addEvidence(CriminalApplication.getInstance().getEvidence(eid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray crims = (JSONArray)new JSONParser().parse(CRIMINALS);
