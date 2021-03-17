@@ -12,8 +12,8 @@ public class CriminalApplication {
     private ArrayList<Witness> witnesses;
     private ArrayList<Suspect> suspects;
     private ArrayList<Victim> victims;
-    private ArrayList<PersonOfInterest> personOfInterest;
-    private ArrayList<Evidence> evidence;
+    private ArrayList<PersonOfInterest> personsOfInterest;
+    private ArrayList<Evidence> evidences;
     private ArrayList<Crime> crimes;
     private ArrayList<User> users;
 
@@ -31,19 +31,28 @@ public class CriminalApplication {
     }
 
     public void addCriminal(Criminal criminal) {
-
+        criminals.add(criminal);
     }
 
     public ArrayList<Criminal> getCriminals() {
         return criminals;
     }
 
-    public boolean removeCriminal(Criminal criminal) {
-        return true;
+    public Criminal getCrimal(int id) {
+        for(Criminal criminal: criminals) {
+            if(criminal.getUuid() == id) {
+                return criminal;
+            }
+        }
+        return null;
     }
 
-    public int criminalLength() {
-        return 1;
+    public boolean removeCriminal(Criminal criminal) {
+       return criminals.remove(criminal);
+    }
+
+    public int getCriminalLength() {
+        return criminals.size();
     }
 
     public void searchCriminal(String keyWord, String category) {
@@ -51,47 +60,92 @@ public class CriminalApplication {
     }
 
     public void addWitness(Witness witness) {
-
+        witnesses.add(witness);
     }
 
-    public ArrayList<Witness> getWitness() {
+    public ArrayList<Witness> getWitnesses() {
         return witnesses;
     }
 
-    public void addSuspect(Suspect suspect) {
+    public Witness getWitness(int id) {
+        for(Witness witness: witnesses) {
+            if(witness.getUuid() == id) {
+                return witness;
+            }
+        }
+        return null;
+    }
 
+    public void addSuspect(Suspect suspect) {
+        suspects.add(suspect);
     }
 
     public ArrayList<Suspect> getSuspects() {
         return suspects;
     }
 
-    public void addVictim(Victim victim) {
-
+    public Suspect getSuspect(int id) {
+        for(Suspect suspect: suspects) {
+            if(suspect.getUuid() == id) {
+                return suspect;
+            }
+        }
+        return null;
     }
 
-    public ArrayList<Victim> getVictim() {
+    public void addVictim(Victim victim) {
+        victims.add(victim);
+    }   
+
+    public ArrayList<Victim> getVictims() {
         return victims;
     }
 
-    public void addPersonOfInterest(PersonOfInterest personOfInterest) {
-
+    public Victim getVictim(int id) {
+        for(Victim victim: victims) {
+            if(victim.getUuid() == id) {
+                return victim;
+            }
+        }
+        return null;
     }
 
-    public ArrayList<PersonOfInterest> getPersonOfInterest() {
-        return personOfInterest;
+    public void addPersonOfInterest(PersonOfInterest personOfInterest) {
+        personOfInterest.add(personOfInterest);
+    }
+
+    public ArrayList<PersonOfInterest> getPersonsOfInterest() {
+        return personsOfInterest;
+    }
+
+    public PersonOfInterest getPersonOfInterest(int id) {
+        for(PersonOfInterest personOfInterest: personsOfInterest) {
+            if(personOfInterest.getUuid() == id) {
+                return personOfInterest;
+            }
+        }
+        return null;
     }
 
     public void addEvidence(Evidence evidence) {
-
+        evidences.add(evidence);
     }
 
     public ArrayList<Evidence> getEvidences() {
-        return evidence;
+        return evidences;
+    }
+
+    public Evidence getEvidence(int id) {
+        for(Evidene evidence: evidences) {
+            if(evidence.getUuid() == id) {
+                return evidence;
+            }
+        }
+        return null;
     }
 
     public void addCrime(Crime crime) {
-        
+        crimes.add(crime);
     }
 
     public ArrayList<Crime> getCrimes() {
@@ -108,7 +162,7 @@ public class CriminalApplication {
     }
 
     public int crimeLength() {
-        return 1;
+        return crimes.size();
     }
 
     public void addUser(User user) {
