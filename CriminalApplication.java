@@ -18,8 +18,14 @@ public class CriminalApplication {
     private ArrayList<User> users;
 
     public CriminalApplication() {
-        crimes = DataLoader.getCrimes();
+        // crimes = DataLoader.getCrimes();
         users = DataLoader.getUsers();
+        // criminals = DataLoader.getCriminals();
+        // witnesses = DataLoader.getWitnesses();
+        // suspects = DataLoader.getSuspects();
+        // victims = DataLoader.getVictims();
+        // personsOfInterest = DataLoader.getPOIs();
+        evidences = DataLoader.getEvidences();
     }
 
     public static CriminalApplication getInstance() {
@@ -38,7 +44,7 @@ public class CriminalApplication {
         return criminals;
     }
 
-    public Criminal getCrimal(int id) {
+    public Criminal getCriminal(int id) {
         for(Criminal criminal: criminals) {
             if(criminal.getUuid() == id) {
                 return criminal;

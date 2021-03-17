@@ -4,16 +4,16 @@
         "evidenceType": "knife",
         "location": "1000 Whaley St",
         "time": "9:42pm",
-        "enteredEvidence": "Michael Payne",
-        "handleEvidence": "Kyle Workman",
+        "enteredEvidence": 1,
+        "handleEvidence": 2,
         "comments": "knife had blood on it"
     },{
         "id": 2,
         "evidenceType": "gun",
         "location": "1000 Whaley St",
         "time": "10:02pm",
-        "enteredEvidence": "Chester Toppez",
-        "handleEvidence": "Michael Payne",
+        "enteredEvidence": 3,
+        "handleEvidence": 1,
         "comments": "gun was fired, but no one was hurt"
     }
 ]

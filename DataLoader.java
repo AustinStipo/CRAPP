@@ -85,7 +85,7 @@ public class DataLoader extends DataConstants {
                 for(int j = 0; j < pers.size(); j++) {
                     JSONObject per = (JSONObject)pers.get(i);
                     int pid = ((Long)personJSON.get(ID)).intValue();
-                    crime.addPersonOfInterest(CriminalApplication.getInstance().getPOI(pid)); // I think I need to create a new Victims class
+                    crime.addPersonOfInterest(CriminalApplication.getInstance().getPersonOfInterest(pid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray susps = (JSONArray)new JSONParser().parse(SUSPECTS);
@@ -200,7 +200,7 @@ public class DataLoader extends DataConstants {
 
         try {
             FileReader reader = new FileReader(EVIDENCE_FILE);
-            JSONParser parser = new JSONParser();	
+            JSONParser parser = new JSONParser();
             JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
     
             for(int i = 0; i < peopleJSON.size(); i++) {
@@ -210,6 +210,7 @@ public class DataLoader extends DataConstants {
                 String location = (String)personJSON.get(LOCATION);
                 String time = (String)personJSON.get(TIMES);
                 int enteredEvidenceID = ((Long)personJSON.get(ENTERED_EVIDENCE)).intValue();
+                // int handleEvidence = ((Long)personJSON.get(EVIDENCE_HANDLED)).intValue();
                 User enteredEvidence = CriminalApplication.getInstance().getUser(enteredEvidenceID);
                 String comment = (String)personJSON.get(COMMENTS);
                 ArrayList<String> comments = new ArrayList<String>();
@@ -247,12 +248,12 @@ public class DataLoader extends DataConstants {
                 String image = (String)personJSON.get(IMAGE);
                 String phoneNumber = (String)personJSON.get(PHONE_NUMBER);
                 String email = (String)personJSON.get(EMAIL);
-                String suspectAssociationToID = (String)personJSON.get(SUSPECT_ASSOCIATION_TO); //NEEDS to be a suspect
+                int suspectAssociationToID = ((Long)personJSON.get(SUSPECT_ASSOCIATION_TO)).intValue();
                 Suspect suspectAssociatedTo = CriminalApplication.getInstance().getSuspect(suspectAssociationToID);
                 String associationToCase = (String)personJSON.get(ASSOCIATION_TO_CASE);
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
                 String story = (String)personJSON.get(STORIES);
-                PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToCase, associationToSuspect)
+                PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToCase, associationToSuspect);
                 poi.addStory(story);
                 personsofinterest.add(poi);
             }
@@ -403,8 +404,8 @@ public class DataLoader extends DataConstants {
     }
 
     public static void main(String[] args) {
-        ArrayList<Criminal> users =  DataLoader.getCriminals();
-        for(Criminal user: users) {
+        ArrayList<Evidence> users =  DataLoader.getEvidences();
+        for(Evidence user: users) {
             System.out.println(user);
         }
     }
