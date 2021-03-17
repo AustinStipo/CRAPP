@@ -55,8 +55,20 @@ public class CriminalApplication {
         return criminals.size();
     }
 
+    /**
+     * not sure how to search by keyword and category
+     * gonna try something else we can always fix this later 
+     */
     public void searchCriminal(String keyWord, String category) {
        
+    }
+
+    public Criminal searchCriminal(String id) {
+        for(Criminal criminal: criminals) {
+            if(criminal.getUuid() == id) {
+                return criminal;
+            }
+        }
     }
 
     public void addWitness(Witness witness) {
@@ -182,10 +194,22 @@ public class CriminalApplication {
         return null;
     }
 
+    /**
+     * same thing as searchCriminal
+     */
     public void searchCrime(String keyWord, String category) {
-
+        
     }
 
+    public Crime searchCriminal(String id) {
+        for(Crime crime: crimes) {
+            if(crime.getUuid() == id) {
+                return crime;
+            }
+        }
+    }
+
+    
     public ArrayList<Criminal> rankCriminals() {
         return criminals;
     }
