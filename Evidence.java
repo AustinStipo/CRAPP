@@ -7,18 +7,18 @@ public class Evidence {
     
     private int id;
     private String evidenceType;
-    private ArrayList<String> locations;
-    private ArrayList<String> times;
+    private String location;
+    private String time;
     private User enteredEvidence;
-    private ArrayList<User> handleEvidence;
+    // private User handleEvidence;
     private ArrayList<String> comments;
 
 
-    public Evidence(int id, String evidenceType, ArrayList<String> location, ArrayList<String> time, User enteredEvidence, ArrayList<String> comment) {
+    public Evidence(int id, String evidenceType, String location, String time, User enteredEvidence, ArrayList<String> comment) {
         this.id = id;
         this.evidenceType = evidenceType;
-        this.locations = location;
-        this.times = time;
+        this.location = location;
+        this.time = time;
         this.enteredEvidence = enteredEvidence;
         this.comments = comment;
     }
@@ -31,45 +31,45 @@ public class Evidence {
         return "Evidence Type: "+ evidenceType;
     } 
 
-    public void addLocation(String location) {
-        this.locations.add(location);
+    public void setLocation(String location) {
+        this.location = location ;
     } 
 
-    public ArrayList<String> getLocations() {
-        return locations;
+    public String getLocation() {
+        return location;
     } 
 
-    public String getLastLocation() {
-        return locations.get(locations.size()-1);
+    // public String getLastLocation() {
+    //     return locations.get(locations.size()-1);
+    // } 
+
+    public void setTime(String time) {
+        this.time = time;
     } 
 
-    public void addTime(String time) {
-        times.add(time);
+    public String getTime() {
+        return time;
     } 
 
-    public ArrayList<String> getTimes() {
-        return times;
-    } 
-
-    public String getLastTime() {
-        return times.get(times.size()-1);
-    } 
+    // public String getLastTime() {
+    //     return times.get(times.size()-1);
+    // } 
 
     public User getEnteredEvidence() {
-        return handleEvidence.get(0);
+        return enteredEvidence;
     } 
 
-    public void addHandleEvidence(User user) {
-        handleEvidence.add(user);
-    } 
+    // public void addHandleEvidence(User user) {
+    //     handleEvidence.add(user);
+    // } 
 
-    public  ArrayList<User> getHandleEvidence() {
-        return handleEvidence;
-    }
+    // public  ArrayList<User> getHandleEvidence() {
+    //     return handleEvidence;
+    // }
 
-    public User getLastHandleEvidence() {
-        return handleEvidence.get(handleEvidence.size()-1);
-    }
+    // public User getLastHandleEvidence() {
+    //     return handleEvidence.get(handleEvidence.size()-1);
+    // }
 
     public void addComment(String comment) {
         comments.add(comment);
