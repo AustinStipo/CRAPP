@@ -63,12 +63,13 @@ public class CriminalApplication {
        
     }
 
-    public Criminal searchCriminal(String id) {
+    public Criminal searchCriminal(String firstName) {
         for(Criminal criminal: criminals) {
-            if(criminal.getUuid() == id) {
+            if(criminal.getFirstName().equals(firstName)) {
                 return criminal;
             }
         }
+        return null;
     }
 
     public void addWitness(Witness witness) {
@@ -123,7 +124,7 @@ public class CriminalApplication {
     }
 
     public void addPersonOfInterest(PersonOfInterest personOfInterest) {
-        personOfInterest.add(personOfInterest);
+        this.personsOfInterest.add(personOfInterest);
     }
 
     public ArrayList<PersonOfInterest> getPersonsOfInterest() {
@@ -148,7 +149,7 @@ public class CriminalApplication {
     }
 
     public Evidence getEvidence(int id) {
-        for(Evidene evidence: evidences) {
+        for(Evidence evidence: evidences) {
             if(evidence.getUuid() == id) {
                 return evidence;
             }
@@ -201,12 +202,13 @@ public class CriminalApplication {
         
     }
 
-    public Crime searchCriminal(String id) {
+    public Crime searchCrime(String crimeType) {
         for(Crime crime: crimes) {
-            if(crime.getUuid() == id) {
+            if(crime.getCrimeType().equals(crimeType)) {
                 return crime;
             }
         }
+        return null;
     }
 
     
