@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class Suspect extends Person{
+    private boolean hasTattoos;
     private ArrayList<String> tattoos;
     private ArrayList<String> aliases;
     private ArrayList<Person> associates;
@@ -18,8 +19,23 @@ public class Suspect extends Person{
         this.tattoos.add(tattoos);
     }
 
+    public String getTattoo() {
+        return tattoos.get(tattoos.size() - 1);
+    }
+
+    public boolean getHasTattoos() {
+        if(tattoos.size() > 0) {
+            hasTattoos = true;
+        }
+        return hasTattoos;
+    }
+
     public void addAlias(String aliases) {
         this.aliases.add(aliases);
+    }
+
+    public String getAlias() {
+        return aliases.get(aliases.size() - 1);
     }
 
     public void addAssociate(Person person) {
@@ -28,6 +44,10 @@ public class Suspect extends Person{
 
     public void addCrime(Crime crime) {
         pastCrimes.add(crime);
+    }
+
+    public ArrayList<Crime> getCrimes() {
+        return pastCrimes;
     }
 
     public void removeCrime(Crime crime){

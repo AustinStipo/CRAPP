@@ -18,8 +18,7 @@
         "criminals": [{"id":1, "name":"Jack Windsor"}],
         "Jurisdiction": "USCPD",
         "enteredCrimeID": 1,
-        "extraInfo": null,
-        "addedInfo": "Chris Klein was fined $500 after being convicted and charged with trespassing",
+        "extraInfo": "Chris Klein was fined $500 after being convicted and charged with trespassing",
         "Image": "Gate4Security.jpg"
     }
 ]

@@ -156,10 +156,7 @@ public class Crime {
     } 
 
     public User getEnteredCrime() {
-        if(users == null) {
-            return null;
-        }
-        return users.get(0);
+        return enteredCrime;
     }
 
     public void setCrimeSeverity(int severity) {
@@ -199,10 +196,13 @@ public class Crime {
         "\nCriminals: " + crims + "\nExtra Info: " + extraInfo;
     }
 
-    public void addingInfo(String info, User user){
-        addedInfo.add(user);
+    public void addInfo(String info){
         extraInfo = extraInfo + "\n" + info;
     } 
+
+    public String getInfo() {
+        return extraInfo;
+    }
 
     public String getImage() {
         return image;
