@@ -92,7 +92,7 @@ public class Victim extends Person {
     
     /**
      * Returns the last story of the victim
-     * @return The first 
+     * @return The last story of the victim 
      */
     public String getLastStory() {
         return stories.get(stories.size()-1);
