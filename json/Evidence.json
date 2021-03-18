@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "evidenceType": "knife",
+        "location": "1000 Whaley St",
+        "time": "9:42pm",
+        "enteredEvidence": 1,
+        "handleEvidence": 2,
+        "comments": "knife had blood on it"
+    },{
+        "id": 2,
+        "evidenceType": "gun",
+        "location": "1000 Whaley St",
+        "time": "10:02pm",
+        "enteredEvidence": 3,
+        "handleEvidence": 1,
+        "comments": "gun was fired, but no one was hurt"
+    }
+]

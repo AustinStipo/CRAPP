@@ -13,8 +13,8 @@ public class CriminalApplication {
     private ArrayList<Witness> witnesses;
     private ArrayList<Suspect> suspects;
     private ArrayList<Victim> victims;
-    private ArrayList<PersonOfInterest> personOfInterest;
-    private ArrayList<Evidence> evidence;
+    private ArrayList<PersonOfInterest> personsOfInterest;
+    private ArrayList<Evidence> evidences;
     private ArrayList<Crime> crimes;
     private ArrayList<User> users;
 
@@ -22,8 +22,14 @@ public class CriminalApplication {
      * Creates a Criminal Application
      */
     public CriminalApplication() {
-        crimes = DataLoader.getCrimes();
+        // crimes = DataLoader.getCrimes();
         users = DataLoader.getUsers();
+        // criminals = DataLoader.getCriminals();
+        // witnesses = DataLoader.getWitnesses();
+        // suspects = DataLoader.getSuspects();
+        // victims = DataLoader.getVictims();
+        // personsOfInterest = DataLoader.getPOIs();
+        evidences = DataLoader.getEvidences();
     }
 
     /**
@@ -43,7 +49,7 @@ public class CriminalApplication {
      * @param criminal Criminal for a crime
      */
     public void addCriminal(Criminal criminal) {
-
+        criminals.add(criminal);
     }
 
     /**
@@ -55,12 +61,26 @@ public class CriminalApplication {
     }
 
     /**
+     * Returns a criminal associated with a crime given an id
+     * @param id Identifier for the criminal
+     * @return The criminal
+     */
+    public Criminal getCriminal(int id) {
+        for(Criminal criminal: criminals) {
+            if(criminal.getUuid() == id) {
+                return criminal;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Removes a criminal from the list of criminals
      * @param criminal Criminal for a crime
      * @return Returns true if the criminal is succesfully removed and false otherwise
      */
     public boolean removeCriminal(Criminal criminal) {
-        return true;
+       return criminals.remove(criminal);
     }
 
     /**
@@ -73,27 +93,37 @@ public class CriminalApplication {
 
     /**
      * Searches for criminals
-     * @param keyWord Keyword for search
-     * @param category Category of search
+     * @param firstName First name of the criminal
+     * @return The criminal searched for
      */
-    public void searchCriminal(String keyWord, String category) {
-       
+    public Criminal searchCriminal(String firstName) {
+        for(Criminal criminal: criminals) {
+            if(criminal.getFirstName().equals(firstName)) {
+                return criminal;
+            }
+        }
+        return null;
     }
-
     /**
      * Adds a witness to the list of witnesses
      * @param witness Witness for a crime
      */
     public void addWitness(Witness witness) {
-
+        witnesses.add(witness);
     }
 
     /**
      * Returns the witnesses of a crime
+     * @param id Identifier for the witness
      * @return The witnesses
      */
-    public ArrayList<Witness> getWitness() {
-        return witnesses;
+    public Witness getWitness(int id) {
+        for(Witness witness: witnesses) {
+            if(witness.getUuid() == id) {
+                return witness;
+            }
+        }
+        return null;
     }
 
     /**
@@ -101,15 +131,21 @@ public class CriminalApplication {
      * @param suspect suspect for a crime
      */
     public void addSuspect(Suspect suspect) {
-
+        suspects.add(suspect);
     }
 
     /**
      * Returns the suspects of a crime
+     * @param id Identifier for the suspect
      * @return The suspects
      */
-    public ArrayList<Suspect> getSuspects() {
-        return suspects;
+    public Suspect getSuspect(int id) {
+        for(Suspect suspect: suspects) {
+            if(suspect.getUuid() == id) {
+                return suspect;
+            }
+        }
+        return null;
     }
 
     /**
@@ -117,15 +153,21 @@ public class CriminalApplication {
      * @param victim Victim for a crime
      */
     public void addVictim(Victim victim) {
-
-    }
+        victims.add(victim);
+    }   
 
     /**
      * Returns the victims of a crime
+     * @param id Identifier for the victim
      * @return The victims
      */
-    public ArrayList<Victim> getVictim() {
-        return victims;
+    public Victim getVictim(int id) {
+        for(Victim victim: victims) {
+            if(victim.getUuid() == id) {
+                return victim;
+            }
+        }
+        return null;
     }
 
     /**
@@ -133,15 +175,29 @@ public class CriminalApplication {
      * @param personOfInterest Person of interest for a crime
      */
     public void addPersonOfInterest(PersonOfInterest personOfInterest) {
-
+        this.personsOfInterest.add(personOfInterest);
     }
-
+    
     /**
      * Returns the people of interest for a crime
      * @return The people of interest
      */
-    public ArrayList<PersonOfInterest> getPersonOfInterest() {
-        return personOfInterest;
+    public ArrayList<PersonOfInterest> getPersonsOfInterest() {
+        return personsOfInterest;
+    }
+
+    /**
+     * Returns a person of interest for a crime given an id
+     * @param id Identifier for the person of interest
+     * @return The person of interest
+     */
+    public PersonOfInterest getPersonOfInterest(int id) {
+        for(PersonOfInterest personOfInterest: personsOfInterest) {
+            if(personOfInterest.getUuid() == id) {
+                return personOfInterest;
+            }
+        }
+        return null;
     }
 
     /**
@@ -149,15 +205,21 @@ public class CriminalApplication {
      * @param evidence Evidence for a crime
      */
     public void addEvidence(Evidence evidence) {
-
+        evidences.add(evidence);
     }
 
     /**
-     * Returns the evidence for a crime
+     * Returns the evidence for a crime given an id
+     * @param id Identifier for the evidence
      * @return The evidence
      */
-    public ArrayList<Evidence> getEvidences() {
-        return evidence;
+    public Evidence getEvidence(int id) {
+        for(Evidence evidence: evidences) {
+            if(evidence.getUuid() == id) {
+                return evidence;
+            }
+        }
+        return null;
     }
 
     /**
@@ -165,7 +227,7 @@ public class CriminalApplication {
      * @param crime A crime
      */
     public void addCrime(Crime crime) {
-        
+        crimes.add(crime);
     }
 
     /**
@@ -191,11 +253,11 @@ public class CriminalApplication {
     }
 
     /**
-     * Returns the length of the crime
-     * @return The length of the crime
+     * Returns the length of the list of crimes
+     * @return The length of the list
      */
     public int crimeLength() {
-        return 1;
+        return crimes.size();
     }
 
     /**
@@ -230,17 +292,22 @@ public class CriminalApplication {
 
     /**
      * Searches for crime
-     * @param keyWord Keyword for search
-     * @param category Category of search
+     * @param crimeType Type of the crime
+     * @return The crime searched for
      */
-    public void searchCrime(String keyWord, String category) {
-
+    public Crime searchCrime(String crimeType) {
+        for(Crime crime: crimes) {
+            if(crime.getCrimeType().equals(crimeType)) {
+                return crime;
+            }
+        }
+        return null;
     }
 
     /**
      * Returns a list of criminals ranked
      * @return The list of criminals
-     */
+     */    
     public ArrayList<Criminal> rankCriminals() {
         return criminals;
     }

@@ -20,12 +20,28 @@ public class Criminal extends Person {
         this.enteredCriminal = enteredCriminal;
     }
 
+    public User getEnteredCriminal() {
+        return enteredCriminal;
+    }
+
     public void addTattoo(String tattoo) {
         tattoos.add(tattoo);
     }
 
+    public String getTattoo() {
+        return tattoos.get(tattoos.size() - 1);
+    }
+
+    public boolean getHasTattoos() {
+        return hasTattoos;
+    }
+
     public void addAlias(String alias) {
         aliases.add(alias);
+    }
+
+    public String getAlias() {
+        return aliases.get(aliases.size() - 1);
     }
 
     public void addAssociate(Person person) {
@@ -74,9 +90,10 @@ public class Criminal extends Person {
 
     public void setChargesDropped(boolean dropped) {
         chargesDropped = dropped;
+        pastCrimes.remove(pastCrimes.size() - 1);
     }
 
-    public boolean chargesDropped() {
+    public boolean getChargesDropped() {
         return this.chargesDropped;
     }
 

@@ -286,10 +286,7 @@ public class Crime {
      * @return The user
      */
     public User getEnteredCrime() {
-        if(users == null) {
-            return null;
-        }
-        return users.get(0);
+        return enteredCrime;
     }
     
     /**
@@ -343,6 +340,14 @@ public class Crime {
      * Returns the image of the crime
      * @return The image
      */
+    public void addInfo(String info){
+        extraInfo = extraInfo + "\n" + info;
+    } 
+
+    public String getInfo() {
+        return extraInfo;
+    }
+
     public String getImage() {
         return image;
     } 
