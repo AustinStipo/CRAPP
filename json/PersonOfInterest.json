@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Nathan Ford",
+        "age": "49",
+        "address": "200 Mill Rd",
+        "image": "NathanFord.jpg",
+        "phonenumber": "8037771265",
+        "email": "nathanford@gmail.com",
+        "suspectAssociatedTo": "Sage Ford",
+        "association to Suspect": "Brother",
+        "stories": "Brother, Sage, noted Nathan had been acting strangely since returning from their trip to cancun"
+    }
+]
