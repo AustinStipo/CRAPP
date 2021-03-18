@@ -344,10 +344,18 @@ public class Crime {
         extraInfo = extraInfo + "\n" + info;
     } 
 
+    /**
+     * Returns the information on the crime
+     * @return The info
+     */
     public String getInfo() {
         return extraInfo;
     }
 
+    /**
+     * Returns the image of the crime
+     * @return The image
+     */
     public String getImage() {
         return image;
     } 
