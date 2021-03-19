@@ -9,16 +9,14 @@ public class PersonOfInterest extends Person{
     private String email;
     private Suspect suspectAssociatedTo;
     private String associationToSuspect;
-    private String associationToCase;
     private ArrayList<String> stories;
 
-    public PersonOfInterest(int id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, Suspect suspectAssociatedTo, String associationToCase, String associationToSuspect) {
+    public PersonOfInterest(int id, String firstName, String lastName, int age, int height, int weight, String skinColor, String hairColor, String eyeColor, String address, String phoneNumber, String email, Suspect suspectAssociatedTo, String associationToSuspect) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
         setSuspectAssociatedTo(suspectAssociatedTo);
-        setAssociationToCase(associationToCase);
     }
 
     public String getPhoneNumber() {
@@ -51,14 +49,6 @@ public class PersonOfInterest extends Person{
 
     public void setSuspectAssociatedTo(Suspect association) {
         this.suspectAssociatedTo = association;
-    }
-
-    public void setAssociationToCase(String associatoinToCase) {
-        this.associationToCase = associatoinToCase;
-    }
-
-    public String getAssociationToCase() {
-        return associationToCase;
     }
 
     public void addStory(String story) {

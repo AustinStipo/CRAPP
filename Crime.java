@@ -47,6 +47,13 @@ public class Crime {
         this.severity = severity;
         this.jurisdiction = jurisdiction;
         this.enteredCrime = enteredCrime;
+        victims = new ArrayList<Victim>();
+        witnesses = new ArrayList<Witness>();
+        suspects = new ArrayList<Suspect>();
+        criminals = new ArrayList<Criminal>();
+        personOfInterest = new ArrayList<PersonOfInterest>();
+        evidence = new ArrayList<Evidence>();
+        users = new ArrayList<User>();
     }
     
     /**

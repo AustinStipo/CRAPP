@@ -16,7 +16,7 @@
         "solved": true,
         "severity": 6,
         "criminals": [{"id":1}],
-        "Jurisdiction": "USCPD",
+        "jurisdiction": "USCPD",
         "enteredCrimeID": 1,
         "extraInfo": "Chris Klein was fined $500 after being convicted and charged with trespassing",
         "Image": "Gate4Security.jpg"

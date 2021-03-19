@@ -19,7 +19,7 @@ public abstract class DataConstants {
     protected static final String CRIME_TYPE = "crimeType";
     protected static final String VICTIMS = "victims";
     protected static final String WITNESSSES = "witnesses";
-    protected static final String POI = "presonsOfInterest";
+    protected static final String POI = "personOfInterest";
     protected static final String SUSPECTS = "suspects";
     protected static final String USERS = "users";
     protected static final String EVIDENCE = "evidence";
@@ -55,12 +55,13 @@ public abstract class DataConstants {
     protected static final String EVIDENCE_TYPE = "evidenceType";
     protected static final String LOCATIONS = "locations";
     protected static final String TIMES = "times";
+    protected static final String TIME = "time";
     protected static final String ENTERED_EVIDENCE = "enteredEvidence";
     protected static final String EVIDENCE_HANDLED = "handledEvidence";
     protected static final String COMMENTS = "comments";
     
     protected static final String POI_FILE = "json/Personofinterest.json";
-    protected static final String SUSPECT_ASSOCIATION_TO = "suspectAssociationTo";
+    protected static final String SUSPECT_ASSOCIATED_TO = "suspectAssociatedTo";
     protected static final String ASSOCIATION_TO_SUSPECT = "assocationToSuspect";
     protected static final String ASSOCIATION_TO_CASE = "associationToCase";
     protected static final String STORIES = "stories";

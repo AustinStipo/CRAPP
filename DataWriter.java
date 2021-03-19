@@ -88,7 +88,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void savewitnesss() {
-        ArrayList<PersonOfInterest> poiList = CriminalApplication.getInstance().getPersonOfInterest();
+        ArrayList<PersonOfInterest> poiList = CriminalApplication.getInstance().getPersonsOfInterest();
         JSONArray jsonPOIs = new JSONArray();
 		
 		//creating all the json objects
@@ -128,7 +128,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveVictims() {
-        ArrayList<Victim> victimList = CriminalApplication.getInstance().getVictim();
+        ArrayList<Victim> victimList = CriminalApplication.getInstance().getVictims();
         JSONArray jsonVictims = new JSONArray();
 		
 		//creating all the json objects

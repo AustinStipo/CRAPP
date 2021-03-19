@@ -22,14 +22,7 @@ public class CriminalApplication {
      * Creates a Criminal Application
      */
     public CriminalApplication() {
-        // crimes = DataLoader.getCrimes();
-        users = DataLoader.getUsers();
-        // criminals = DataLoader.getCriminals();
-        // witnesses = DataLoader.getWitnesses();
-        // suspects = DataLoader.getSuspects();
-        // victims = DataLoader.getVictims();
-        // personsOfInterest = DataLoader.getPOIs();
-        evidences = DataLoader.getEvidences();
+
     }
 
     /**
@@ -42,6 +35,70 @@ public class CriminalApplication {
         }
 
         return crapp;
+    }
+
+    /**
+     * Gets the crimes. Will make DataLoader methods work better
+     */
+    public ArrayList<Crime> loadCrimes() {
+        crimes = DataLoader.getCrimes();
+        return crimes;
+    }
+
+    /**
+     * Loads the users
+     */
+    public ArrayList<User> loadUsers() {
+        users = DataLoader.getUsers();
+        return users;
+    }
+
+    /**
+     * Loads the criminals
+     */
+    public ArrayList<Criminal> loadCriminals() {
+        criminals = DataLoader.getCriminals();
+        return criminals;
+    }
+    
+    /**
+     * Loads the Witnesses
+     */
+    public ArrayList<Witness> loadWitnesses() {
+        witnesses = DataLoader.getWitnesses();
+        return witnesses;
+    }
+    
+    /**
+     * Loads the Suspects
+     */
+    public ArrayList<Suspect> loadSuspects() {
+        suspects = DataLoader.getSuspects();
+        return suspects;
+    }
+    
+    /**
+     * Loads the Victims
+     */
+    public ArrayList<Victim> loadVictims() {
+        victims = DataLoader.getVictims();
+        return victims;
+    }
+    
+    /**
+     * Loads the Persons of Interest
+     */
+    public ArrayList<PersonOfInterest> loadPOIs() {
+        personsOfInterest = DataLoader.getPOIs();
+        return personsOfInterest;
+    }
+        
+    /**
+     * Loads the Evidence
+     */
+    public ArrayList<Evidence> loadEvidences() {
+        evidences = DataLoader.getEvidences();
+        return evidences;
     }
 
     /**
@@ -66,6 +123,9 @@ public class CriminalApplication {
      * @return The criminal
      */
     public Criminal getCriminal(int id) {
+        if(criminals == null){
+            criminals = loadCriminals();
+        }
         for(Criminal criminal: criminals) {
             if(criminal.getUuid() == id) {
                 return criminal;
@@ -118,6 +178,10 @@ public class CriminalApplication {
      * @return The witnesses
      */
     public Witness getWitness(int id) {
+        if(witnesses == null);
+        {
+            witnesses = loadWitnesses();
+        }
         for(Witness witness: witnesses) {
             if(witness.getUuid() == id) {
                 return witness;
@@ -140,6 +204,9 @@ public class CriminalApplication {
      * @return The suspects
      */
     public Suspect getSuspect(int id) {
+        if(suspects == null) {
+            suspects = loadSuspects();
+        }
         for(Suspect suspect: suspects) {
             if(suspect.getUuid() == id) {
                 return suspect;
@@ -162,6 +229,9 @@ public class CriminalApplication {
      * @return The victims
      */
     public Victim getVictim(int id) {
+        if(victims == null) {
+            victims = loadVictims();
+        }
         for(Victim victim: victims) {
             if(victim.getUuid() == id) {
                 return victim;
@@ -192,6 +262,9 @@ public class CriminalApplication {
      * @return The person of interest
      */
     public PersonOfInterest getPersonOfInterest(int id) {
+        if(personsOfInterest == null) {
+            personsOfInterest = loadPOIs();
+        }
         for(PersonOfInterest personOfInterest: personsOfInterest) {
             if(personOfInterest.getUuid() == id) {
                 return personOfInterest;
@@ -214,6 +287,9 @@ public class CriminalApplication {
      * @return The evidence
      */
     public Evidence getEvidence(int id) {
+        if(evidences == null) {
+            evidences = loadEvidences();
+        }
         for(Evidence evidence: evidences) {
             if(evidence.getUuid() == id) {
                 return evidence;
@@ -244,6 +320,9 @@ public class CriminalApplication {
      * @return The crime
      */
     public Crime getCrime(int id) {
+        if(crimes == null) {
+            crimes = loadCrimes();
+        }
         for(Crime crime: crimes) {
             if(crime.getUuid() == id) {
                 return crime;
@@ -282,6 +361,9 @@ public class CriminalApplication {
      * @return The user
      */
     public User getUser(int id) {
+        if(users == null) {
+            users = loadUsers();
+        }
         for(User user: users) {
             if(user.getUuid() == id) {
                 return user;
