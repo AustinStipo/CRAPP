@@ -25,6 +25,13 @@ public class User {
         setRank(rank);
         setPassword(password);
     }
+
+    /**
+     * Empty User constructor
+     */
+    public User() {
+
+    }
     
     public int getUuid() {
         return id;

@@ -18,6 +18,32 @@ public class Criminal extends Person {
             String hairColor, String eyeColor, String address, User enteredCriminal) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         this.enteredCriminal = enteredCriminal;
+        tattoos = new ArrayList<String>();
+        aliases = new ArrayList<String>();
+        associates = new ArrayList<Person>();
+        pastCrimes = new ArrayList<Crime>();
+        for(Crime crime: CriminalApplication.getInstance().getCrimes()) {
+            for(Criminal criminal: crime.getCriminals()) {
+                if(criminal.getUuid() == id) {
+                    pastCrimes.add(crime);
+                }
+            }
+        }
+        for(Crime crime: pastCrimes) {
+            for(Criminal criminal: crime.getCriminals()) {
+                if(criminal.getUuid() != id) {
+                    associates.add(criminal);
+                }
+            }
+        }
+        addedInfo = new ArrayList<User>();
+    }
+
+    /**
+     * Empty Criminal Constructor
+     */
+    public Criminal() {
+
     }
 
     public User getEnteredCriminal() {
@@ -90,7 +116,9 @@ public class Criminal extends Person {
 
     public void setChargesDropped(boolean dropped) {
         chargesDropped = dropped;
-        pastCrimes.remove(pastCrimes.size() - 1);
+        if(pastCrimes.size() > 0) {
+            pastCrimes.remove(pastCrimes.size() - 1);
+        }
     }
 
     public boolean getChargesDropped() {

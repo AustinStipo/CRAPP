@@ -53,7 +53,14 @@ public class Crime {
         criminals = new ArrayList<Criminal>();
         personOfInterest = new ArrayList<PersonOfInterest>();
         evidence = new ArrayList<Evidence>();
-        users = new ArrayList<User>();
+        users = detectives;
+    }
+
+    /**
+     * Empty Crime constructors
+     */
+    public Crime() {
+
     }
     
     /**
@@ -270,7 +277,7 @@ public class Crime {
      */
     public ArrayList<Criminal> getCriminals() {
         return criminals;
-    } 
+    }
 
     /**
      * Returns the jurisdiction where the crime happened

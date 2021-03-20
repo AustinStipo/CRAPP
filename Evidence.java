@@ -31,6 +31,13 @@ public class Evidence {
         this.enteredEvidence = enteredEvidence;
         this.comments = comment;
     }
+
+    /**
+     * Empty Evidence constructor
+     */
+    public Evidence() {
+
+    }
     
     /**
      * Returns the identifier for the evidence

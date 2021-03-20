@@ -13,6 +13,18 @@ public class Suspect extends Person{
             String hairColor, String eyeColor, String address, String alibi) {
         super(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address);
         setAlibi(alibi);
+        tattoos = new ArrayList<String>();
+        aliases = new ArrayList<String>();
+        associates = new ArrayList<Person>();
+        pastCrimes = new ArrayList<Crime>();
+        evidence = new ArrayList<Evidence>();
+    }
+
+    /**
+     * Empty Suspect Constructor
+     */
+    public Suspect() {
+
     }
 
     public void addTattoo(String tattoos) {

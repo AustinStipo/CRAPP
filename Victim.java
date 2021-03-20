@@ -35,6 +35,13 @@ public class Victim extends Person {
     }
 
     /**
+     * Empty Victim constructor
+     */
+    public Victim() {
+
+    }
+
+    /**
      * Returns the phone number of the victim
      * @return The phone number 
      */

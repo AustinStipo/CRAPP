@@ -32,6 +32,7 @@ public class DataLoader extends DataConstants {
 				String badgeNumber = (String)personJSON.get(USER_BADGE_NUMBER);
 				String rank = (String)personJSON.get(USER_RANK);
 				String password = (String)personJSON.get(USER_PASSWORD);
+                //Need to search the crimes the user is working
 
                 users.add(new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, crimesWorking));
             }
@@ -164,18 +165,18 @@ public class DataLoader extends DataConstants {
                     criminal.addTattoo(tattoos);                    
                 }
                 criminal.addAlias(aliases);
-                for(Crime crime: CriminalApplication.getInstance().getCrimes()) {
-                    for(Criminal crim: crime.getCriminals()) {
-                        if(crim.getUuid() == id) {
-                            criminal.addPastCrime(crime);
-                        }
-                    }
-                }
-                for(Crime crime: criminal.getPastCrimes()) {
-                    for(Criminal crim: crime.getCriminals()) {
-                        criminal.addAssociate(crim);
-                    }
-                }
+                // for(Crime crime: CriminalApplication.getInstance().getCrimes()) {
+                //     for(Criminal crim: crime.getCriminals()) {
+                //         if(crim.getUuid() == id) {
+                //             criminal.addPastCrime(crime);
+                //         }
+                //     }
+                // }
+                // for(Crime crime: criminal.getPastCrimes()) {
+                //     for(Criminal crim: crime.getCriminals()) {
+                //         criminal.addAssociate(crim);
+                //     }
+                // }
                 criminal.setJail(jail);
                 criminal.setAlive(alive);
                 criminal.setChargesDropped(chargesDropped);
@@ -245,8 +246,7 @@ public class DataLoader extends DataConstants {
                 String image = (String)personJSON.get(IMAGE);
                 String phoneNumber = (String)personJSON.get(PHONE_NUMBER);
                 String email = (String)personJSON.get(EMAIL);
-                int suspectAssociationToID = ((Long)personJSON.get(SUSPECT_ASSOCIATED_TO)).intValue();
-                Suspect suspectAssociatedTo = CriminalApplication.getInstance().getSuspect(suspectAssociationToID);
+                Suspect suspectAssociatedTo = new Suspect();
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
                 String story = (String)personJSON.get(STORIES);
                 PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToSuspect);
@@ -288,21 +288,21 @@ public class DataLoader extends DataConstants {
 
                 Suspect suspect = new Suspect(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, alibi);
 
-                for(Crime crime: CriminalApplication.getInstance().loadCrimes()) {
-                    for(Criminal criminal: crime.getCriminals()) {
-                        if(criminal.getUuid() == id) {
-                            suspect.addCrime(crime);
-                        }
-                    }
-                }
-                for(Crime crime: suspect.getCrimes()) {
-                    for(Criminal criminal: crime.getCriminals()) {
-                        suspect.addAssociate(criminal);
-                    }
-                    for(Evidence evidence: crime.getEvidence()) {
-                        suspect.addEvidence(evidence);
-                    }
-                }
+                // for(Crime crime: CriminalApplication.getInstance().loadCrimes()) {
+                //     for(Criminal criminal: crime.getCriminals()) {
+                //         if(criminal.getUuid() == id) {
+                //             suspect.addCrime(crime);
+                //         }
+                //     }
+                // }
+                // for(Crime crime: suspect.getCrimes()) {
+                //     for(Criminal criminal: crime.getCriminals()) {
+                //         suspect.addAssociate(criminal);
+                //     }
+                //     for(Evidence evidence: crime.getEvidence()) {
+                //         suspect.addEvidence(evidence);
+                //     }
+                // }
                 if(hasTattoos) {
                     suspect.addTattoo(tattoos);
                 }
@@ -400,8 +400,8 @@ public class DataLoader extends DataConstants {
     }
 
     public static void main(String[] args) {
-        ArrayList<PersonOfInterest> users =  DataLoader.getPOIs();
-        for(PersonOfInterest user: users) {
+        ArrayList<Crime> users =  DataLoader.getCrimes();
+        for(Crime user: users) {
             System.out.println(user);
         }
     }

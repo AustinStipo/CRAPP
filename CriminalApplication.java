@@ -102,6 +102,14 @@ public class CriminalApplication {
     }
 
     /**
+     * Gets the evidence
+     * @return The evidence in the system
+     */
+    public ArrayList<Evidence> getEvidence() {
+        return evidences;
+    }
+
+    /**
      * Adds a criminal to the list of criminals
      * @param criminal Criminal for a crime
      */
@@ -164,12 +172,21 @@ public class CriminalApplication {
         }
         return null;
     }
+
     /**
      * Adds a witness to the list of witnesses
      * @param witness Witness for a crime
      */
     public void addWitness(Witness witness) {
         witnesses.add(witness);
+    }
+
+    /**
+     * Gets the list of Witnesses
+     * @return The witnesses in the system
+     */
+    public ArrayList<Witness> getWitnesses() {
+        return witnesses;
     }
 
     /**
@@ -188,6 +205,14 @@ public class CriminalApplication {
             }
         }
         return null;
+    }
+
+    /**
+     * Gets the list of Suspects
+     * @return The suspects in the system.
+     */
+    public ArrayList<Suspect> getSuspects() {
+        return suspects;
     }
 
     /**
@@ -213,6 +238,14 @@ public class CriminalApplication {
             }
         }
         return null;
+    }
+
+    /**
+     * Gets the list of Victims
+     * @return The victims in the system
+     */
+    public ArrayList<Victim> getVictims() {
+        return victims;
     }
 
     /**

@@ -39,6 +39,14 @@ public class Person {
         setEyeColor(eyeColor);
         setAddress(address);
     }
+
+    /**
+     * Empty Person constuctor
+     */
+    public Person() {
+
+    }
+
     /**
      * Returns the identifier for the person
      * @return The id

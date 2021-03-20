@@ -13,6 +13,13 @@ public class Witness extends Person{
         setEmail(email);
     }
 
+    /**
+     * Empty Witness constructor
+     */
+    public Witness() {
+
+    }
+
     public String getPhoneNumber() {
         return this.phoneNumber;
     }

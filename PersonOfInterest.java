@@ -17,6 +17,14 @@ public class PersonOfInterest extends Person{
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
         setSuspectAssociatedTo(suspectAssociatedTo);
+        stories = new ArrayList<String>();
+    }
+
+    /**
+     * Empty PersonOfInterest constructor
+     */
+    public PersonOfInterest() {
+
     }
 
     public String getPhoneNumber() {

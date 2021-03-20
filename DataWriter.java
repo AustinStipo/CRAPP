@@ -68,7 +68,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveEvidences() {
-        ArrayList<Evidence> evidenceList = CriminalApplication.getInstance().getEvidences();
+        ArrayList<Evidence> evidenceList = CriminalApplication.getInstance().getEvidence();
         JSONArray jsonEvidences = new JSONArray();
 		
 		//creating all the json objects
@@ -148,7 +148,7 @@ public class DataWriter extends DataConstants {
     }
 
     public static void saveWitnesses() {
-        ArrayList<Witness> witnessList = CriminalApplication.getInstance().getWitness();
+        ArrayList<Witness> witnessList = CriminalApplication.getInstance().getWitnesses();
         JSONArray jsonWitnesss = new JSONArray();
 		
 		//creating all the json objects
@@ -299,8 +299,7 @@ public class DataWriter extends DataConstants {
         poiDetails.put(IMAGE, poi.getImage());
         poiDetails.put(PHONE_NUMBER, poi.getPhoneNumber());
         poiDetails.put(EMAIL, poi.getEmail());
-        poiDetails.put(SUSPECT_ASSOCIATION_TO, poi.getSuspectAssociatedTo().getUuid());
-        poiDetails.put(ASSOCIATION_TO_CASE, poi.getAssociationToCase());
+        poiDetails.put(SUSPECT_ASSOCIATED_TO, poi.getSuspectAssociatedTo().getUuid());
         poiDetails.put(ASSOCIATION_TO_SUSPECT, poi.getAssociationToSuspect());
         poiDetails.put(STORIES, poi.getStory());
         return poiDetails;
@@ -363,6 +362,12 @@ public class DataWriter extends DataConstants {
         witnessDetails.put(PHONE_NUMBER, witness.getPhoneNumber());
         witnessDetails.put(STORIES, witness.getLastStory());
         return witnessDetails;
+    }
+
+    public static void main(String[] args) {
+        CriminalApplication.getInstance().loadUsers();
+        CriminalApplication.getInstance().addUser(new User(4, "Bill", "Neary", "bill.neary@police.gov", "8034561254", "USCPD", "Homicide", "000000006", "Detective", "akd5s8w53#$5", new ArrayList<Crime>()));
+        saveUsers();
     }
 
 }
