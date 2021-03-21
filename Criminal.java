@@ -22,20 +22,6 @@ public class Criminal extends Person {
         aliases = new ArrayList<String>();
         associates = new ArrayList<Person>();
         pastCrimes = new ArrayList<Crime>();
-        for(Crime crime: CriminalApplication.getInstance().getCrimes()) {
-            for(Criminal criminal: crime.getCriminals()) {
-                if(criminal.getUuid() == id) {
-                    pastCrimes.add(crime);
-                }
-            }
-        }
-        for(Crime crime: pastCrimes) {
-            for(Criminal criminal: crime.getCriminals()) {
-                if(criminal.getUuid() != id) {
-                    associates.add(criminal);
-                }
-            }
-        }
         addedInfo = new ArrayList<User>();
     }
 
