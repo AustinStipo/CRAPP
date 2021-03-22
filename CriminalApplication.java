@@ -22,7 +22,15 @@ public class CriminalApplication {
      * Creates a Criminal Application
      */
     public CriminalApplication() {
-
+        crapp = new CriminalApplication();
+        criminals = new ArrayList<Criminal>;
+        witnesses = new ArrayList<Witness>;
+        suspects = new ArrayList<Suspect>;
+        victims = new ArrayList<Victim>;
+        personsOfInterest =  new ArrayList<PersonOfInterst>;
+        evidences = new ArrayList<evidence>;
+        crimes = new ArrayList<Crime>;
+        users = new ArrayList<User>;
     }
 
     /**
@@ -33,7 +41,6 @@ public class CriminalApplication {
         if(crapp == null) {
             crapp = new CriminalApplication();
         }
-
         return crapp;
     }
 
@@ -156,7 +163,7 @@ public class CriminalApplication {
      * @return Length of the list
      */
     public int criminalLength() {
-        return 1;
+        return criminals.size();
     }
 
     /**
