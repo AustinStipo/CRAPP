@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 /**
- * A Person
+ * A Victim
  * @author Connor Downey, Alex Santoro, Austin Stipo, and Sarah Carlucci
  */
 public class Victim extends Person {
