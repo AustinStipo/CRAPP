@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * A Criminal Application
+ * A User
  * @author Connor Downey, Alex Santoro, Austin Stipo, and Sarah Carlucci
  */
 public class User {
