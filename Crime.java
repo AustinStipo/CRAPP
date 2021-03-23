@@ -53,7 +53,6 @@ public class Crime {
         criminals = new ArrayList<Criminal>();
         personOfInterest = new ArrayList<PersonOfInterest>();
         evidence = new ArrayList<Evidence>();
-        users = detectives;
     }
 
     /**
@@ -314,6 +313,7 @@ public class Crime {
         String pois = "";
         String susps = "";
         String crims = "";
+        String evids = "";
         for(User u: users) {
             userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";
         }
@@ -332,12 +332,12 @@ public class Crime {
         for(Criminal c: criminals) {
             crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
         }
-        for(User u: users) {
-            userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";
+        for(Evidence e: evidence) {
+            evids = evids + e.getEvidenceType() + ", ";
         }
         return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nSolved?: " + solved + "\nSeverity: " + severity +
-        "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps + "\n" +
-        "\nCriminals: " + crims + "\nExtra Info: " + extraInfo;
+        "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps +
+        "\nCriminals: " + crims + "\nEvidence: " + evids + "\nExtra Info: " + extraInfo;
     }
 
     /**
@@ -355,6 +355,9 @@ public class Crime {
      * @return The image
      */
     public void addInfo(String info){
+        if(extraInfo == null) {
+            extraInfo = info;
+        }
         extraInfo = extraInfo + "\n" + info;
     } 
 

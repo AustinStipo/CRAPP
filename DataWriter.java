@@ -365,9 +365,8 @@ public class DataWriter extends DataConstants {
     }
 
     public static void main(String[] args) {
-        CriminalApplication.getInstance().loadUsers();
-        CriminalApplication.getInstance().addUser(new User(4, "Bill", "Neary", "bill.neary@police.gov", "8034561254", "USCPD", "Homicide", "000000006", "Detective", "akd5s8w53#$5", new ArrayList<Crime>()));
-        saveUsers();
+        CriminalApplication.getInstance().loadCrimes();
+        saveCrimes();
     }
 
 }

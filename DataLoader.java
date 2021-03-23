@@ -61,7 +61,8 @@ public class DataLoader extends DataConstants {
                 String crimeType = (String)personJSON.get(CRIME_TYPE);
                 JSONArray users = (JSONArray)personJSON.get(USERS);
                 for(int j = 0; j < users.size(); j++) {
-                    int uid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject usersJSON = (JSONObject)users.get(j);
+                    int uid = ((Long)usersJSON.get(ID)).intValue();
                     detectives.add(CriminalApplication.getInstance().getUser(uid));
                 }
                 int severity = ((Long)personJSON.get(CRIME_SEVERITY)).intValue();
@@ -73,37 +74,43 @@ public class DataLoader extends DataConstants {
 
                 JSONArray vics = (JSONArray)personJSON.get(VICTIMS);
                 for(int j = 0; j < vics.size(); j++) {
-                    int vid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject vicsJSON = (JSONObject)vics.get(j);
+                    int vid = ((Long)vicsJSON.get(ID)).intValue();
                     crime.addVictim(CriminalApplication.getInstance().getVictim(vid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray wits = (JSONArray)personJSON.get(WITNESSSES);
                 for(int j = 0; j < wits.size(); j++) {
-                    int wid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject witsJSON = (JSONObject)wits.get(j);
+                    int wid = ((Long)witsJSON.get(ID)).intValue();
                     crime.addWitness(CriminalApplication.getInstance().getWitness(wid)); // I think I need to create a new Victims class
                 }
                 
                 JSONArray pers = (JSONArray)personJSON.get(POI);
                 for(int j = 0; j < pers.size(); j++) {
-                    int pid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject persJSON = (JSONObject)pers.get(j);
+                    int pid = ((Long)persJSON.get(ID)).intValue();
                     crime.addPersonOfInterest(CriminalApplication.getInstance().getPersonOfInterest(pid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray susps = (JSONArray)personJSON.get(SUSPECTS);
                 for(int j = 0; j < susps.size(); j++) {
-                    int sid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject suspsJSON = (JSONObject)susps.get(j);
+                    int sid = ((Long)suspsJSON.get(ID)).intValue();
                     crime.addSuspect(CriminalApplication.getInstance().getSuspect(sid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray evids = (JSONArray)personJSON.get(EVIDENCE);
                 for(int j = 0; j < evids.size(); j++) {
-                    int eid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject evidsJSON = (JSONObject)evids.get(j);
+                    int eid = ((Long)evidsJSON.get(ID)).intValue();
                     crime.addEvidence(CriminalApplication.getInstance().getEvidence(eid)); // I think I need to create a new Victims class
                 }
 
                 JSONArray crims = (JSONArray)personJSON.get(CRIMINALS);
                 for(int j = 0; j < crims.size(); j++) {
-                    int cid = ((Long)personJSON.get(ID)).intValue();
+                    JSONObject crimsJSON = (JSONObject)crims.get(j);
+                    int cid = ((Long)crimsJSON.get(ID)).intValue();
                     crime.addCriminal(CriminalApplication.getInstance().getCriminal(cid)); // I think I need to create a new Victims class
                 }
                 

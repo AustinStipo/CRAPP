@@ -22,15 +22,22 @@ public class CriminalApplication {
      * Creates a Criminal Application
      */
     public CriminalApplication() {
-        crapp = new CriminalApplication();
-        criminals = new ArrayList<Criminal>;
-        witnesses = new ArrayList<Witness>;
-        suspects = new ArrayList<Suspect>;
-        victims = new ArrayList<Victim>;
-        personsOfInterest =  new ArrayList<PersonOfInterst>;
-        evidences = new ArrayList<evidence>;
-        crimes = new ArrayList<Crime>;
-        users = new ArrayList<User>;
+        // criminals = new ArrayList<Criminal>();
+        // witnesses = new ArrayList<Witness>();
+        // suspects = new ArrayList<Suspect>();
+        // victims = new ArrayList<Victim>();
+        // personsOfInterest = new ArrayList<PersonOfInterest>();
+        // evidences = new ArrayList<Evidence>();
+        // crimes = new ArrayList<Crime>();
+        // users = new ArrayList<User>();
+        criminals = null;
+        witnesses = null;
+        suspects = null;
+        victims = null;
+        personsOfInterest = null;
+        evidences = null;
+        crimes = null;
+        users = null;
     }
 
     /**
@@ -202,8 +209,7 @@ public class CriminalApplication {
      * @return The witnesses
      */
     public Witness getWitness(int id) {
-        if(witnesses == null);
-        {
+        if(witnesses == null);  {
             witnesses = loadWitnesses();
         }
         for(Witness witness: witnesses) {
