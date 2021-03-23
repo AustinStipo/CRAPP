@@ -437,6 +437,9 @@ public class CriminalApplication {
      * @return The list of criminals
      */    
     public ArrayList<Criminal> rankCriminals() {
+        for(Criminal criminal : criminals) {
+            criminal.getSeverity();
+        }
         return criminals;
     }
 

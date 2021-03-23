@@ -19,10 +19,38 @@ public class CrappUI {
 	}
     
     /**
-     * Prints the welcome message to the console
+     * Runs the front end of the application
      */
     public void run() {
         System.out.println(WELCOME_MESSAGE);
+        //register or login (maybe make a new method to return the correct next page)
+        //home page after login w/ multiple options
+            //new method with switch statement
+            //1. add a crime
+            //2. add a criminal
+            //3. 
+    }
+
+    /**
+     * Displays the main menu
+     */
+    public void mainMenu() {
+        System.out.println("******** MAIN MENU ********");
+    }
+
+    /**
+     * Asks the user to choose between a list of options
+     * @param numOfCommands The size of the list of options
+     * @return The choice if it is valid and -1 otherwise
+     */
+    public int promptUser(int numOfCommands) {
+        System.out.println("Choose an option: ");
+        String input = scanner.nextLine();
+        int choice = Integer.parseInt(input);
+        if(choice > 0 && choice <= numOfCommands) {
+            return choice;
+        }
+        return -1;
     }
 
     /**
