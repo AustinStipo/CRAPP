@@ -256,7 +256,8 @@ public class DataLoader extends DataConstants {
                 Suspect suspectAssociatedTo = new Suspect();
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
                 String story = (String)personJSON.get(STORIES);
-                PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToSuspect);
+                String associationToCase = "";
+                PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToCase, associationToSuspect);
                 poi.addStory(story);
                 personsofinterest.add(poi);
             }
