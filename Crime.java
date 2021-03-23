@@ -335,7 +335,7 @@ public class Crime {
         for(Evidence e: evidence) {
             evids = evids + e.getEvidenceType() + ", ";
         }
-        return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nSolved?: " + solved + "\nSeverity: " + severity +
+        return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nCrime Number: " + id + "\nSolved?: " + solved + "\nSeverity: " + severity +
         "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps +
         "\nCriminals: " + crims + "\nEvidence: " + evids + "\nExtra Info: " + extraInfo;
     }
@@ -358,7 +358,9 @@ public class Crime {
         if(extraInfo == null) {
             extraInfo = info;
         }
-        extraInfo = extraInfo + "\n" + info;
+        else {
+            extraInfo = extraInfo + "\n" + info;
+        }
     } 
 
     /**
