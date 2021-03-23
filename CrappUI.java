@@ -15,7 +15,7 @@ public class CrappUI {
      */
     public CrappUI(){
 		scanner = new Scanner(System.in);
-		crapp = new CriminalApplication();
+		crapp = CriminalApplication.getInstance();
 	}
     
     /**
