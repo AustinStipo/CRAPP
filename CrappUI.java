@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 /**
  * A CrappUI
@@ -78,7 +79,6 @@ public class CrappUI {
             System.out.println("Not a valid command");
         }
 
-        //"Add Crime", "Add Criminal", "Add Suspect", "Add Witness", "Add Person of Interest", "Add Victim"
         switch(input) {
             case(1):
                 addCrime();
@@ -94,8 +94,40 @@ public class CrappUI {
                 addVictim();
         }
     }
+    
     public void addCrime() {
-        
+        System.out.println("Enter the Location: ");
+        String location = scanner.nextLine();
+        System.out.println("Enter the Date: ");
+        String date = scanner.nextLine();
+        System.out.println("Enter the Description: ");
+        String description = scanner.nextLine();
+        System.out.println("Enter the Type of Crime: ");
+        String crimeType = scanner.nextLine();
+        System.out.println("Enter the Detectives' Badge Numbers separated by a comma: ");
+        String detectives = scanner.nextLine();
+        //TODO detective parser
+        ArrayList<User> detectiveTemp = new ArrayList<User>();
+
+        System.out.println("Enter the Severity: ");
+        String severityInput = scanner.nextLine();
+        int severity = Integer.parseInt(severityInput);
+        System.out.println("Enter the Jurisdiction: ");
+        String jurisdiction = scanner.nextLine();
+        System.out.println("Enter your ID: ");
+        String userIDString = scanner.nextLine();
+        int userID = Integer.parseInt(userIDString);
+        User userTemp;
+        for(User user : crapp.getUsers())
+        {
+            if(user.getUuid()==userID){
+                userTemp = user;
+            }
+        }    
+        int size = crapp.getCrimes().size();
+        int id = crapp.getCrimes().get(size-1).getUuid()+1;
+        Crime temp = new Crime(id, location, date, description, crimeType, detectiveTemp, severity, jurisdiction, userTemp);
+        crapp.addCrime(temp);
         System.out.println(ACTION);
     }
 
@@ -263,21 +295,21 @@ public class CrappUI {
         System.out.println("Enter your Last Name: ");
         String lastName = scanner.nextLine();
         System.out.println("Enter your Badge Number: ");
-        String email = scanner.nextLine();
-        System.out.println("Enter your Email: ");
-        String phoneNumber = scanner.nextLine();
-        System.out.println("Enter your Phone Number: ");
-        String precinct = scanner.nextLine();
-        System.out.println("Enter your Precinct: ");
-        String department = scanner.nextLine();
-        System.out.println("Enter your Department: ");
         String badgeNumber = scanner.nextLine();
+        System.out.println("Enter your Email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter your Phone Number: ");
+        String phoneNumber = scanner.nextLine();
+        System.out.println("Enter your Precinct: ");
+        String precinct = scanner.nextLine();
+        System.out.println("Enter your Department: ");
+        String department = scanner.nextLine();
         System.out.println("Enter your Rank: ");
         String rank = scanner.nextLine();
         System.out.println("Enter your Password: ");
         String password = scanner.nextLine();
         int size = crapp.getUsers().size();
-        int id = crapp.getUsers().get(size).getUuid()+1;
+        int id = crapp.getUsers().get(size-1).getUuid()+1;
         User user = new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, null);
         crapp.addUser(user);
     }
