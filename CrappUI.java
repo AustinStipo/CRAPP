@@ -112,7 +112,7 @@ public class CrappUI {
         System.out.println("Enter your ID: ");
         String userIDString = scanner.nextLine();
         int userID = Integer.parseInt(userIDString);
-        User userTemp;
+        User userTemp= new User();
         ArrayList<User> detectives = new ArrayList<User>();
         for(User user : crapp.getUsers())
         {
