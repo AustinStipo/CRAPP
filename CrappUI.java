@@ -146,27 +146,39 @@ public class CrappUI {
     }
 
     public void removeCrime() {
-
+        int id = idPrompt("crime");
+        Crime temp = crapp.getCrime(id);
+        crapp.getCrimes().remove(temp);
     }
 
     public void removeCriminal() {
-
+        int id = idPrompt("criminal");
+        Criminal temp = crapp.getCriminal(id);
+        crapp.removeCriminal(temp);
     }
 
     public void removeSuspect() {
-
+        int id = idPrompt("suspect");
+        Suspect temp = crapp.getSuspect(id);
+        crapp.getSuspects().remove(temp);
     }
 
     public void removeWitness() {
-
+        int id = idPrompt("witness");
+        Witness temp = crapp.getWitness(id);
+        crapp.getWitnesses().remove(temp);
     }
 
     public void removePersonOfInterest() {
-
+        int id = idPrompt("person of interest");
+        PersonOfInterest temp = crapp.getPersonOfInterest(id);
+        crapp.getPersonsOfInterest().remove(temp);
     }
 
     public void removeVictim() {
-
+        int id = idPrompt("victim");
+        Victim temp = crapp.getVictim(id);
+        crapp.getVictims().remove(temp);
     }
 
     /**
