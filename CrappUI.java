@@ -39,6 +39,9 @@ public class CrappUI {
 		}
     }
 
+    /**
+     * Displays and performs main menu operators for user
+     */
     public void mainMenu() {
         menuOptions(mainMenuOptions);
 			
@@ -63,16 +66,96 @@ public class CrappUI {
         }
     }
 
+    /**
+     * Displays and performs addition operators for user
+     */
     public void addition() {
         menuOptions(additionOptions);
+        int input = promptUser(additionOptions.length-1);
+        
+        if(input == -1) {
+            System.out.println("Not a valid command");
+        }
+
+        //"Add Crime", "Add Criminal", "Add Suspect", "Add Witness", "Add Person of Interest", "Add Victim"
+        switch(input) {
+            case(1):
+                
+            case(2):
+                
+            case(3):
+
+            case(4):
+                
+            case(5):
+                
+            case(6):
+                
+        }
     }
 
+    /**
+     * Displays and performs removal operators for user
+     */
     public void removal() {
         menuOptions(removalOptions);
+        int input = promptUser(removalOptions.length-1);
+        
+        if(input == -1) {
+            System.out.println("Not a valid command");
+        }
+
+        //"Remove Crime", "Remove Criminal", "Remove Suspect", "Remove Witness", "Remove Person of Interest", "Remove Victim"
+        switch(input) {
+            case(1):
+                
+            case(2):
+                
+            case(3):
+
+            case(4):
+                
+            case(5):
+                
+            case(6):
+                
+        }
     }
 
+    /**
+     * Displays and performs search operators for user
+     */
     public void search() {
         menuOptions(searchOptions);
+        int input = promptUser(searchOptions.length-1);
+        
+        if(input == -1) {
+            System.out.println("Not a valid command");
+        }
+
+        //crime, criminal
+        switch(input) {
+            case(1):
+                searchCrime();
+            case(2):
+                searchCriminal();
+        }
+    }
+
+    public int idPrompt(String name) {
+        System.out.println("Enter the UUID for the "+name);
+        String input = scanner.nextLine();
+        int id = Integer.parseInt(input);
+        return id;
+    }
+
+    public void searchCrime() {
+        int id = idPrompt("crime");
+        crapp.
+    }
+
+    public void searchCriminal() {
+
     }
 
     /**

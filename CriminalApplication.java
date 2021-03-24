@@ -181,12 +181,12 @@ public class CriminalApplication {
 
     /**
      * Searches for criminals
-     * @param firstName First name of the criminal
+     * @param id UUID of the criminal
      * @return The criminal searched for
      */
-    public Criminal searchCriminal(String firstName) {
+    public Criminal searchCriminal(int id) {
         for(Criminal criminal: criminals) {
-            if(criminal.getFirstName().equals(firstName)) {
+            if(criminal.getUuid()==id) {
                 return criminal;
             }
         }
@@ -444,12 +444,12 @@ public class CriminalApplication {
 
     /**
      * Searches for crime
-     * @param crimeType Type of the crime
+     * @param id UUID for the crime
      * @return The crime searched for
      */
-    public Crime searchCrime(String crimeType) {
+    public Crime searchCrime(int id) {
         for(Crime crime: crimes) {
-            if(crime.getCrimeType().equals(crimeType)) {
+            if(crime.getUuid()==id) {
                 return crime;
             }
         }
