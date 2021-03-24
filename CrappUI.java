@@ -53,9 +53,9 @@ public class CrappUI {
             System.out.println("Not a valid command");
         }
 
-        if(input == mainMenuOptions.length-2) {
+        if(input == mainMenuOptions.length-1) {
             System.out.println("Good bye, and have a nice day");
-            loggedOut = true;
+            loggedOut = true; //I think we need to create a logout method to save whatever is inputted
         }
 
         switch(input) {
@@ -323,9 +323,10 @@ public class CrappUI {
         for(User user : crapp.getUsers()) {
             if(user.getBadgeNumber().equals(badgeNumber) && user.getPassword().equals(password)) {
                 loginAttempt = true;
+                break;
             }
         }
-        loginAttempt = false;
+        // loginAttempt = false;
     }
 
     /**
