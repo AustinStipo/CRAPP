@@ -315,6 +315,9 @@ public class Crime {
         String crims = "";
         String evids = "";
         for(User u: users) {
+            if(users.size() == 0) {
+                break;
+            }
             if(u.equals(users.get(users.size()-1))) {
                 userNames = userNames + u.getFirstName() + " " + u.getLastName();
             }
@@ -322,7 +325,12 @@ public class Crime {
                 userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";           
             }
         }
+        String str = "A " + crimeType + " happenned on " + date + " at " + location + "\nDescription: " + description + "\nCrime Number: " + id + "\nSolved?: " + solved + "\nSeverity: " + severity +
+        "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames;
         for(Victim v: victims) {
+            if(victims.size() == 0) {
+                break;
+            }
             if(v.equals(victims.get(victims.size()-1))) {
                 victs = victs + v.getFirstName() + " " + v.getLastName();
             }
@@ -331,6 +339,9 @@ public class Crime {
             }
         }
         for(Witness w: witnesses) {
+            if(witnesses.size() == 0) {
+                break;
+            }
             if(w.equals(witnesses.get(witnesses.size()-1))) {
                 witns = witns + w.getFirstName() + " " + w.getLastName();
             }
@@ -339,6 +350,9 @@ public class Crime {
             }
         }
         for(PersonOfInterest p: personOfInterest) {
+            if(personOfInterest.size() == 0) {
+                break;
+            }
             if(p.equals(personOfInterest.get(personOfInterest.size()-1))) {
                 pois = pois + p.getFirstName() + " " + p.getLastName();
             }
@@ -347,6 +361,9 @@ public class Crime {
             }
         }
         for(Suspect s: suspects) {
+            if(suspects.size() == 0) {
+                break;
+            }
             if(s.equals(suspects.get(suspects.size()-1))) {
                 susps = susps + s.getFirstName() + " " + s.getLastName();
             }
@@ -355,6 +372,9 @@ public class Crime {
             }
         }
         for(Criminal c: criminals) {
+            if(criminals.size() == 0) {
+                break;
+            }
             if(c.equals(criminals.get(criminals.size()-1))) {
                 crims = crims + c.getFirstName() + " " + c.getLastName();
             }
@@ -363,6 +383,9 @@ public class Crime {
             }
         }
         for(Evidence e: evidence) {
+            if(evidence.size() == 0) {
+                break;
+            }
             if(e.equals(evidence.get(evidence.size()-1))) {
                 evids = evids + e.getEvidenceType();
             }
@@ -370,9 +393,28 @@ public class Crime {
                 evids = evids + e.getEvidenceType() + ", ";
             }
         }
-        return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nCrime Number: " + id + "\nSolved?: " + solved + "\nSeverity: " + severity +
-        "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps +
-        "\nCriminals: " + crims + "\nEvidence: " + evids + "\nExtra Info: " + extraInfo;
+        if(!victs.equals("")) {
+            str = str + "\nVictims: " + victs;
+        }
+        if(!witns.equals("")) {
+            str = str + "\nWitnesses: " + witns;
+        }
+        if(!pois.equals("")) {
+            str = str + "\nPersons of Interest: " + pois;
+        }
+        if(!susps.equals("")) {
+            str = str + "\nSuspects: " + susps;
+        }
+        if(!crims.equals("")) {
+            str = str + "\nCriminals: " + crims;
+        }
+        if(!evids.equals("")) {
+            str = str + "\nEvidence: " + evids;
+        }
+        if(!extraInfo.equals("")) {
+            str = str + "\nExtra Info: " + extraInfo;
+        }
+        return str;
     }
 
     /**

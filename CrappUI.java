@@ -213,7 +213,7 @@ public class CrappUI {
     }
 
     public int idPrompt(String name) {
-        System.out.println("Enter the UUID for the "+name);
+        System.out.println("Enter the ID for the " + name);
         String input = scanner.nextLine();
         int id = Integer.parseInt(input);
         return id;
@@ -272,9 +272,9 @@ public class CrappUI {
         String department = scanner.nextLine();
         System.out.println("Enter your Department: ");
         String badgeNumber = scanner.nextLine();
-        System.out.println("Enter your Badge Number: ");
-        String rank = scanner.nextLine();
         System.out.println("Enter your Rank: ");
+        String rank = scanner.nextLine();
+        System.out.println("Enter your Password: ");
         String password = scanner.nextLine();
         int size = crapp.getUsers().size();
         int id = crapp.getUsers().get(size).getUuid()+1;

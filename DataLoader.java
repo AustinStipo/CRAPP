@@ -50,9 +50,9 @@ public class DataLoader extends DataConstants {
             FileReader reader = new FileReader(CRIME_FILE_NAME);
             JSONParser parser = new JSONParser();	
             JSONArray peopleJSON = (JSONArray)new JSONParser().parse(reader);
-            ArrayList<User> detectives = new ArrayList<User>();
     
             for(int i = 0; i < peopleJSON.size(); i++) {
+                ArrayList<User> detectives = new ArrayList<User>();
                 JSONObject personJSON = (JSONObject)peopleJSON.get(i);
                 int id = ((Long)personJSON.get(ID)).intValue();
                 String location = (String)personJSON.get(LOCATION);
@@ -399,11 +399,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
-    // public static void main(String[] args) {
-    //     ArrayList<Witness> users =  DataLoader.getWitnesses();
-    //     for(Witness user: users) {
-    //         System.out.println(user);
-    //     }
-    // }
+    public static void main(String[] args) {
+        ArrayList<Crime> users =  DataLoader.getCrimes();
+        for(Crime user: users) {
+            System.out.println(user);
+        }
+    }
     
 }
