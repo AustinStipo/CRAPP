@@ -215,7 +215,7 @@ public class User {
      * @param addCrime Comment about the evidence
      */
     public void addCrime(Crime crime) {
-        
+        crimesWorking.add(crime);
     }
 
     /**

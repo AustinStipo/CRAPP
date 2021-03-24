@@ -70,8 +70,8 @@ public class CrappUI {
         String rank = scanner.nextLine();
         System.out.println("Enter your Rank: ");
         String password = scanner.nextLine();
-        //TODO fix this
-        int id = 10;
+        int size = crapp.getUsers().size();
+        int id = crapp.getUsers().get(size).getUuid()+1;
         User user = new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, null);
         crapp.addUser(user);
     }
