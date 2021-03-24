@@ -104,11 +104,6 @@ public class CrappUI {
         String description = scanner.nextLine();
         System.out.println("Enter the Type of Crime: ");
         String crimeType = scanner.nextLine();
-        System.out.println("Enter the Detectives' Badge Numbers separated by a comma: ");
-        String detectives = scanner.nextLine();
-        //TODO detective parser
-        ArrayList<User> detectiveTemp = new ArrayList<User>();
-
         System.out.println("Enter the Severity: ");
         String severityInput = scanner.nextLine();
         int severity = Integer.parseInt(severityInput);
@@ -118,15 +113,17 @@ public class CrappUI {
         String userIDString = scanner.nextLine();
         int userID = Integer.parseInt(userIDString);
         User userTemp;
+        ArrayList<User> detectives = new ArrayList<User>();
         for(User user : crapp.getUsers())
         {
             if(user.getUuid()==userID){
                 userTemp = user;
+                detectives.add(user);
             }
         }    
         int size = crapp.getCrimes().size();
         int id = crapp.getCrimes().get(size-1).getUuid()+1;
-        Crime temp = new Crime(id, location, date, description, crimeType, detectiveTemp, severity, jurisdiction, userTemp);
+        Crime temp = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, userTemp);
         crapp.addCrime(temp);
         System.out.println(ACTION);
     }
