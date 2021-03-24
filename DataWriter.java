@@ -244,8 +244,6 @@ public class DataWriter extends DataConstants {
         crimeDetails.put(CRIMINALS, crims);        
         crimeDetails.put(CRIME_SOVLED, crime.getSolved());
         crimeDetails.put(EXTRA_INFO, crime.getInfo());
-        crimeDetails.put(IMAGE, crime.getImage());
-
         return crimeDetails;
     }
 
@@ -261,7 +259,6 @@ public class DataWriter extends DataConstants {
         criminalDetails.put(HAIR, criminal.getHairColor());
         criminalDetails.put(EYE, criminal.getEyeColor());
         criminalDetails.put(ADDRESS, criminal.getAddress());
-        criminalDetails.put(IMAGE, criminal.getImage());
         criminalDetails.put(HAS_TATTOOS, criminal.getHasTattoos());
         criminalDetails.put(TATTOOS, criminal.getTattoo());
         criminalDetails.put(ALIASES, criminal.getAlias());
@@ -296,7 +293,6 @@ public class DataWriter extends DataConstants {
         poiDetails.put(HAIR, poi.getHairColor());
         poiDetails.put(EYE, poi.getEyeColor());
         poiDetails.put(ADDRESS, poi.getAddress());
-        poiDetails.put(IMAGE, poi.getImage());
         poiDetails.put(PHONE_NUMBER, poi.getPhoneNumber());
         poiDetails.put(EMAIL, poi.getEmail());
         poiDetails.put(SUSPECT_ASSOCIATED_TO, poi.getSuspectAssociatedTo().getUuid());
@@ -317,7 +313,6 @@ public class DataWriter extends DataConstants {
         suspectDetails.put(HAIR, suspect.getHairColor());
         suspectDetails.put(EYE, suspect.getEyeColor());
         suspectDetails.put(ADDRESS, suspect.getAddress());
-        suspectDetails.put(IMAGE, suspect.getImage());
         suspectDetails.put(HAS_TATTOOS, suspect.getHasTattoos());
         suspectDetails.put(TATTOOS, suspect.getTattoo());
         suspectDetails.put(ALIASES, suspect.getAlias());
@@ -337,7 +332,6 @@ public class DataWriter extends DataConstants {
         victimDetails.put(HAIR, victim.getHairColor());
         victimDetails.put(EYE, victim.getEyeColor());
         victimDetails.put(ADDRESS, victim.getAddress());
-        victimDetails.put(IMAGE, victim.getImage());
         victimDetails.put(PHONE_NUMBER, victim.getPhoneNumber());
         victimDetails.put(HOSPITALIZED, victim.getHospitalized());
         victimDetails.put(ALIVE, victim.getAlive());
@@ -358,14 +352,15 @@ public class DataWriter extends DataConstants {
         witnessDetails.put(HAIR, witness.getHairColor());
         witnessDetails.put(EYE, witness.getEyeColor());
         witnessDetails.put(ADDRESS, witness.getAddress());
-        witnessDetails.put(IMAGE, witness.getImage());
         witnessDetails.put(PHONE_NUMBER, witness.getPhoneNumber());
         witnessDetails.put(STORIES, witness.getLastStory());
         return witnessDetails;
     }
 
     public static void main(String[] args) {
-        CriminalApplication.getInstance().loadCrimes();
+        CriminalApplication.getInstance().loadCriminals();
+        Criminal criminal = new Criminal(4, "firstName", lastName, age, height, weight, skinColor, hairColor, eyeColor, address, enteredCriminal);
+        CriminalApplication.getInstance().addCriminal(criminal);
         saveCrimes();
     }
 

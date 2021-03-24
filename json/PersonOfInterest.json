@@ -4,16 +4,16 @@
         "firstName": "Nathan",
         "lastName": "Ford",
         "age": 49,
-        "height": 49,
-        "weight": 49,
+        "height": 63,
+        "weight": 149,
         "skinColor": "white",
         "hairColor": "black",
         "eyeColor": "brown",
         "address": "200 Mill Rd",
-        "image": "NathanFord.jpg",
         "phoneNumber": "8037771265",
         "email": "nathanford@gmail.com",
-        "association to Suspect": "Brother",
+        "associationToSuspect": "Brother",
+        "suspectAssociatedTo": 1,
         "stories": "Brother, Sage, noted Nathan had been acting strangely since returning from their trip to cancun"
     }
 ]

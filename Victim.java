@@ -32,6 +32,7 @@ public class Victim extends Person {
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
+        stories = new ArrayList<String>();
     }
 
     /**
@@ -151,6 +152,28 @@ public class Victim extends Person {
      */
     public void changeAlive() {
         alive = !alive;
+    }
+
+    public String toString() {
+        String stor = "";
+        for(String s: stories) {
+            if(s.equals(stories.get(stories.size()-1))) {
+                stor = stor + s;
+            }
+            else {
+                stor = stor + s + ", ";
+            }
+        }
+        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
+        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nEmail: " + email + "\nSuspect Associated to: "
+        + "\nAssociation To Suspect: " + associationToSuspect + "\nStories: " + stor;
+        if(hospitalized) {
+            str = str + "\nHospitalized";
+        }
+        if(!alive) {
+            str = str + "\nDead";
+        }
+        return str;
     }
 }
 

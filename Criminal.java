@@ -144,6 +144,10 @@ public class Criminal extends Person {
         this.getHairColor(), this.getEyeColor(), this.getAddress(), "no alibi");
     }
 
+    /**
+     * Returns a string of the variables
+     * @return The string of variables
+     */
     public String toString() {
         loadPastCrimes();
         String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor

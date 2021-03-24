@@ -35,7 +35,7 @@ public class PersonOfInterest extends Person{
         setPhoneNumber(phoneNumber);
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
-        setSuspectAssociatedTo(suspectAssociatedTo);
+        this.suspectAssociatedTo = suspectAssociatedTo;
         setAssociationToCase(associationToCase);
         stories = new ArrayList<String>();
     }
@@ -106,8 +106,18 @@ public class PersonOfInterest extends Person{
      * Sets the POI associated to
      * @param suspectAssociatedTo suspect associated to the POI
      */
-    public void setSuspectAssociatedTo(Suspect association) {
-        this.suspectAssociatedTo = association;
+    public void setSuspectAssociatedTo() {
+        for(Crime crimes: CriminalApplication.getInstance().getCrimes()){
+            for(PersonOfInterest poi: crimes.getPersonOfInterest()) {
+                if(poi.getUuid() == id) {
+                    for(Suspect suspect: crimes.getSuspects()) {
+                        if(suspect.getUuid() == suspectAssociatedTo.getUuid()) {
+                            suspectAssociatedTo = suspect;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -145,7 +155,27 @@ public class PersonOfInterest extends Person{
      * Returns the last story from the POI
      * @return The last story
      */
-    public  String getLastStory() {
+    public String getLastStory() {
         return stories.get(stories.size()-1);
+    }
+    
+    /**
+     * Returns a string of the variables
+     * @return The string of variables
+     */
+    public String toString() {
+        setSuspectAssociatedTo();
+        String stor = "";
+        for(String s: stories) {
+            if(s.equals(stories.get(stories.size()-1))) {
+                stor = stor + s;
+            }
+            else {
+                stor = stor + s + ", ";
+            }
+        }
+        return "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
+        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nEmail: " + email + "\nSuspect Associated to: "
+        + suspectAssociatedTo.getFirstName() + " " + suspectAssociatedTo.getLastName() + "\nAssociation To Suspect: " + associationToSuspect + "\nStories: " + stor;
     }
 }

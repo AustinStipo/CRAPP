@@ -62,7 +62,7 @@ public abstract class DataConstants {
     
     protected static final String POI_FILE = "json/Personofinterest.json";
     protected static final String SUSPECT_ASSOCIATED_TO = "suspectAssociatedTo";
-    protected static final String ASSOCIATION_TO_SUSPECT = "assocationToSuspect";
+    protected static final String ASSOCIATION_TO_SUSPECT = "associationToSuspect";
     protected static final String ASSOCIATION_TO_CASE = "associationToCase";
     protected static final String STORIES = "stories";
     

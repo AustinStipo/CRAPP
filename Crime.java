@@ -22,7 +22,7 @@ public class Crime {
     private User enteredCrime;
     private String extraInfo;
     private ArrayList<User> addedInfo;
-    private String image;
+    // private String image;
     private int id;
 
     /**
@@ -315,25 +315,60 @@ public class Crime {
         String crims = "";
         String evids = "";
         for(User u: users) {
-            userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";
+            if(u.equals(users.get(users.size()-1))) {
+                userNames = userNames + u.getFirstName() + " " + u.getLastName();
+            }
+            else {
+                userNames = userNames + u.getFirstName() + " " + u.getLastName() + ", ";           
+            }
         }
         for(Victim v: victims) {
-            victs = victs + v.getFirstName() + " " + v.getLastName() + ", ";
+            if(v.equals(victims.get(victims.size()-1))) {
+                victs = victs + v.getFirstName() + " " + v.getLastName();
+            }
+            else {
+                victs = victs + v.getFirstName() + " " + v.getLastName() + ", ";
+            }
         }
         for(Witness w: witnesses) {
-            witns = witns + w.getFirstName() + " " + w.getLastName() + ", ";
+            if(w.equals(witnesses.get(witnesses.size()-1))) {
+                witns = witns + w.getFirstName() + " " + w.getLastName();
+            }
+            else {
+                witns = witns + w.getFirstName() + " " + w.getLastName() + ", ";
+            }
         }
         for(PersonOfInterest p: personOfInterest) {
-            pois = pois + p.getFirstName() + " " + p.getLastName() + ", ";
+            if(p.equals(personOfInterest.get(personOfInterest.size()-1))) {
+                pois = pois + p.getFirstName() + " " + p.getLastName();
+            }
+            else {
+                pois = pois + p.getFirstName() + " " + p.getLastName() + ", ";
+            }
         }
         for(Suspect s: suspects) {
-            susps = susps + s.getFirstName() + " " + s.getLastName() + ", ";
+            if(s.equals(suspects.get(suspects.size()-1))) {
+                susps = susps + s.getFirstName() + " " + s.getLastName();
+            }
+            else {
+                susps = susps + s.getFirstName() + " " + s.getLastName() + ", ";
+            }
         }
         for(Criminal c: criminals) {
-            crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
+            if(c.equals(criminals.get(criminals.size()-1))) {
+                crims = crims + c.getFirstName() + " " + c.getLastName();
+            }
+            else {
+                crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
+            }
         }
         for(Evidence e: evidence) {
-            evids = evids + e.getEvidenceType() + ", ";
+            if(e.equals(evidence.get(evidence.size()-1))) {
+                evids = evids + e.getEvidenceType();
+            }
+            else {
+                evids = evids + e.getEvidenceType() + ", ";
+            }
         }
         return "A " + crimeType + " happenned on " + date + " at the " + location + "\nDescription: " + description + "\nCrime Number: " + id + "\nSolved?: " + solved + "\nSeverity: " + severity +
         "\nJurisdiction: " + jurisdiction + "\nOn the case: " + userNames + "\nVictims: " + victs + "\nWitnesses: " + witns + "\nPersons of Interest: " + pois + "\nSuspects: " + susps +
@@ -351,8 +386,8 @@ public class Crime {
     } 
 
     /**
-     * Returns the image of the crime
-     * @return The image
+     * Returns the info of the crime
+     * @return The info
      */
     public void addInfo(String info){
         if(extraInfo == null) {
@@ -371,21 +406,21 @@ public class Crime {
         return extraInfo;
     }
 
-    /**
-     * Returns the image of the crime
-     * @return The image
-     */
-    public String getImage() {
-        return image;
-    } 
+    // /**
+    //  * Returns the image of the crime
+    //  * @return The image
+    //  */
+    // public String getImage() {
+    //     return image;
+    // } 
 
-    /**
-     * Sets the image of the crime
-     * @param image Image of the crime
-     */
-    public void setImage(String image) {
-        this.image = image;
-    } 
+    // /**
+    //  * Sets the image of the crime
+    //  * @param image Image of the crime
+    //  */
+    // public void setImage(String image) {
+    //     this.image = image;
+    // } 
 
 
 }

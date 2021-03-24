@@ -119,9 +119,6 @@ public class DataLoader extends DataConstants {
 
                 String extraInfo = (String)personJSON.get(EXTRA_INFO);
                 crime.addInfo(extraInfo);
-                
-                String image = (String)personJSON.get(IMAGE);
-                crime.setImage(image);
 
                 crimes.add(crime);
     
@@ -154,7 +151,6 @@ public class DataLoader extends DataConstants {
                 String hairColor = (String)personJSON.get(HAIR);
                 String eyeColor = (String)personJSON.get(EYE);
                 String address = (String)personJSON.get(ADDRESS);
-                String image = (String)personJSON.get(IMAGE);
                 boolean hasTattoos = ((Boolean)personJSON.get(HAS_TATTOOS)).booleanValue();
                 String tattoos = (String)personJSON.get(TATTOOS);
                 String aliases = (String)personJSON.get(ALIASES);
@@ -164,10 +160,8 @@ public class DataLoader extends DataConstants {
                 int severity = ((Long)personJSON.get(SEVERITY)).intValue();
                 int enteredCriminalID = ((Long)personJSON.get(ENTERED_CRIMINAL)).intValue();
                 User enteredCriminal = CriminalApplication.getInstance().getUser(enteredCriminalID);
-                // String addedInfo = (String)personJSON.get(ADDED_INFO);
 
                 Criminal criminal = new Criminal(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, enteredCriminal);
-                criminal.setImage(image);
                 if(hasTattoos) {
                     criminal.addTattoo(tattoos);                    
                 }
@@ -217,7 +211,6 @@ public class DataLoader extends DataConstants {
                 String location = (String)personJSON.get(LOCATION);
                 String time = (String)personJSON.get(TIME);
                 int enteredEvidenceID = ((Long)personJSON.get(ENTERED_EVIDENCE)).intValue();
-                // int handleEvidence = ((Long)personJSON.get(EVIDENCE_HANDLED)).intValue();
                 User enteredEvidence = CriminalApplication.getInstance().getUser(enteredEvidenceID);
                 String comment = (String)personJSON.get(COMMENTS);
                 ArrayList<String> comments = new ArrayList<String>();
@@ -255,7 +248,8 @@ public class DataLoader extends DataConstants {
                 String image = (String)personJSON.get(IMAGE);
                 String phoneNumber = (String)personJSON.get(PHONE_NUMBER);
                 String email = (String)personJSON.get(EMAIL);
-                Suspect suspectAssociatedTo = new Suspect();
+                int suspectAssociatedToID = ((Long)personJSON.get(SUSPECT_ASSOCIATED_TO)).intValue();
+                Suspect suspectAssociatedTo = new Suspect(suspectAssociatedToID);
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
                 String story = (String)personJSON.get(STORIES);
                 String associationToCase = "";
@@ -290,7 +284,6 @@ public class DataLoader extends DataConstants {
                 String hairColor = (String)personJSON.get(HAIR);
                 String eyeColor = (String)personJSON.get(EYE);
                 String address = (String)personJSON.get(ADDRESS);
-                String image = (String)personJSON.get(IMAGE);
                 boolean hasTattoos = ((Boolean)personJSON.get(HAS_TATTOOS)).booleanValue();
                 String tattoos = (String)personJSON.get(TATTOOS);
                 String aliases = (String)personJSON.get(ALIASES);
@@ -318,7 +311,6 @@ public class DataLoader extends DataConstants {
                 }
 
                 suspect.addAlias(aliases);
-                suspect.setImage(image);
 
                 suspects.add(suspect);
             }
@@ -350,17 +342,17 @@ public class DataLoader extends DataConstants {
                 String eyeColor = (String)personJSON.get(EYE);
                 String email = (String)personJSON.get(EMAIL);
                 String address = (String)personJSON.get(ADDRESS);
-                String image = (String)personJSON.get(IMAGE);
                 String phoneNumber = (String)personJSON.get(PHONE_NUMBER);
                 boolean hospitalized = ((Boolean)personJSON.get(HOSPITALIZED)).booleanValue();
                 boolean alive = ((Boolean)personJSON.get(ALIVE)).booleanValue();
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
+                String story = (String)personJSON.get(STORIES);
 
                 Victim victim = new Victim(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, associationToSuspect);
                 
+                victim.addStory(story);
                 victim.setAlive(alive);
                 victim.setHospitalized(hospitalized);
-                victim.setImage(image);
 
                 victims.add(victim);
             }
@@ -392,12 +384,10 @@ public class DataLoader extends DataConstants {
                 String eyeColor = (String)personJSON.get(EYE);
                 String email = (String)personJSON.get(EMAIL);
                 String address = (String)personJSON.get(ADDRESS);
-                String image = (String)personJSON.get(IMAGE);
                 String phoneNumber = (String)personJSON.get(PHONE_NUMBER);
                 String stories = (String)personJSON.get(STORIES);
 
                 Witness witness = new Witness(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email);
-                witness.setImage(image);
                 witness.addStory(stories);
 
                 witnesses.add(witness);
@@ -409,11 +399,11 @@ public class DataLoader extends DataConstants {
         return null;
     }
 
-    public static void main(String[] args) {
-        ArrayList<Criminal> users =  DataLoader.getCriminals();
-        for(Criminal user: users) {
-            System.out.println(user);
-        }
-    }
+    // public static void main(String[] args) {
+    //     ArrayList<Witness> users =  DataLoader.getWitnesses();
+    //     for(Witness user: users) {
+    //         System.out.println(user);
+    //     }
+    // }
     
 }

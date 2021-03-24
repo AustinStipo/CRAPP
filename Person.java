@@ -13,7 +13,7 @@ public class Person {
     protected String hairColor;
     protected String eyeColor;
     protected String address;
-    protected String image;
+    // protected String image;
 
     /**
      * @param id An identifier for the person
@@ -127,21 +127,21 @@ public class Person {
         this.address = address; 
     }
 
-    /**
-     * Returns an image of the person
-     * @return The image
-     */
-    public String getImage() {
-        return "Person looks like " + image;
-    }
+    // /**
+    //  * Returns an image of the person
+    //  * @return The image
+    //  */
+    // public String getImage() {
+    //     return "Person looks like " + image;
+    // }
 
-    /**
-     * Sets the image for a person
-     * @param image image of the person
-     */
-    public void setImage(String image) {
-        this.image = image;
-    } 
+    // /**
+    //  * Sets the image for a person
+    //  * @param image image of the person
+    //  */
+    // public void setImage(String image) {
+    //     this.image = image;
+    // } 
 
     /**
      * Sets the height of the person

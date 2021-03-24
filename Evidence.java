@@ -52,7 +52,7 @@ public class Evidence {
      * @return The type
      */
     public String getEvidenceType() {
-        return "Evidence Type: "+ evidenceType;
+        return evidenceType;
     } 
 
     /**
@@ -137,5 +137,22 @@ public class Evidence {
      */
     public String getLastComment() {
         return comments.get(comments.size()-1);
+    }
+
+    /**
+     * Returns a string of the variables
+     * @return The string of variables
+     */
+    public String toString() {
+        String comm = "";
+        for(String c: comments) {
+            if(c.equals(comments.get(comments.size()-1))) {
+                comm = comm + c;
+            }
+            else {
+                comm = comm + c + ", ";           
+            }
+        }
+        return "ID: " + id + "\nEvidence Type: " + evidenceType + "\nLocation: " + location + "\nTime: " + time + "\nEntered Evidence: " + enteredEvidence.getFirstName() + " " + enteredEvidence.getLastName() + "\nComments: " + comm;
     }
 }

@@ -85,6 +85,21 @@ public class Witness extends Person{
     public String getLastStory() {
         return stories.get(stories.size()-1);
     }
-    
+
+    public String toString() {
+        String stor = "";
+        for(String s: stories) {
+            if(s.equals(stories.get(stories.size()-1))) {
+                stor = stor + s;
+            }
+            else {
+                stor = stor + s + ", ";
+            }
+        }
+        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
+        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nEmail: " + email + "\nSuspect Associated to: "
+        + "\nStories: " + stor;
+        return str;
+    }
 }
 

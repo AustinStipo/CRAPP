@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "firstName": "Jack",
+        "firstName": "Deborah",
         "lastName": "Windsor",
         "age": 19,
         "weight": 190,
@@ -10,7 +10,6 @@
         "hairColor": "Brown",
         "eyeColor": "Brown",
         "address": "633 Wells Rd",
-        "image": "JackWindsor.jpg",
         "hasTattoos": true,
         "tattoos": "American flag on left bicep",
         "aliases": "JDubs",
@@ -20,8 +19,7 @@
         "alive": true,
         "chargesDropped": false,
         "severity": 4,
-        "enteredCriminal": 3,
-        "addedInfo": "Michael Payne"
+        "enteredCriminal": 3
     },{
         "id": 2,
         "firstName": "Jenna",
@@ -33,7 +31,6 @@
         "hairColor": "black",
         "eyeColor": "green",
         "address": "2356 Overture Ave",
-        "image": "JennaBrown.jpg",
         "hasTattoos": false,
         "tattoos": null,
         "aliases": null,
@@ -43,8 +40,7 @@
         "alive": true,
         "chargesDropped": false,
         "severity": 8,
-        "enteredCriminal": 2,
-        "addedInfo": "Kyle Workman"
+        "enteredCriminal": 2
     },{
         "id": 3,
         "firstName": "Mark",
@@ -56,7 +52,6 @@
         "hairColor": "black",
         "eyeColor": "brown",
         "address": "172 Penfield St",
-        "image": "MarkKelly.jpg",
         "hasTattoos": false,
         "tattoos": null,
         "aliases": "MK",
@@ -66,7 +61,6 @@
         "alive": true,
         "chargesDropped": false,
         "severity": 7,
-        "enteredCriminal": 1,
-        "addedInfo": "Chester Toppez"
+        "enteredCriminal": 1
     }
 ]
