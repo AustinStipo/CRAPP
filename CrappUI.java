@@ -80,18 +80,41 @@ public class CrappUI {
         //"Add Crime", "Add Criminal", "Add Suspect", "Add Witness", "Add Person of Interest", "Add Victim"
         switch(input) {
             case(1):
-                
+                addCrime();
             case(2):
-                
+                addCriminal();
             case(3):
-
+                addSuspect();
             case(4):
-                
+                addWitness();
             case(5):
-                
+                addPersonOfInterest();
             case(6):
-                
+                addVictim();
         }
+    }
+    public void addCrime() {
+        
+    }
+
+    public void addCriminal() {
+
+    }
+
+    public void addSuspect() {
+
+    }
+
+    public void addWitness() {
+
+    }
+
+    public void addPersonOfInterest() {
+
+    }
+
+    public void addVictim() {
+
     }
 
     /**
@@ -108,18 +131,42 @@ public class CrappUI {
         //"Remove Crime", "Remove Criminal", "Remove Suspect", "Remove Witness", "Remove Person of Interest", "Remove Victim"
         switch(input) {
             case(1):
-                
+                removeCrime();
             case(2):
-                
+                removeCriminal();
             case(3):
-
+                removeSuspect();
             case(4):
-                
+                removeWitness();
             case(5):
-                
+                removePersonOfInterest();
             case(6):
-                
+                removeVictim();
         }
+    }
+
+    public void removeCrime() {
+
+    }
+
+    public void removeCriminal() {
+
+    }
+
+    public void removeSuspect() {
+
+    }
+
+    public void removeWitness() {
+
+    }
+
+    public void removePersonOfInterest() {
+
+    }
+
+    public void removeVictim() {
+
     }
 
     /**
@@ -151,11 +198,14 @@ public class CrappUI {
 
     public void searchCrime() {
         int id = idPrompt("crime");
-        crapp.
+        Crime temp = crapp.searchCrime(id);
+        System.out.println(temp);
     }
 
     public void searchCriminal() {
-
+        int id = idPrompt("criminal");
+        Criminal temp = crapp.searchCriminal(id);
+        System.out.println(temp);
     }
 
     /**
