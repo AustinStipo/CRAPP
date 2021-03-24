@@ -13,9 +13,6 @@
         "hasTattoos" : false,
         "tattoos": null,
         "aliases": "Mistress of Death",
-        "associates": null,
-        "pastCrimes": "public urination",
-        "evidence": null,
         "alibi": "Her African Grey parrot claims she was at home"
     },{
         "id": 2,
@@ -31,10 +28,7 @@
         "hasTattoos" : true,
         "tattoos": "grizzly bear on the right thigh",
         "aliases": "Larry Bird",
-        "associates": "Jonny Greig, Duncan Ridley, Tyreese Montes",
-        "pastCrimes": "posession of marijuana with intent to distribute",
-        "evidence": "fingerprints found at the scene of the crime",
-        "alibi": null
+        "alibi": "Taking daughter to get ice cream"
     },{
         "id": 3,
         "firstName": "Vincent",
@@ -49,9 +43,6 @@
         "hasTattoos" : true,
         "tattoos": "a nametag that reads \"Hi my name is Vinny\" on the left pectoral",
         "aliases": "Vinny",
-        "associates": null,
-        "pastCrimes": null,
-        "evidence": "fits the description and lives two doors down from the scene of the crime",
-        "alibi": null
+        "alibi": "Just hangin around"
     }
 ]

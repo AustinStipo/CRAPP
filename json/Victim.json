@@ -46,7 +46,7 @@
         "address": "12 Super St",
         "phoneNumber": "1295649908",
         "email": "carlgiambetty@yahoo.com",
-        "associationToSuspect": "none",
+        "associationToSuspect": "",
         "hospitalized": true,
         "alive": true,
         "stories": "Was hit in back of head"

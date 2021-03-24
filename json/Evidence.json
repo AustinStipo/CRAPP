@@ -1,17 +1,38 @@
 [
     {
         "id": 1,
-        "evidenceType": "knife",
-        "location": "1000 Whaley St",
-        "time": "9:42pm",
-        "enteredEvidence": 1,
-        "comments": "knife had blood on it"
-    },{
-        "id": 2,
         "evidenceType": "gun",
         "location": "1000 Whaley St",
         "time": "10:02pm",
         "enteredEvidence": 3,
         "comments": "gun was fired, but no one was hurt"
+    },{
+        "id": 2,
+        "evidenceType": "liquor bottle",
+        "location": "1000 Whaley St",
+        "time": "10:02pm",
+        "enteredEvidence": 3,
+        "comments": "bottle had Tommy Windsor's DNA on it"
+    },{
+        "id": 3,
+        "evidenceType": "baseball bat",
+        "location": "2356 Overture Ave",
+        "time": "9:52 am",
+        "enteredEvidence": 2,
+        "comments": "bat is owned by Ms. Brown and had watermelon juice on it"
+    },{
+        "id": 4,
+        "evidenceType": "gun",
+        "location": "1800 Lincoln st",
+        "time": "8:45 am",
+        "enteredEvidence": 1,
+        "comments": "gun was found down the street of the bank with Vincent Delgado's fingerprints"
+    },{
+        "id": 5,
+        "evidenceType": "Money bag tracker",
+        "location": "9455 Bowman Lane",
+        "time": "9:05 am",
+        "enteredEvidence": 1,
+        "comments": "Tracker was tracked back to Vincent Delgado's known address"
     }
 ]
