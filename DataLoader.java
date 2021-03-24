@@ -171,7 +171,9 @@ public class DataLoader extends DataConstants {
                 if(hasTattoos) {
                     criminal.addTattoo(tattoos);                    
                 }
-                criminal.addAlias(aliases);
+                if(aliases != null) {
+                    criminal.addAlias(aliases);
+                }
                 // for(Crime crime: CriminalApplication.getInstance().getCrimes()) {
                 //     for(Criminal crim: crime.getCriminals()) {
                 //         if(crim.getUuid() == id) {
@@ -408,8 +410,8 @@ public class DataLoader extends DataConstants {
     }
 
     public static void main(String[] args) {
-        ArrayList<Crime> users =  DataLoader.getCrimes();
-        for(Crime user: users) {
+        ArrayList<Criminal> users =  DataLoader.getCriminals();
+        for(Criminal user: users) {
             System.out.println(user);
         }
     }

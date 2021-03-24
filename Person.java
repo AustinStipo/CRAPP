@@ -3,17 +3,17 @@
  * @author Connor Downey, Alex Santoro, Austin Stipo, and Sarah Carlucci
  */
 public class Person {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int age;
-    private int height; //in inches
-    private int weight;
-    private String skinColor;
-    private String hairColor;
-    private String eyeColor;
-    private String address;
-    private String image;
+    protected int id;
+    protected String firstName;
+    protected String lastName;
+    protected int age;
+    protected int height; //in inches
+    protected int weight;
+    protected String skinColor;
+    protected String hairColor;
+    protected String eyeColor;
+    protected String address;
+    protected String image;
 
     /**
      * @param id An identifier for the person

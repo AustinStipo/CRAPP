@@ -72,12 +72,18 @@ public class Criminal extends Person {
         return this.jail;
     }
 
-    public void addPastCrime(Crime crime) {
-        pastCrimes.add(crime);
-    }
-
     public ArrayList<Crime> getPastCrimes() {
         return pastCrimes;
+    }
+
+    public void loadPastCrimes() {
+        for(Crime crimes: CriminalApplication.getInstance().getCrimes()){
+            for(Criminal criminals: crimes.getCriminals()) {
+                if(criminals.getUuid() == id) {
+                    pastCrimes.add(crimes);
+                }
+            }
+        }
     }
 
     public void setJail(boolean jailed) {
@@ -119,10 +125,6 @@ public class Criminal extends Person {
         this.severity = severity;
     }
 
-    public String toString(){
-        return "I'm not sure how we want to write this toString so I'll save this for later when we format";
-    }
-
     // public void addingInfo(String info, User user) {
     //     addedInfo.add(info);
     //     addedInfo.add(user);
@@ -140,5 +142,69 @@ public class Criminal extends Person {
         return new Suspect(this.getUuid(), this.getFirstName(), this.getLastName(), 
         this.getAge(), this.getHeight(), this.getWeight(), this.getSkinColor(), 
         this.getHairColor(), this.getEyeColor(), this.getAddress(), "no alibi");
+    }
+
+    public String toString() {
+        loadPastCrimes();
+        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
+        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nUser Entered: " + enteredCriminal.getFirstName()+ " " + enteredCriminal.getLastName();
+        String tatt = "";
+        String ali = "";
+        String assoc = "";
+        String crimes = "";
+        for(String t: tattoos) {
+            if(t.equals(tattoos.get(tattoos.size()-1))) {
+                tatt = t + tatt;
+            }
+            else {
+                tatt = t + ", " + tatt;
+            }
+        }
+        for(String a: aliases) {
+            if(a.equals(aliases.get(aliases.size()-1))) {
+                ali = a + ali;
+            }
+            else {
+                ali = a + ", " + ali;
+            }
+        }
+        for(Person p: associates) {
+            if(p.equals(associates.get(associates.size()-1))) {
+                assoc = assoc + p.getFirstName() + " " + p.getLastName();
+            }
+            else {
+                assoc = assoc + p.getFirstName() + " " + p.getLastName() + ", ";
+            }
+        }
+        for(Crime c: pastCrimes) {
+            if(c.equals(pastCrimes.get(pastCrimes.size()-1))) {
+                crimes = crimes + c.getCrimeType();
+            }
+            else {
+                crimes = crimes + c.getCrimeType() + ", ";
+            }
+
+        }
+        if(!assoc.equals("")) {
+            str = str + "\nAssociates: " + assoc;
+        }
+        if(!ali.equals("")) {
+            str = str + "\nAliases: " + ali;
+        }
+        if(!tatt.equals("")) {
+            str = str + "\nTattoos: " + tatt;
+        }
+        str = str + "\nCrimes Committed: " + crimes;
+        if(jail) {
+            str = str + "\nIn Jail";
+        }
+        if(!alive) {
+            str = str + "\nDead";
+        }
+        if(chargesDropped) {
+            str = str + "\nCharges Dropped";
+        }
+        str = str + "\nSeverity Ranking: " + severity;
+        return str;
     }
 }

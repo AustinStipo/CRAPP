@@ -120,6 +120,9 @@ public class CriminalApplication {
      * @return The evidence in the system
      */
     public ArrayList<Evidence> getEvidence() {
+        if(evidences == null) {
+            evidences = loadEvidences();
+        }
         return evidences;
     }
 
@@ -136,6 +139,9 @@ public class CriminalApplication {
      * @return The criminals
      */
     public ArrayList<Criminal> getCriminals() {
+        if(criminals == null){
+            criminals = loadCriminals();
+        }
         return criminals;
     }
 
@@ -200,6 +206,9 @@ public class CriminalApplication {
      * @return The witnesses in the system
      */
     public ArrayList<Witness> getWitnesses() {
+        if(witnesses == null);  {
+            witnesses = loadWitnesses();
+        }
         return witnesses;
     }
 
@@ -225,6 +234,9 @@ public class CriminalApplication {
      * @return The suspects in the system.
      */
     public ArrayList<Suspect> getSuspects() {
+        if(suspects == null) {
+            suspects = loadSuspects();
+        }
         return suspects;
     }
 
@@ -258,6 +270,9 @@ public class CriminalApplication {
      * @return The victims in the system
      */
     public ArrayList<Victim> getVictims() {
+        if(victims == null) {
+            victims = loadVictims();
+        }
         return victims;
     }
 
@@ -299,6 +314,9 @@ public class CriminalApplication {
      * @return The people of interest
      */
     public ArrayList<PersonOfInterest> getPersonsOfInterest() {
+        if(personsOfInterest == null) {
+            personsOfInterest = loadPOIs();
+        }
         return personsOfInterest;
     }
 
@@ -357,6 +375,9 @@ public class CriminalApplication {
      * @return The crimes
      */
     public ArrayList<Crime> getCrimes() {
+        if(crimes == null) {
+            crimes = loadCrimes();
+        }
         return crimes;
     }
 
@@ -398,6 +419,9 @@ public class CriminalApplication {
      * @return The users
      */
     public ArrayList<User> getUsers() {
+        if(users == null) {
+            users = loadUsers();
+        }
         return users;
     }
 
