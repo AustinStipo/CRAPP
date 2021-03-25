@@ -63,10 +63,13 @@ public class CrappUI {
         switch(input) {
             case(1):
                 addition();
+                break;
             case(2):
                 removal();
+                break;
             case(3):
                 search();
+                break;
         }
     }
 
@@ -84,16 +87,22 @@ public class CrappUI {
         switch(input) {
             case(1):
                 addCrime();
+                break;
             case(2):
                 addCriminal();
+                break;
             case(3):
                 addSuspect();
+                break;
             case(4):
                 addWitness();
+                break;
             case(5):
                 addPersonOfInterest();
+                break;
             case(6):
                 addVictim();
+                break;
         }
     }
     
@@ -163,8 +172,8 @@ public class CrappUI {
                 // add(user);
             }
         }    
-        int size = crapp.getCrimes().size();
-        int id = crapp.getCrimes().get(size-1).getUuid()+1;
+        int size = crapp.getCriminals().size();
+        int id = crapp.getCriminals().get(size-1).getUuid()+1;
         Criminal temp = new Criminal(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, userTemp);
         crapp.addCriminal(temp);
         System.out.println(ACTION);
@@ -194,6 +203,10 @@ public class CrappUI {
         String address = scanner.nextLine();
         System.out.println("Enter the suspects alibi: ");
         String alibi = scanner.nextLine();
+        int size = crapp.getSuspects().size();
+        int id = crapp.getSuspects().get(size-1).getUuid()+1;
+        Suspect sus = new Suspect(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, alibi);
+        crapp.getSuspects().add(sus);
         System.out.println(ACTION);
     }
 
@@ -220,10 +233,13 @@ public class CrappUI {
         System.out.println("Enter the witnesses address: ");
         String address = scanner.nextLine();
         System.out.println("Enter the witnesses phone number");
-        String phoneNumberInput = scanner.nextLine();
-        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        String phoneNumber = scanner.nextLine();
         System.out.println("Enter the witnesses email: ");
         String email = scanner.nextLine();
+        int size = crapp.getWitnesses().size();
+        int id = crapp.getWitnesses().get(size-1).getUuid()+1;
+        Witness temp = new Witness(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email);
+        crapp.getWitnesses().add(temp);
         System.out.println(ACTION);
     }
 
@@ -250,16 +266,20 @@ public class CrappUI {
         System.out.println("Enter the person of interests address: ");
         String address = scanner.nextLine();
         System.out.println("Enter the person of interests phone number");
-        String phoneNumberInput = scanner.nextLine();
-        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        String phoneNumber = scanner.nextLine();
         System.out.println("Enter the person of interests email: ");
         String email = scanner.nextLine();
         System.out.println("Enter the person of interests personal associations: ");
-        String suspectAssociatedTo = scanner.nextLine();
+        //TODO fix this
         System.out.println("Enter the person of interests association to the case: ");
         String associationToCase = scanner.nextLine();
         System.out.println("Enter the person of interests association to suspect: ");
         String associationToSuspect = scanner.nextLine();
+        int size = crapp.getPersonsOfInterest().size();
+        int id = crapp.getPersonsOfInterest().get(size-1).getUuid()+1;
+        Suspect suspectAssociatedTo = new Suspect(id);
+        PersonOfInterest p = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToCase, associationToSuspect);
+        crapp.getPersonsOfInterest().add(p);
         System.out.println(ACTION);
     }
 
@@ -286,12 +306,15 @@ public class CrappUI {
         System.out.println("Enter the victims address: ");
         String address = scanner.nextLine();
         System.out.println("Enter the victims phone number");
-        String phoneNumberInput = scanner.nextLine();
-        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        String phoneNumber = scanner.nextLine();
         System.out.println("Enter the victims email: ");
         String email = scanner.nextLine();
         System.out.println("Enter the victims association to suspect: ");
         String associationToSuspect = scanner.nextLine();
+        int size = crapp.getVictims().size();
+        int id = crapp.getVictims().get(size-1).getUuid()+1;
+        Victim v = new Victim(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, associationToSuspect)
+        crapp.getVictims().add(v);
         System.out.println(ACTION);
     }
 
@@ -309,16 +332,22 @@ public class CrappUI {
         switch(input) {
             case(1):
                 removeCrime();
+                break;
             case(2):
                 removeCriminal();
+                break;
             case(3):
                 removeSuspect();
+                break;
             case(4):
                 removeWitness();
+                break;
             case(5):
                 removePersonOfInterest();
+                break;
             case(6):
                 removeVictim();
+                break;
         }
     }
 
