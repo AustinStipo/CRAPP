@@ -39,6 +39,8 @@ public class CrappUI {
         while(!loggedOut) {
 			mainMenu();
 		}
+
+        logOut();
     }
 
     /**
@@ -353,6 +355,20 @@ public class CrappUI {
             return choice;
         }
         return -1;
+    }
+
+    /**
+     * Will save the what ever was done to the json files
+     */
+    public void logOut() {
+        DataWriter.saveUsers();
+        DataWriter.saveCrimes();
+        DataWriter.saveCriminals();
+        DataWriter.saveEvidences();
+        DataWriter.saveSuspects();
+        DataWriter.saveVictims();
+        DataWriter.saveWitnesses();
+        DataWriter.savePOIs();
     }
 
     /**

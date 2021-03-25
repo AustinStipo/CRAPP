@@ -87,7 +87,7 @@ public class DataWriter extends DataConstants {
         }
     }
 
-    public static void savewitnesss() {
+    public static void savePOIs() {
         ArrayList<PersonOfInterest> poiList = CriminalApplication.getInstance().getPersonsOfInterest();
         JSONArray jsonPOIs = new JSONArray();
 		
