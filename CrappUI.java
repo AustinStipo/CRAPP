@@ -120,20 +120,17 @@ public class CrappUI {
         int severity = Integer.parseInt(severityInput);
         System.out.println("Enter the Jurisdiction: ");
         String jurisdiction = scanner.nextLine();
-        System.out.println("Enter your ID: ");
-        String userIDString = scanner.nextLine();
-        int userID = Integer.parseInt(userIDString);
         User userTemp= new User();
         ArrayList<User> detectives = new ArrayList<User>();
+        int size = crapp.getCrimes().size();
+        int id = crapp.getCrimes().get(size-1).getUuid()+1;
         for(User user : crapp.getUsers())
         {
-            if(user.getUuid()==userID){
+            if(user.getUuid()==id){
                 userTemp = user;
                 detectives.add(user);
             }
         }    
-        int size = crapp.getCrimes().size();
-        int id = crapp.getCrimes().get(size-1).getUuid()+1;
         Crime temp = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, userTemp);
         crapp.addCrime(temp);
         System.out.println(ACTION);
@@ -161,19 +158,16 @@ public class CrappUI {
         String eyeColor = scanner.nextLine();
         System.out.println("Enter the criminal's address: ");
         String address = scanner.nextLine();
-        System.out.println("Enter your ID: ");
-        String userIDString = scanner.nextLine();
-        int userID = Integer.parseInt(userIDString);
         User userTemp= new User();
+        int size = crapp.getCriminals().size();
+        int id = crapp.getCriminals().get(size-1).getUuid()+1;
         for(User user : crapp.getUsers())
         {
-            if(user.getUuid()==userID){
+            if(user.getUuid()==id){
                 userTemp = user;
                 // add(user);
             }
         }    
-        int size = crapp.getCriminals().size();
-        int id = crapp.getCriminals().get(size-1).getUuid()+1;
         Criminal temp = new Criminal(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, userTemp);
         crapp.addCriminal(temp);
         System.out.println(ACTION);
