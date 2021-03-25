@@ -59,12 +59,14 @@ public abstract class DataConstants {
     protected static final String ENTERED_EVIDENCE = "enteredEvidence";
     protected static final String EVIDENCE_HANDLED = "handledEvidence";
     protected static final String COMMENTS = "comments";
+    protected static final String COMMENT = "comment";
     
     protected static final String POI_FILE = "json/Personofinterest.json";
     protected static final String SUSPECT_ASSOCIATED_TO = "suspectAssociatedTo";
     protected static final String ASSOCIATION_TO_SUSPECT = "associationToSuspect";
     protected static final String ASSOCIATION_TO_CASE = "associationToCase";
     protected static final String STORIES = "stories";
+    protected static final String STORY = "story";
     
     protected static final String SUSPECT_FILE = "json/Suspect.json";
     protected static final String ALIBI = "alibi";

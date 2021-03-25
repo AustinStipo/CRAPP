@@ -57,7 +57,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(CRIMINAL_FILE)) {
  
             file.write(jsonCriminals.toJSONString());
             file.flush();
@@ -77,7 +77,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(EVIDENCE_FILE)) {
  
             file.write(jsonEvidences.toJSONString());
             file.flush();
@@ -97,7 +97,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(POI_FILE)) {
  
             file.write(jsonPOIs.toJSONString());
             file.flush();
@@ -117,7 +117,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(SUSPECT_FILE)) {
  
             file.write(jsonSuspects.toJSONString());
             file.flush();
@@ -137,7 +137,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(VICTIM_FILE)) {
  
             file.write(jsonVictims.toJSONString());
             file.flush();
@@ -157,7 +157,7 @@ public class DataWriter extends DataConstants {
 		}
 		
 		//Write JSON file
-        try (FileWriter file = new FileWriter(CRIME_FILE_NAME)) {
+        try (FileWriter file = new FileWriter(WITNESS_FILE)) {
  
             file.write(jsonWitnesss.toJSONString());
             file.flush();
@@ -277,7 +277,13 @@ public class DataWriter extends DataConstants {
         evidenceDetails.put(LOCATION, evidence.getLocation());
         evidenceDetails.put(TIMES, evidence.getTime());
         evidenceDetails.put(ENTERED_EVIDENCE, evidence.getEnteredEvidence().getUuid());
-        evidenceDetails.put(COMMENTS, evidence.getComments());
+        JSONArray comments = new JSONArray();
+        for(int j = 0; j < evidence.getComments().size(); j++) {
+            JSONObject comment = new JSONObject();
+            comment.put(COMMENT, evidence.getComments().get(j));
+            comments.add(comment);
+        }
+        evidenceDetails.put(COMMENTS, comments);
         return evidenceDetails;
     }
 
@@ -297,7 +303,13 @@ public class DataWriter extends DataConstants {
         poiDetails.put(EMAIL, poi.getEmail());
         poiDetails.put(SUSPECT_ASSOCIATED_TO, poi.getSuspectAssociatedTo().getUuid());
         poiDetails.put(ASSOCIATION_TO_SUSPECT, poi.getAssociationToSuspect());
-        poiDetails.put(STORIES, poi.getStory());
+        JSONArray stories = new JSONArray();
+        for(int j = 0; j < poi.getStory().size(); j++) {
+            JSONObject story = new JSONObject();
+            story.put(STORY, poi.getStory().get(j));
+            stories.add(story);
+        }
+        poiDetails.put(STORIES, stories);
         return poiDetails;
     }
 
@@ -358,8 +370,8 @@ public class DataWriter extends DataConstants {
     }
 
     public static void main(String[] args) {
-        CriminalApplication.getInstance().loadCrimes();
-        saveCrimes();
+        CriminalApplication.getInstance().loadCriminals();
+        saveCriminals();
     }
 
 }

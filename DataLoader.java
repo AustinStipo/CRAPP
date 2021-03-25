@@ -212,9 +212,13 @@ public class DataLoader extends DataConstants {
                 String time = (String)personJSON.get(TIME);
                 int enteredEvidenceID = ((Long)personJSON.get(ENTERED_EVIDENCE)).intValue();
                 User enteredEvidence = CriminalApplication.getInstance().getUser(enteredEvidenceID);
-                String comment = (String)personJSON.get(COMMENTS);
+                JSONArray commentsJSON = (JSONArray)personJSON.get(COMMENTS);
                 ArrayList<String> comments = new ArrayList<String>();
-                comments.add(comment);
+                for(int j = 0; j < commentsJSON.size(); j++) {
+                    JSONObject commentJSON = (JSONObject)commentsJSON.get(j);
+                    String comment = (String)commentJSON.get(COMMENT);
+                    comments.add(comment);
+                } //Need to read JSONArray
 
                 evidences.add(new Evidence(id, evidenceType, location, time, enteredEvidence, comments));
             }
@@ -251,10 +255,14 @@ public class DataLoader extends DataConstants {
                 int suspectAssociatedToID = ((Long)personJSON.get(SUSPECT_ASSOCIATED_TO)).intValue();
                 Suspect suspectAssociatedTo = new Suspect(suspectAssociatedToID);
                 String associationToSuspect = (String)personJSON.get(ASSOCIATION_TO_SUSPECT);
-                String story = (String)personJSON.get(STORIES);
                 String associationToCase = "";
                 PersonOfInterest poi = new PersonOfInterest(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, suspectAssociatedTo, associationToCase, associationToSuspect);
-                poi.addStory(story);
+                JSONArray storiesJSON = (JSONArray)personJSON.get(STORIES);
+                for(int j = 0; j < storiesJSON.size(); j++) {
+                    JSONObject storyJSON = (JSONObject)storiesJSON.get(j);
+                    String story = (String)storyJSON.get(STORY);
+                    poi.addStory(story);
+                } //Need to read JSONArray
                 personsofinterest.add(poi);
             }
             return personsofinterest;

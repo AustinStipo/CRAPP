@@ -313,7 +313,7 @@ public class CrappUI {
         String associationToSuspect = scanner.nextLine();
         int size = crapp.getVictims().size();
         int id = crapp.getVictims().get(size-1).getUuid()+1;
-        Victim v = new Victim(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, associationToSuspect)
+        Victim v = new Victim(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, associationToSuspect);
         crapp.getVictims().add(v);
         System.out.println(ACTION);
     }

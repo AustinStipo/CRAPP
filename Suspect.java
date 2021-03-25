@@ -57,6 +57,9 @@ public class Suspect extends Person{
      * @return The tattos
      */
     public String getTattoo() {
+        if(tattoos.size() == 0) {
+            return "";
+        }
         return tattoos.get(tattoos.size() - 1);
     }
 

@@ -41,6 +41,9 @@ public class Criminal extends Person {
     }
 
     public String getTattoo() {
+        if(tattoos.size() == 0) {
+            return "";
+        }
         return tattoos.get(tattoos.size() - 1);
     }
 
