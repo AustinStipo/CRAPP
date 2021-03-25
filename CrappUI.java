@@ -131,27 +131,167 @@ public class CrappUI {
     }
 
     public void addCriminal() {
-
+        System.out.println("Enter the criminals first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter the criminals last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter the criminals age: ");
+        String ageInput = scanner.nextLine();
+        int age = Integer.parseInt(ageInput);
+        System.out.println("Enter the criminals height (in inches): ");
+        String heightInput = scanner.nextLine();
+        int height = Integer.parseInt(heightInput);
+        System.out.println("Enter the criminals weight (in pounds): ");
+        String weightInput = scanner.nextLine();
+        int weight = Integer.parseInt(weightInput);
+        System.out.println("Enter the criminals skin color: ");
+        String skinColor = scanner.nextLine();
+        System.out.println("Enter the criminals hair color: ");
+        String hairColor = scanner.nextLine();
+        System.out.println("Enter the criminals eye color: ");
+        String eyeColor = scanner.nextLine();
+        System.out.println("Enter the criminals address: ");
+        String address = scanner.nextLine();
+        System.out.println("Enter your ID: ");
+        String userIDString = scanner.nextLine();
+        int userID = Integer.parseInt(userIDString);
+        User userTemp= new User();
+        for(User user : crapp.getUsers())
+        {
+            if(user.getUuid()==userID){
+                userTemp = user;
+                // add(user);
+            }
+        }    
+        int size = crapp.getCrimes().size();
+        int id = crapp.getCrimes().get(size-1).getUuid()+1;
+        Criminal temp = new Criminal(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, userTemp);
+        crapp.addCriminal(temp);
         System.out.println(ACTION);
     }
 
     public void addSuspect() {
-
+        System.out.println("Enter the suspects first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter the suspects last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter suspects the age: ");
+        String ageInput = scanner.nextLine();
+        int age = Integer.parseInt(ageInput);
+        System.out.println("Enter the suspects height (in inches): ");
+        String heightInput = scanner.nextLine();
+        int height = Integer.parseInt(heightInput);
+        System.out.println("Enter the suspects weight (in pounds): ");
+        String weightInput = scanner.nextLine();
+        int weight = Integer.parseInt(weightInput);
+        System.out.println("Enter the suspects skin color: ");
+        String skinColor = scanner.nextLine();
+        System.out.println("Enter the suspects hair color: ");
+        String hairColor = scanner.nextLine();
+        System.out.println("Enter the suspects eye color: ");
+        String eyeColor = scanner.nextLine();
+        System.out.println("Enter the suspects address: ");
+        String address = scanner.nextLine();
+        System.out.println("Enter the suspects alibi: ");
+        String alibi = scanner.nextLine();
         System.out.println(ACTION);
     }
 
     public void addWitness() {
-
+        System.out.println("Enter the witnesses first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter the witnesses last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter witnesses the age: ");
+        String ageInput = scanner.nextLine();
+        int age = Integer.parseInt(ageInput);
+        System.out.println("Enter the witnesses height (in inches): ");
+        String heightInput = scanner.nextLine();
+        int height = Integer.parseInt(heightInput);
+        System.out.println("Enter the witnesses weight (in pounds): ");
+        String weightInput = scanner.nextLine();
+        int weight = Integer.parseInt(weightInput);
+        System.out.println("Enter the witnesses skin color: ");
+        String skinColor = scanner.nextLine();
+        System.out.println("Enter the witnesses hair color: ");
+        String hairColor = scanner.nextLine();
+        System.out.println("Enter the witnesses eye color: ");
+        String eyeColor = scanner.nextLine();
+        System.out.println("Enter the witnesses address: ");
+        String address = scanner.nextLine();
+        System.out.println("Enter the witnesses phone number");
+        String phoneNumberInput = scanner.nextLine();
+        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        System.out.println("Enter the witnesses email: ");
+        String email = scanner.nextLine();
         System.out.println(ACTION);
     }
 
     public void addPersonOfInterest() {
-
+        System.out.println("Enter the person of interests first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter the person of interests last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter person of interests the age: ");
+        String ageInput = scanner.nextLine();
+        int age = Integer.parseInt(ageInput);
+        System.out.println("Enter the person of interests height (in inches): ");
+        String heightInput = scanner.nextLine();
+        int height = Integer.parseInt(heightInput);
+        System.out.println("Enter the person of interests weight (in pounds): ");
+        String weightInput = scanner.nextLine();
+        int weight = Integer.parseInt(weightInput);
+        System.out.println("Enter the person of interests skin color: ");
+        String skinColor = scanner.nextLine();
+        System.out.println("Enter the person of interests hair color: ");
+        String hairColor = scanner.nextLine();
+        System.out.println("Enter the person of interests eye color: ");
+        String eyeColor = scanner.nextLine();
+        System.out.println("Enter the person of interests address: ");
+        String address = scanner.nextLine();
+        System.out.println("Enter the person of interests phone number");
+        String phoneNumberInput = scanner.nextLine();
+        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        System.out.println("Enter the person of interests email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter the person of interests personal associations: ");
+        String suspectAssociatedTo = scanner.nextLine();
+        System.out.println("Enter the person of interests association to the case: ");
+        String associationToCase = scanner.nextLine();
+        System.out.println("Enter the person of interests association to suspect: ");
+        String associationToSuspect = scanner.nextLine();
         System.out.println(ACTION);
     }
 
     public void addVictim() {
-
+        System.out.println("Enter the victims first name: ");
+        String firstName = scanner.nextLine();
+        System.out.println("Enter the victims last name: ");
+        String lastName = scanner.nextLine();
+        System.out.println("Enter victims the age: ");
+        String ageInput = scanner.nextLine();
+        int age = Integer.parseInt(ageInput);
+        System.out.println("Enter the victims height (in inches): ");
+        String heightInput = scanner.nextLine();
+        int height = Integer.parseInt(heightInput);
+        System.out.println("Enter the victims weight (in pounds): ");
+        String weightInput = scanner.nextLine();
+        int weight = Integer.parseInt(weightInput);
+        System.out.println("Enter the victims skin color: ");
+        String skinColor = scanner.nextLine();
+        System.out.println("Enter the victims hair color: ");
+        String hairColor = scanner.nextLine();
+        System.out.println("Enter the victims eye color: ");
+        String eyeColor = scanner.nextLine();
+        System.out.println("Enter the victims address: ");
+        String address = scanner.nextLine();
+        System.out.println("Enter the victims phone number");
+        String phoneNumberInput = scanner.nextLine();
+        int phoneNumber = Integer.parseInt(phoneNumberInput);
+        System.out.println("Enter the victims email: ");
+        String email = scanner.nextLine();
+        System.out.println("Enter the victims association to suspect: ");
+        String associationToSuspect = scanner.nextLine();
         System.out.println(ACTION);
     }
 
