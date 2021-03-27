@@ -1,0 +1,90 @@
+A Bank Robbery happenned on January 12, 2021 at 1500 Lincoln St
+Description: A man was seen holding up a bank and walking out with a bag of money and a gun
+Crime Number: 6
+Solved?: false
+Severity: 8
+Jurisdiction: USCPD
+On the case: Michael Payne
+Victims: ID: 3
+	Name: Carl Giambetty
+	Age: 45
+	Height: 70 inches
+	Weight: 170 lbs.
+	Skin Color: brown
+	Hair Color: black
+	Eye Color: brown
+	Address: 12 Super St
+	Phone Number: 1295649908
+	Email: carlgiambetty@yahoo.com
+	Association To Suspect: 
+	Stories: 
+	Hospitalized
+
+Witnesses: ID: 2
+	Name: Billy Turner
+	Age: 66
+	Height: 74 inches
+	Weight: 200 lbs.
+	Skin Color: white
+	Hair Color: white
+	Eye Color: brown
+	Address: Address: Address: Address: 23987 Cornerstone Ave
+	Phone Number: 9450729932
+	Email: null
+	Suspect Associated to: 
+	Stories: Was in bank during robbery. Says robber sounded young and as pretty skinny
+ID: 3
+	Name: Carrie Sider
+	Age: 30
+	Height: 71 inches
+	Weight: 140 lbs.
+	Skin Color: brown
+	Hair Color: black
+	Eye Color: brown
+	Address: Address: Address: Address: 5522 Oval Cir
+	Phone Number: 3925965043
+	Email: null
+	Suspect Associated to: 
+	Stories: Saw young man running out of bank with gun and bag of money in the direction the gun was found
+
+Suspects: ID: 2
+	Name: Austin Woodley
+	Age: 29
+	Height: 70 inches
+	Weight: 200 lbs.
+	Skin Color: white
+	Hair Color: brown
+	Eye Color: green
+	Address: 136 Oakland St.
+	Aliases: Larry Bird
+	Tattoos: grizzly bear on the right thigh
+	Crimes Committed: Murdering WatermelonMurdering Watermelon
+	Evidence Found: 
+	Alibi: Taking daughter to get ice creamID: 3
+	Name: Vincent Delgado
+	Age: 18
+	Height: 69 inches
+	Weight: 155 lbs.
+	Skin Color: brown
+	Hair Color: brown
+	Eye Color: brown
+	Address: 9455 Bowman Lane
+	Aliases: Vinny
+	Tattoos: a nametag that reads "Hi my name is Vinny" on the left pectoral
+	Crimes Committed: AssaultAssault
+	Evidence Found: 
+	Alibi: Just hangin around
+Evidence: ID: 4
+	Evidence Type: gun
+	Location: 1800 Lincoln st
+	Time: null
+	Entered Evidence: Michael Payne
+	Comments: gun was found down the street of the bank with Vincent Delgado's fingerprints
+ID: 5
+	Evidence Type: Money bag tracker
+	Location: 9455 Bowman Lane
+	Time: null
+	Entered Evidence: Michael Payne
+	Comments: Tracker was tracked back to Vincent Delgado's known address
+
+Extra Info: Vincent Delgado seems to be out prime suspect right now based on evidence

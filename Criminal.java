@@ -48,6 +48,9 @@ public class Criminal extends Person {
     }
 
     public boolean getHasTattoos() {
+        if(tattoos.size() > 0) {
+            hasTattoos = true;
+        }
         return hasTattoos;
     }
 

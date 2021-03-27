@@ -96,9 +96,9 @@ public class Witness extends Person{
                 stor = stor + s + ", ";
             }
         }
-        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
-        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nEmail: " + email + "\nSuspect Associated to: "
-        + "\nStories: " + stor;
+        String str = "ID: " + id + "\n\tName: " + firstName + " " + lastName + "\n\tAge: " + age + "\n\tHeight: " + height + " inches\n\tWeight: " + weight + " lbs.\n\tSkin Color: " + skinColor
+        + "\n\tHair Color: " + hairColor + "\n\tEye Color: " + eyeColor + "\n\tAddress: " + address + "\n\tPhone Number: " + phoneNumber + "\n\tEmail: " + email + "\n\tSuspect Associated to: "
+        + "\n\tStories: " + stor + "\n";
         return str;
     }
 }

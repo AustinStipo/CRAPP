@@ -116,7 +116,7 @@ public class Person {
      * @return The address
      */
     public String getAddress() {
-        return "Address: " + address;
+        return address;
     }
 
     /**

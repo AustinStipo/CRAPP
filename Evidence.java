@@ -153,6 +153,6 @@ public class Evidence {
                 comm = comm + c + ", ";           
             }
         }
-        return "ID: " + id + "\nEvidence Type: " + evidenceType + "\nLocation: " + location + "\nTime: " + time + "\nEntered Evidence: " + enteredEvidence.getFirstName() + " " + enteredEvidence.getLastName() + "\nComments: " + comm;
+        return "ID: " + id + "\n\tEvidence Type: " + evidenceType + "\n\tLocation: " + location + "\n\tTime: " + time + "\n\tEntered Evidence: " + enteredEvidence.getFirstName() + " " + enteredEvidence.getLastName() + "\n\tComments: " + comm + "\n";
     }
 }

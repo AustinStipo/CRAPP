@@ -349,6 +349,7 @@ public class DataWriter extends DataConstants {
         victimDetails.put(ALIVE, victim.getAlive());
         victimDetails.put(EMAIL, victim.getEmail());
         victimDetails.put(ASSOCIATION_TO_SUSPECT, victim.getAssociationToSuspect());
+        victimDetails.put(STORIES, victim.getLastStory());
         return victimDetails;
     }
 

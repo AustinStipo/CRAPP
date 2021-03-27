@@ -185,6 +185,9 @@ public class CriminalApplication {
      * @return The criminal searched for
      */
     public Criminal searchCriminal(int id) {
+        if(criminals == null) {
+            criminals = loadCriminals();
+        }
         for(Criminal criminal: criminals) {
             if(criminal.getUuid()==id) {
                 return criminal;
@@ -448,6 +451,9 @@ public class CriminalApplication {
      * @return The crime searched for
      */
     public Crime searchCrime(int id) {
+        if(crimes == null) {
+            crimes = loadCrimes();
+        }
         for(Crime crime: crimes) {
             if(crime.getUuid()==id) {
                 return crime;

@@ -165,8 +165,8 @@ public class Suspect extends Person{
      */
     public String toString() {
         loadPastCrimes();
-        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
-        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address;
+        String str = "ID: " + id + "\n\tName: " + firstName + " " + lastName + "\n\tAge: " + age + "\n\tHeight: " + height + " inches\n\tWeight: " + weight + " lbs.\n\tSkin Color: " + skinColor
+        + "\n\tHair Color: " + hairColor + "\n\tEye Color: " + eyeColor + "\n\tAddress: " + address;
         String tatt = "";
         String ali = "";
         String assoc = "";
@@ -213,17 +213,17 @@ public class Suspect extends Person{
             }
         }
         if(!assoc.equals("")) {
-            str = str + "\nAssociates: " + assoc;
+            str = str + "\n\tAssociates: " + assoc;
         }
         if(!ali.equals("")) {
-            str = str + "\nAliases: " + ali;
+            str = str + "\n\tAliases: " + ali;
         }
         if(!tatt.equals("")) {
-            str = str + "\nTattoos: " + tatt;
+            str = str + "\n\tTattoos: " + tatt;
         }
-        str = str + "\nCrimes Committed: " + crimes;
-        str = str + "\nEvidence Found: " + evid;
-        str = str + "\nAlibi: " + alibi;
+        str = str + "\n\tCrimes Committed: " + crimes;
+        str = str + "\n\tEvidence Found: " + evid;
+        str = str + "\n\tAlibi: " + alibi;
         return str;
     }
 }

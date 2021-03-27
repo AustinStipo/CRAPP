@@ -164,16 +164,16 @@ public class Victim extends Person {
                 stor = stor + s + ", ";
             }
         }
-        String str = "ID: " + id + "\nName: " + firstName + " " + lastName + "\nAge: " + age + "\nHeight: " + height + " inches\nWeight: " + weight + " lbs.\nSkin Color: " + skinColor
-        + "\nHair Color: " + hairColor + "\nEye Color: " + eyeColor + "\nAddress: " + address + "\nPhone Number: " + phoneNumber + "\nEmail: " + email + "\nSuspect Associated to: "
-        + "\nAssociation To Suspect: " + associationToSuspect + "\nStories: " + stor;
+        String str = "ID: " + id + "\n\tName: " + firstName + " " + lastName + "\n\tAge: " + age + "\n\tHeight: " + height + " inches\n\tWeight: " + weight + " lbs.\n\tSkin Color: " + skinColor
+        + "\n\tHair Color: " + hairColor + "\n\tEye Color: " + eyeColor + "\n\tAddress: " + address + "\n\tPhone Number: " + phoneNumber + "\n\tEmail: " + email 
+        + "\n\tAssociation To Suspect: " + associationToSuspect + "\n\tStories: " + stor;
         if(hospitalized) {
-            str = str + "\nHospitalized";
+            str = str + "\n\tHospitalized";
         }
         if(!alive) {
-            str = str + "\nDead";
+            str = str + "\n\tDead";
         }
-        return str;
+        return str + "\n";
     }
 }
 

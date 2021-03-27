@@ -331,67 +331,73 @@ public class Crime {
             if(victims.size() == 0) {
                 break;
             }
-            if(v.equals(victims.get(victims.size()-1))) {
-                victs = victs + v.getFirstName() + " " + v.getLastName();
-            }
-            else {
-                victs = victs + v.getFirstName() + " " + v.getLastName() + ", ";
-            }
+            victs = victs + v;
+            // if(v.equals(victims.get(victims.size()-1))) {
+            //     victs = victs + v.getFirstName() + " " + v.getLastName();
+            // }
+            // else {
+            //     victs = victs + v.getFirstName() + " " + v.getLastName() + ", ";
+            // }
         }
         for(Witness w: witnesses) {
             if(witnesses.size() == 0) {
                 break;
             }
-            if(w.equals(witnesses.get(witnesses.size()-1))) {
-                witns = witns + w.getFirstName() + " " + w.getLastName();
-            }
-            else {
-                witns = witns + w.getFirstName() + " " + w.getLastName() + ", ";
-            }
+            witns = witns + w;
+            // if(w.equals(witnesses.get(witnesses.size()-1))) {
+            //     witns = witns + w.getFirstName() + " " + w.getLastName();
+            // }
+            // else {
+            //     witns = witns + w.getFirstName() + " " + w.getLastName() + ", ";
+            // }
         }
         for(PersonOfInterest p: personOfInterest) {
             if(personOfInterest.size() == 0) {
                 break;
             }
-            if(p.equals(personOfInterest.get(personOfInterest.size()-1))) {
-                pois = pois + p.getFirstName() + " " + p.getLastName();
-            }
-            else {
-                pois = pois + p.getFirstName() + " " + p.getLastName() + ", ";
-            }
+            pois = pois + p;
+            // if(p.equals(personOfInterest.get(personOfInterest.size()-1))) {
+            //     pois = pois + p.getFirstName() + " " + p.getLastName();
+            // }
+            // else {
+            //     pois = pois + p.getFirstName() + " " + p.getLastName() + ", ";
+            // }
         }
         for(Suspect s: suspects) {
             if(suspects.size() == 0) {
                 break;
             }
-            if(s.equals(suspects.get(suspects.size()-1))) {
-                susps = susps + s.getFirstName() + " " + s.getLastName();
-            }
-            else {
-                susps = susps + s.getFirstName() + " " + s.getLastName() + ", ";
-            }
+            susps = susps + s;
+            // if(s.equals(suspects.get(suspects.size()-1))) {
+            //     susps = susps + s.getFirstName() + " " + s.getLastName();
+            // }
+            // else {
+            //     susps = susps + s.getFirstName() + " " + s.getLastName() + ", ";
+            // }
         }
         for(Criminal c: criminals) {
             if(criminals.size() == 0) {
                 break;
             }
-            if(c.equals(criminals.get(criminals.size()-1))) {
-                crims = crims + c.getFirstName() + " " + c.getLastName();
-            }
-            else {
-                crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
-            }
+            crims = crims + c;
+            // if(c.equals(criminals.get(criminals.size()-1))) {
+            //     crims = crims + c.getFirstName() + " " + c.getLastName();
+            // }
+            // else {
+            //     crims = crims + c.getFirstName() + " " + c.getLastName() + ", ";
+            // }
         }
         for(Evidence e: evidence) {
             if(evidence.size() == 0) {
                 break;
             }
-            if(e.equals(evidence.get(evidence.size()-1))) {
-                evids = evids + e.getEvidenceType();
-            }
-            else {
-                evids = evids + e.getEvidenceType() + ", ";
-            }
+            evids = evids + e;
+            // if(e.equals(evidence.get(evidence.size()-1))) {
+            //     evids = evids + e.getEvidenceType();
+            // }
+            // else {
+            //     evids = evids + e.getEvidenceType() + ", ";
+            // }
         }
         if(!victs.equals("")) {
             str = str + "\nVictims: " + victs;
