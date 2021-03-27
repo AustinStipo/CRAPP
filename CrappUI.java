@@ -402,11 +402,16 @@ public class CrappUI {
             System.out.println("Not a valid command");
         }
 
-        switch(input) {
-            case(1):
-                searchCrime();
-            case(2):
-                searchCriminal();
+        // switch(input) {
+        //     case(1):
+        //         searchCrime();
+        //     case(2):
+        //         searchCriminal();
+        // }
+        if(input == 1) {
+            searchCrime();
+        } else {
+            searchCriminal();
         }
     }
 
@@ -426,8 +431,10 @@ public class CrappUI {
     }
 
     public void searchCriminal() {
-        int id = idPrompt("criminal");
-        Criminal temp = crapp.searchCriminal(id);
+        // int id = idPrompt("criminal");
+        System.out.println("Please select category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
+        String category = scanner.nextLine();
+        ArrayList<Criminal> temp = crapp.searchCriminal(category);
         System.out.println(temp);
         writeToFile(temp);
         System.out.println(ACTION);

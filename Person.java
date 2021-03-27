@@ -60,7 +60,7 @@ public class Person {
      * @return The first name + last name
      */
     public String getName() {
-        return "First Name: " + firstName + "\nLastName: " + lastName;
+        return firstName + " " + lastName;
     }
 
     /**

@@ -1,6 +1,7 @@
 // import org.graalvm.compiler.nodes.virtual.EnsureVirtualizedNode;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Scanner;
 
 /**
  * A Criminal Application
@@ -194,6 +195,125 @@ public class CriminalApplication {
             }
         }
         return null;
+    }
+    
+    /**
+     * Searches for criminals based on certain category
+     * @param search is what you are searching for
+     * @param category is the catergory to search for it under
+     * @return The criminal searched for
+     */
+    public ArrayList<Criminal> searchCriminal(String category) {
+        if(criminals == null) {
+            criminals = loadCriminals();
+        }
+        ArrayList<Criminal> crims = new ArrayList<Criminal>();
+		Scanner scanner = new Scanner(System.in);
+        boolean done = false;
+        while(!done){
+            if(category.equalsIgnoreCase("ID")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getUuid() == Integer.parseInt(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Name")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getName().equalsIgnoreCase(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Age")) { //Age range would be better
+                System.out.print("Lower Bound: ");
+                String lower = scanner.nextLine();
+                System.out.print("Upper Bound: ");
+                String upper = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getAge() > Integer.parseInt(lower) && criminal.getAge() < Integer.parseInt(upper)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Height")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getHeight() == Integer.parseInt(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Skin Color")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getSkinColor().equalsIgnoreCase(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Hair Color")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getHairColor().equalsIgnoreCase(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else if(category.equalsIgnoreCase("Tattoos")) {
+                System.out.print("Search: ");
+                String search = scanner.nextLine();
+                for(Criminal criminal: criminals) {
+                    if(criminal.getTattoo().equalsIgnoreCase(search)) {
+                        crims.add(criminal);
+                    }
+                }
+            }
+            else {
+                System.out.println("Invalid Response. Try again");
+                System.out.println("Please select a category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
+                category = scanner.nextLine();
+                searchCriminal(category);                
+            }
+            for(int i = 0; i < crims.size(); i++) {
+                for(int j = i + 1; j < crims.size(); j++) {
+                    if(crims.get(i) == crims.get(j)) {
+                        crims.remove(j);
+                    }
+                }
+            }
+            if(crims.size() == 0) {
+                System.out.println("No match. Would you like to do another search? (y/n)");
+                String answer = scanner.nextLine();
+                if(answer.equalsIgnoreCase("y")){
+                    System.out.println("Please select a category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
+                    category = scanner.nextLine();
+                    searchCriminal(category);
+                }
+                else {
+                    done = true;
+                }
+            }
+            else {
+                System.out.println("We found " + crims.size() + " results. Would you like to narrow your search? (y/n)");
+                String answer = scanner.nextLine();
+                if(answer.equalsIgnoreCase("y")) {
+                    System.out.println("Please select a new category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
+                    category = scanner.nextLine();
+                }
+                else {
+                    done = true;
+                }
+            }
+        }
+        return crims;
     }
 
     /**

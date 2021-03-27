@@ -83,10 +83,12 @@ public class Criminal extends Person {
     }
 
     public void loadPastCrimes() {
-        for(Crime crimes: CriminalApplication.getInstance().getCrimes()){
-            for(Criminal criminals: crimes.getCriminals()) {
-                if(criminals.getUuid() == id) {
-                    pastCrimes.add(crimes);
+        if(pastCrimes.size() == 0) {            
+            for(Crime crimes: CriminalApplication.getInstance().getCrimes()){
+                for(Criminal criminals: crimes.getCriminals()) {
+                    if(criminals.getUuid() == id) {
+                        pastCrimes.add(crimes);
+                    }
                 }
             }
         }
@@ -215,6 +217,6 @@ public class Criminal extends Person {
             str = str + "\nCharges Dropped";
         }
         str = str + "\nSeverity Ranking: " + severity;
-        return str;
+        return str + "\n";
     }
 }
