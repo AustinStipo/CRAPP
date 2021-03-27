@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
 /**
  * A CrappUI
  * @author Connor Downey, Alex Santoro, Austin Stipo, and Sarah Carlucci
@@ -417,6 +421,7 @@ public class CrappUI {
         int id = idPrompt("crime");
         Crime temp = crapp.searchCrime(id);
         System.out.println(temp);
+        writeToFile(temp);
         System.out.println(ACTION);
     }
 
@@ -424,6 +429,7 @@ public class CrappUI {
         int id = idPrompt("criminal");
         Criminal temp = crapp.searchCriminal(id);
         System.out.println(temp);
+        writeToFile(temp);
         System.out.println(ACTION);
     }
 
@@ -518,6 +524,22 @@ public class CrappUI {
             return choice;
         }
         return -1;
+    }
+
+    public void writeToFile(Object o) {
+        try {
+            System.out.println("Would you like to print to a txt file? (y/n)");
+            String input = scanner.nextLine();
+            if(input.equalsIgnoreCase("y")) {
+                System.out.println("What would you like to name the file?");
+                String fileName = "text/" + scanner.nextLine() + ".txt";
+                FileWriter writer = new FileWriter(fileName, false);
+                writer.write(o.toString());
+                writer.close();
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
