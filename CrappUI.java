@@ -432,7 +432,7 @@ public class CrappUI {
 
     public void searchCriminal() {
         // int id = idPrompt("criminal");
-        System.out.println("Please select category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
+        System.out.println("Please select category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos)");
         String category = scanner.nextLine();
         ArrayList<Criminal> temp = crapp.searchCriminal(category);
         System.out.println(temp);
