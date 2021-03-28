@@ -22,7 +22,7 @@ public class CriminalApplication {
     /**
      * Creates a Criminal Application
      */
-    public CriminalApplication() {
+    private CriminalApplication() {
         // criminals = new ArrayList<Criminal>();
         // witnesses = new ArrayList<Witness>();
         // suspects = new ArrayList<Suspect>();
