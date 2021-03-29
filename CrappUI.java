@@ -234,9 +234,12 @@ public class CrappUI {
         String phoneNumber = scanner.nextLine();
         System.out.println("Enter witness email: ");
         String email = scanner.nextLine();
+        System.out.println("Enter witness story: ");
+        String story = scanner.nextLine();
         int size = crapp.getWitnesses().size();
         int id = crapp.getWitnesses().get(size-1).getUuid()+1;
         Witness temp = new Witness(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email);
+        temp.addStory(story);
         crapp.getWitnesses().add(temp);
         System.out.println(ACTION);
     }
