@@ -203,12 +203,14 @@ public class CriminalApplication {
      * @param category is the catergory to search for it under
      * @return The criminal searched for
      */
-    public ArrayList<Criminal> searchCriminal(String category) {
+    public ArrayList<Criminal> searchCriminal() {
         if(criminals == null) {
             criminals = loadCriminals();
         }
-        ArrayList<Criminal> crims = new ArrayList<Criminal>();
 		Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos)");
+        String category = scanner.nextLine();
+        ArrayList<Criminal> crims = new ArrayList<Criminal>();
         boolean done = false;
         while(!done){
             if(category.equalsIgnoreCase("ID")) {
@@ -280,7 +282,7 @@ public class CriminalApplication {
                 System.out.println("Invalid Response. Try again");
                 System.out.println("Please select a category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
                 category = scanner.nextLine();
-                searchCriminal(category);                
+                searchCriminal();                
             }
             for(int i = 0; i < crims.size(); i++) {
                 for(int j = i + 1; j < crims.size(); j++) {
@@ -295,7 +297,7 @@ public class CriminalApplication {
                 if(answer.equalsIgnoreCase("y")){
                     System.out.println("Please select a category for search: (ID, Name, Age, Height, Skin Color, Hair Color, Tattoos");
                     category = scanner.nextLine();
-                    searchCriminal(category);
+                    searchCriminal();
                 }
                 else {
                     done = true;
