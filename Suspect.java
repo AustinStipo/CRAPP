@@ -5,6 +5,11 @@ import java.util.ArrayList;
  * @author Connor Downey, Alex Santoro, Austin Stipo, and Sarah Carlucci
  */
 public class Suspect extends Person{
+
+    private static Suspect suspects;
+    private ArrayList<Suspect> suspectList;
+
+
     private boolean hasTattoos;
     private ArrayList<String> tattoos;
     private ArrayList<String> aliases;
@@ -37,13 +42,19 @@ public class Suspect extends Person{
         evidence = new ArrayList<Evidence>();
     }
 
+    public static Suspect getInstance() {
+		if(suspects == null) {
+			suspects = new Suspect(1);
+		}
+		return suspects;
+	}
+
     /**
      * Empty Suspect Constructor
      */
     public Suspect(int id) {
         this.id = id;
     }
-
     /**
      * Adds a tattoo to the list of tattoos
      * @param tattoos tattoos of the suspect
