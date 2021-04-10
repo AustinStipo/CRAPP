@@ -32,6 +32,7 @@ public class User {
      */
     public User(int id, String firstName, String lastName, String email, String phoneNumber, String precinct, String department, String badgeNumber, String rank, String password, ArrayList<Crime> crimesWorking) {
         this.id = id;
+        this.crimesWorking = crimesWorking;
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
