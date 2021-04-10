@@ -33,6 +33,7 @@ public class Victim extends Person {
         setEmail(email);
         setAssociationToSuspect(associationToSuspect);
         stories = new ArrayList<String>();
+        alive = true;
     }
 
     /**
