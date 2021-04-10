@@ -209,7 +209,7 @@ public class DataLoader extends DataConstants {
                 int id = ((Long)personJSON.get(ID)).intValue();
                 String evidenceType = (String)personJSON.get(EVIDENCE_TYPE);
                 String location = (String)personJSON.get(LOCATION);
-                String time = (String)personJSON.get(TIME);
+                String time = (String)personJSON.get(TIMES);
                 int enteredEvidenceID = ((Long)personJSON.get(ENTERED_EVIDENCE)).intValue();
                 User enteredEvidence = CriminalApplication.getInstance().getUser(enteredEvidenceID);
                 JSONArray commentsJSON = (JSONArray)personJSON.get(COMMENTS);

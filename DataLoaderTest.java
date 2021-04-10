@@ -196,5 +196,107 @@ class DataLoaderTest {
         criminalList = DataLoader.getCriminals();
         assertEquals(true, criminalList.get(0).getJail());
     }
-
+    
+    @Test
+    void testGetEvidenceTime() {
+        evidenceList = DataLoader.getEvidences();
+        assertEquals("11:35pm", evidenceList.get(1).getTime());
+    }
+    
+    @Test
+    void testGetSuspectWeight() {
+        suspectList = DataLoader.getSuspects();
+        assertEquals(140, suspectList.get(0).getWeight());
+    }
+    
+    @Test
+    void testGetSuspectTattooEmpty() {
+        suspectList = DataLoader.getSuspects();
+        assertEquals("", suspectList.get(0).getTattoo());
+    }
+    
+    @Test
+    void testGetPOIEmail() {
+        poiList = DataLoader.getPOIs();
+        assertEquals("jackonpollock@gmail.com", poiList.get(0).getEmail());
+    }
+    
+    @Test
+    void testGetPOISuspectAssociatedToID() {
+        poiList = DataLoader.getPOIs();
+        assertEquals(2, poiList.get(1).getSuspectAssociatedTo().getUuid());
+    }
+    
+    @Test
+    void testGetVictimPhoneNumber() {
+        victimList = DataLoader.getVictims();
+        assertEquals("8036987452", victimList.get(0).getPhoneNumber());
+    }  
+    
+    @Test
+    void testGetVictimHospitalized() {
+        victimList = DataLoader.getVictims();
+        assertEquals(false, victimList.get(0).getHospitalized());
+    }  
+    
+    @Test
+    void testGetWitnessLastName() {
+        witnessList = DataLoader.getWitnesses();
+        assertEquals("Seager", witnessList.get(0).getLastName());
+    }  
+    
+    @Test
+    void testGetWitnessStory() {
+        witnessList = DataLoader.getWitnesses();
+        assertEquals("Saw man with run away from atm dropping a crowbar", witnessList.get(0).getLastStory());
+    }  
+    
+    @Test
+    void testGetCrimeVictimFirstName() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals("Corey", crimeList.get(0).getVictims().get(0).getFirstName());
+    }  
+    
+    @Test
+    void testGetCrimeVictimEmpty() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals(new ArrayList<Victim>(), crimeList.get(1).getVictims());
+    }  
+    
+    @Test
+    void testGetCrimeWitnessAge() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals(40, crimeList.get(1).getWitnesses().get(0).getAge());
+    }  
+    
+    @Test
+    void testGetCrimeWitnessEmpty() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals(new ArrayList<Witness>(), crimeList.get(0).getWitnesses().get(0));
+    }  
+    
+    @Test
+    void testGetCrimePersonOfInterestAddress() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals("6000 Lincoln St", crimeList.get(0).getPersonOfInterest().get(0).getAddress());
+    }  
+    
+    @Test
+    void testGetCrimeSuspectAlias() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals("Crazy Tammy", crimeList.get(0).getSuspects().get(0).getAlias());
+    }  
+    
+    @Test
+    void testGetCrimeEvidenceType() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals("Crowbar", crimeList.get(1).getEvidence().get(0).getEvidenceType());
+    }  
+    
+    @Test
+    void testGetCrimeCriminalHeight() {
+        crimeList = DataLoader.getCrimes();
+        assertEquals(72, crimeList.get(0).getCriminals().get(0).getHeight());
+    }
+    
 }
