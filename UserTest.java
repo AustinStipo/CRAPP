@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,17 @@ public class UserTest {
         String firstName ="0", lastName ="0", phoneNumber ="0", email = "0", precinct = "0", department = "0", badgeNumber = "0", rank = "0", password = "0";
         ArrayList<Crime> crimesWorking = new ArrayList<Crime>();
         User u = new User(id, firstName, lastName, email, phoneNumber, precinct, department, badgeNumber, rank, password, crimesWorking);
-        assertEquals(0, u.getUuid());
+        assertEquals(id, u.getUuid());
+        assertEquals(firstName, u.getFirstName());
+        assertEquals(lastName, u.getLastName());
+        assertEquals(email, u.getEmail());
+        assertEquals(phoneNumber, u.getPhoneNumber());
+        assertEquals(precinct, u.getPrecinct());
+        assertEquals(department, u.getDepartment());
+        assertEquals(badgeNumber, u.getBadgeNumber());
+        assertEquals(rank, u.getRank());
+        assertEquals(password, u.getPassword());
+        assertNotNull(u.getCrimesWorking());
     }
 
     @Test
