@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class SuspectTest {
 	
 	private CriminalApplication crapp = CriminalApplication.getInstance();
-    private Suspect suspects = Suspect.getInstance();
+    // private Suspect suspects = Suspect.getInstance();
     private ArrayList<Suspect> suspectList = crapp.getSuspects();
     
     @BeforeEach
@@ -26,19 +26,19 @@ public class SuspectTest {
 	
 	@AfterEach
 	public void tearDown() {
-		Suspect.getInstance().getSuspects().clear();
+		crapp.getSuspects().clear();
 		DataWriter.saveUsers();
 	}
     
     @Test
 	void testHaveSuspectValidFirstItem() {
-		int has1 = Suspect.getUuid();
+		int has1 = suspectList.get(0).getUuid();
 		assertEquals(1, has1);
 	}
 
 	@Test
 	void testHaveSuspectValidLastItem() {
-		int has2 = Suspect.getUuid();
+		int has2 = suspectList.get(1).getUuid();
 		assertEquals(2, has2);
 	}
 }
