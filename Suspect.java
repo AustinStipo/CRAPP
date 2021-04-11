@@ -42,19 +42,17 @@ public class Suspect extends Person{
         evidence = new ArrayList<Evidence>();
     }
 
-    public static Suspect getInstance() {
-		if(suspects == null) {
-			suspects = new Suspect(1);
-		}
-		return suspects;
-	}
-
     /**
      * Empty Suspect Constructor
      */
+    public Suspect() {
+        
+    }
+
     public Suspect(int id) {
         this.id = id;
     }
+    
     /**
      * Adds a tattoo to the list of tattoos
      * @param tattoos tattoos of the suspect
