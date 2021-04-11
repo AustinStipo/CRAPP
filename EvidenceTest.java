@@ -22,6 +22,7 @@ public class EvidenceTest {
         assertEquals(time, e.getTime());
         assertEquals(enteredEvidence, e.getEnteredEvidence());
         assertEquals(comments, e.getComments());
+        assertNotNull(e.getComments());
     }
 
     @Test
