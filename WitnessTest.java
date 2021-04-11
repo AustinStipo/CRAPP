@@ -12,6 +12,17 @@ public class WitnessTest {
         String firstName ="0", lastName ="0", skinColor ="0", hairColor ="0", eyeColor ="0", address ="0", phoneNumber ="0", email = "0";
         Witness w = new Witness(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email);
         assertEquals(0, w.getUuid());
+        assertEquals(firstName, w.getFirstName());
+        assertEquals(lastName, w.getLastName());
+        assertEquals(email, w.getEmail());
+        assertEquals(phoneNumber, w.getPhoneNumber());
+        assertEquals(age, w.getAge());
+        assertEquals(height, w.getHeight());
+        assertEquals(weight, w.getWeight());
+        assertEquals(skinColor, w.getSkinColor());
+        assertEquals(hairColor, w.getHairColor());
+        assertEquals(eyeColor, w.getEyeColor());
+        assertEquals(address, w.getAddress());
     }
 
     @Test

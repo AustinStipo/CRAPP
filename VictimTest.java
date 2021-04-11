@@ -10,6 +10,18 @@ public class VictimTest {
         String firstName ="0", lastName ="0", skinColor ="0", hairColor ="0", eyeColor ="0", address ="0", phoneNumber ="0", email = "0", associationToSuspect = "0";
         Victim v = new Victim(id, firstName, lastName, age, height, weight, skinColor, hairColor, eyeColor, address, phoneNumber, email, associationToSuspect);
         assertEquals(0, v.getUuid());
+        assertEquals(firstName, v.getFirstName());
+        assertEquals(lastName, v.getLastName());
+        assertEquals(email, v.getEmail());
+        assertEquals(phoneNumber, v.getPhoneNumber());
+        assertEquals(age, v.getAge());
+        assertEquals(height, v.getHeight());
+        assertEquals(weight, v.getWeight());
+        assertEquals(skinColor, v.getSkinColor());
+        assertEquals(hairColor, v.getHairColor());
+        assertEquals(eyeColor, v.getEyeColor());
+        assertEquals(address, v.getAddress());
+        assertEquals(associationToSuspect, v.getAssociationToSuspect());
     }
 
     @Test
