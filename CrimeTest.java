@@ -11,18 +11,9 @@ public class CrimeTest {
     public void paramConstructorTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        ArrayList<User> addedInfo = new ArrayList<User>();
-        ArrayList<Victim> victims = new ArrayList<Victim>();
-        ArrayList<Witness> witnesses = new ArrayList<Witness>();
-        ArrayList<Suspect> suspects = new ArrayList<Suspect>();
-        ArrayList<Criminal> criminals = new ArrayList<Criminal>();
-        ArrayList<PersonOfInterest> personOfInterests = new ArrayList<PersonOfInterest>();
-        ArrayList<Evidence> evidences = new ArrayList<Evidence>();
-        ArrayList<User> users = new ArrayList<user>();
-        boolean solved = false;   
-        User enteredCrime;
-        Suspect suspectAssociatedTo = new Suspect();
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         assertEquals(id, c.getUuid());
         assertEquals(location, c.getLocation());
         assertEquals(date, c.getDate());
@@ -37,107 +28,96 @@ public class CrimeTest {
     public void addVictimTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         Victim victim = new Victim();
-        Object victims;
-        victims.add(victim);
         c.addVictim(victim);
-        assertEquals(victims, c.getVictims());
+        assertEquals(victim, c.getVictims().get(0));
     }
     
     @Test
     public void addWitnessTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         Witness witness = new Witness();
-        witness.add(witness);
         c.addWitness(witness);
-        assertEquals(witness, c.getVictims());
+        assertEquals(witness, c.getWitnesses().get(0));
     }
     
     @Test
     public void addPersonOfInterestTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         PersonOfInterest personOfInterest = new PersonOfInterest();
-        personOfInterest.add(personOfInterest);
         c.addPersonOfInterest(personOfInterest);
-        assertEquals(personOfInterest, c.getPersonOfInterest());
-    }
-    
-    @Test
-    public void addWitnessTest() {
-        int id = 0, severity = 0;
-        String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
-        Witness witness = new Witness();
-        witness.add(witness);
-        c.addWitness(witness);
-        assertEquals(witness, c.getVictims());
+        assertEquals(personOfInterest, c.getPersonOfInterest().get(0));
     }
     
     @Test
     public void addUserTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         User user = new User();
-        user.add(user);
         c.addUser(user);
-        assertEquals(user, c.getUsers());
+        assertEquals(user, c.getUsers().get(0));
     }
     
     @Test
     public void addEvidenceTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         Evidence evidence = new Evidence();
-        evidence.add(evidence);
         c.addEvidence(evidence);
-        assertEquals(evidence, c.getEvidence());
+        assertEquals(evidence, c.getEvidence().get(0));
     }
     
     @Test
     public void addCriminalTest() {
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
         Criminal criminal = new Criminal();
-        criminal.add(criminal);
         c.addCriminal(criminal);
-        assertEquals(criminal, c.getCriminals());
+        assertEquals(criminal, c.getCriminals().get(0));
     }
     
     @Test
     public void toStringTest() {
         int id = 0, severity = 0;
-        String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
+        String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0";
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
+        System.out.println(c);
         assertEquals("ID: " + id + "\n\tLocation: " + location + "\n\tDate: " + date + "\n\tDescription: " + description +
         "\n\tCrime Type: " + crimeType + "\n\tSeverity:" + severity + "\n\tJurisdiction:" + jurisdiction + 
-        "\n\tEntered Crime:" + enteredCrime, c.toString());
+        "\n\tEntered Crime: " + enteredCrime, c.toString());
     }
 
     @Test
-    public void addingInfoTest() {
+    public void addInfoTest() {
         String extraInfo = "test";
         int id = 0, severity = 0;
         String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
-        User enteredCrime;
-        Crime crime = new Crime();
-        Crime c = new Crime(id, location, date, description, crimeType, severity, jurisdiction, enteredCrime);
-        c.addingInfo(extraInfo);
-        assertEquals(extraInfo, c.getInfo());
+        User enteredCrime = new User();
+        ArrayList<User> detectives = new ArrayList<User>();
+        Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
+        c.addInfo(extraInfo);
+        assertEquals("/n"+extraInfo, c.getInfo());
     }
 }

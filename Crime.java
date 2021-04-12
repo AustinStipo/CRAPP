@@ -53,6 +53,7 @@ public class Crime {
         criminals = new ArrayList<Criminal>();
         personOfInterest = new ArrayList<PersonOfInterest>();
         evidence = new ArrayList<Evidence>();
+        extraInfo = "";
     }
 
     /**
