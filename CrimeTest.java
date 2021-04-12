@@ -112,7 +112,7 @@ public class CrimeTest {
     public void addInfoTest() {
         String extraInfo = "test";
         int id = 0, severity = 0;
-        String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0", extraInfo ="0";
+        String location ="0", date ="0", description ="0", crimeType ="0", jurisdiction ="0";
         User enteredCrime = new User();
         ArrayList<User> detectives = new ArrayList<User>();
         Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
