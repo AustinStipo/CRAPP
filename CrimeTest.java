@@ -103,7 +103,6 @@ public class CrimeTest {
         User enteredCrime = new User();
         ArrayList<User> detectives = new ArrayList<User>();
         Crime c = new Crime(id, location, date, description, crimeType, detectives, severity, jurisdiction, enteredCrime);
-        System.out.println(c);
         assertEquals("ID: " + id + "\n\tLocation: " + location + "\n\tDate: " + date + "\n\tDescription: " + description +
         "\n\tCrime Type: " + crimeType + "\n\tSeverity:" + severity + "\n\tJurisdiction:" + jurisdiction + 
         "\n\tEntered Crime: " + enteredCrime, c.toString());
